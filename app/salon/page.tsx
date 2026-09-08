@@ -1,5 +1,6 @@
 import { pageMetadata, PageSeo } from '../seo';
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 import Link from '../site-link';
 import { TextLink, Visit, phone } from '../site-chrome';
 
@@ -92,6 +93,7 @@ export default function Salon() {
           <Link href="#tea-time">Tea Time</Link>
           <Link href="#porzellan">Tassen & Kannen</Link>
           <Link href="#mate">Mate</Link>
+          <Link href="#presse">Presse & Berichte</Link>
           <Link href="#besuch">Ihr Besuch</Link>
         </nav>
       </header>
@@ -258,6 +260,85 @@ export default function Salon() {
           <TextLink href="/tee-genuss#mate">
             Marias Mate-Welt entdecken
           </TextLink>
+        </div>
+      </section>
+
+      <section className="salon-press" id="presse" aria-labelledby="salon-press-title">
+        <div className="salon-press-intro">
+          <span className="eyebrow">Berichte über Lupercia in Bonn</span>
+          <h2 id="salon-press-title">
+            Lupercia.
+            <br />
+            <em>Zum Weiterlesen.</em>
+          </h2>
+          <p>
+            Unser Salon, Marias Geschichte und die Freude am Tee –
+            entdecken Sie Lupercia aus einem anderen Blickwinkel.
+          </p>
+        </div>
+        <div className="salon-press-list">
+          <article>
+            <Link
+              className="salon-press-link"
+              href="https://www.rundschau-online.de/region/bonn/gastro-szene-bonn-teestuben-mit-charme-1238613"
+              target="_blank"
+              rel="noopener"
+              aria-labelledby="press-rundschau-publisher press-rundschau-title press-rundschau-action"
+            >
+              <Image
+                className="salon-press-logo"
+                src="/assets/press/koelnische-rundschau.png"
+                alt="Logo der Kölnischen Rundschau"
+                width={512}
+                height={512}
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="salon-press-copy">
+                <span className="eyebrow" id="press-rundschau-publisher">Kölnische Rundschau</span>
+                <h3 id="press-rundschau-title">Gastro-Szene Bonn: Teestuben mit Charme</h3>
+                <p>
+                  Michael Sachse besucht Lupercia in der Südstadt und erzählt
+                  von Maria Moreno, ihrer Verbindung zum Tee und dem Salon.
+                </p>
+                <span className="salon-press-action" id="press-rundschau-action">
+                  Artikel lesen <ArrowUpRight size={17} aria-hidden="true" />
+                  <span className="sr-only"> (öffnet in einem neuen Tab)</span>
+                </span>
+              </div>
+            </Link>
+          </article>
+          <article>
+            <Link
+              className="salon-press-link"
+              href="https://kulinarische-schnitzeljagd.de/lupercia-finest-teas-tea-ceremonies-in-bonn"
+              target="_blank"
+              rel="noopener"
+              aria-labelledby="press-schnitzeljagd-publisher press-schnitzeljagd-title press-schnitzeljagd-action"
+            >
+              <Image
+                className="salon-press-logo"
+                src="/assets/press/kulinarische-schnitzeljagd.png"
+                alt="Logo der Kulinarischen Schnitzeljagd"
+                width={252}
+                height={252}
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="salon-press-copy">
+                <span className="eyebrow" id="press-schnitzeljagd-publisher">Kulinarische Schnitzeljagd</span>
+                <h3 id="press-schnitzeljagd-title">Lupercia – Teekultur in Bonn entdecken</h3>
+                <p>
+                  Das Genussmagazin stellt Marias Teeladen vor: mit Tees aus
+                  aller Welt, argentinischem Mate und gelebten Teetraditionen.
+                </p>
+                <span className="salon-press-action" id="press-schnitzeljagd-action">
+                  Porträt lesen <ArrowUpRight size={17} aria-hidden="true" />
+                  <span className="sr-only"> (öffnet in einem neuen Tab)</span>
+                </span>
+              </div>
+            </Link>
+          </article>
         </div>
       </section>
 

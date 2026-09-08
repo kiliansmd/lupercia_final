@@ -3553,3 +3553,92 @@ figcaption {
 .breadcrumbs a:hover {
   text-decoration: underline;
 }
+
+/* Editorial mentions lead naturally into the invitation to visit the salon. */
+.salon-press {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: clamp(36px, 6vw, 88px);
+  padding-block: clamp(56px, 7vw, 96px);
+  margin-top: clamp(56px, 7vw, 96px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.salon-press-intro h2 {
+  margin-top: 20px;
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1.2;
+}
+.salon-press-intro p {
+  max-width: 32ch;
+  margin: 24px 0 0;
+  color: var(--muted);
+}
+.salon-press-list article + article {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.salon-press-link {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  border-radius: 2px;
+}
+.salon-press-logo {
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+.salon-press-copy .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+.salon-press-copy h3 {
+  margin: 12px 0;
+  font: 400 clamp(24px, 2.2vw, 30px)/1.25 var(--serif);
+  text-wrap: balance;
+}
+.salon-press-copy p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.salon-press-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--accent);
+}
+.salon-press-link:hover .salon-press-action {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.salon-press-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 8px;
+}
+@media (max-width: 1000px) {
+  .salon-press {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .salon-press-intro p {
+    max-width: 54ch;
+  }
+}
+@media (max-width: 480px) {
+  .salon-press-link {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .salon-press-logo {
+    width: 72px;
+    height: 72px;
+  }
+}
