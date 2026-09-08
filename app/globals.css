@@ -26,11 +26,18 @@
   box-sizing: border-box;
 }
 html {
+  min-height: 100%;
+  background: var(--paper);
+  /* Keep native scrolling, but stop vertical bounce at both page boundaries. */
+  overscroll-behavior-y: none;
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
 body {
   margin: 0;
+  min-height: 100svh;
+  overscroll-behavior-y: none;
   background: var(--paper);
   color: var(--ink);
   font: 18px/1.65 var(--sans);
@@ -3661,6 +3668,7 @@ figcaption {
   gap: 30px;
   max-height: calc(85dvh - 24px);
   overflow-y: auto;
+  overscroll-behavior-y: none;
 }
 .consent-copy .eyebrow, .consent-dialog .eyebrow { font-size: 10px; }
 .consent-copy h2 { font-size: clamp(23px, 3vw, 30px); margin: 6px 0 8px; }
@@ -3690,10 +3698,12 @@ figcaption {
   width: min(690px, calc(100% - 32px));
   max-height: calc(100dvh - 40px);
   padding: 30px;
-  overscroll-behavior: contain;
+  overflow-y: auto;
+  overscroll-behavior: none;
 }
 .consent-dialog::backdrop { background: #25272165; }
-html:has(.consent-dialog[open]) { overflow: hidden; }
+html:has(.consent-dialog[open]),
+body:has(.consent-dialog[open]) { overflow: hidden; }
 .consent-dialog-heading { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
 .consent-dialog h2 { margin: 8px 0 18px; font-size: clamp(23px, 4vw, 30px); overflow-wrap: anywhere; }
 .consent-close { background: none; border: 1px solid var(--line); min-width: 44px; height: 44px; font-size: 25px; border-radius: 50%; }
