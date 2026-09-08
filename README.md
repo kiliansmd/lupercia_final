@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Anschließend **http://127.0.0.1:4173/** öffnen. 
+Anschließend **http://127.0.0.1:4173/** öffnen.
 
 ## Fertige statische Website
 
@@ -75,4 +75,3 @@ Die responsive Navigation unterstützt Tastatur und Escape. Veranstaltungsdetail
 - Die Feinkostliste wurde dem passenden Sortimentsteil zugeordnet.
 - Die Geschenkbox-Abbildung bleibt ausdrücklich als Beispiel gekennzeichnet.
 - Rechtliche Angaben wurden aus der bestehenden Website übernommen und an die tatsächlich eingebundenen Dienste angepasst. Die Website wird auf Vercel bereitgestellt.
-
