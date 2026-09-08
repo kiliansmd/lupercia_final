@@ -67,6 +67,13 @@ export default function Home() {
       <h1 className="sr-only">
         Lupercia – Marias Teesalon in der Bonner Südstadt
       </h1>
+      <section className="home-invitation page-width" aria-label="Eine Einladung zum Tee">
+        <h2>
+          Eine Tasse Tee ist eine Einladung.
+          <br />
+          <em>Nehmen Sie sie an.</em>
+        </h2>
+      </section>
       <section
         className="home-mosaic page-width"
         aria-label="Willkommen in Marias Teewelt"
@@ -114,11 +121,6 @@ export default function Home() {
         <Visit withPhoto={false} />
       </div>
       <section className="closing-note page-width">
-        <p>
-          Eine Tasse Tee ist eine Einladung.
-          <br />
-          <em>Nehmen Sie sie an.</em>
-        </p>
         <TextLink href="https://www.instagram.com/lupercia.de/" external>
           Einblicke auf Instagram · @lupercia.de
         </TextLink>
