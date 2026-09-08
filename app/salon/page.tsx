@@ -1,13 +1,9 @@
-import type { Metadata } from 'next';
+import { pageMetadata, PageSeo } from '../seo';
 import Image from 'next/image';
 import Link from '../site-link';
 import { TextLink, Visit, phone } from '../site-chrome';
 
-export const metadata: Metadata = {
-  title: 'Der Salon & Ihr Besuch',
-  description:
-    'Tea Time, feines Gebäck und persönliche Teeberatung bei Maria Moreno. Entdecken Sie Porzellan und traditionelle Mategefäße bei Lupercia in der Bonner Südstadt.',
-};
+export const metadata = pageMetadata('/salon');
 
 const photos = {
   fensterplatz: {
@@ -78,16 +74,18 @@ function SalonPhoto({
 export default function Salon() {
   return (
     <main id="main-content" className="page-width detail-page salon-page">
+      <PageSeo path='/salon' />
       <header className="salon-intro">
-        <span className="eyebrow">Der Salon · Bonn Südstadt</span>
+        <span className="eyebrow">Teesalon & Tea Time · Bonn-Südstadt</span>
         <h1>
           Kommen Sie
           <br />
           <em>auf einen Tee.</em>
         </h1>
         <p>
-          Ein Salon zum Probieren, Entdecken und Bleiben – mit persönlicher
-          Beratung durch Tee-Sommelière Maria Moreno.
+          Ihr Teesalon in Bonn-Südstadt: Tee probieren, Tea Time genießen und
+          Lieblingsstücke entdecken – mit persönlicher Beratung durch
+          Tee-Sommelière Maria Moreno.
         </p>
         <nav className="salon-chapters" aria-label="Den Salon entdecken">
           <Link href="#im-salon">Im Salon</Link>
@@ -147,7 +145,7 @@ export default function Salon() {
         aria-labelledby="salon-teatime-title"
       >
         <div className="salon-teatime-copy">
-          <span className="eyebrow">Tea Time</span>
+          <span className="eyebrow">Tea Time in Bonn</span>
           <h2 id="salon-teatime-title">
             Ein gedeckter Tisch.
             <br />
@@ -211,7 +209,7 @@ export default function Salon() {
               Porzellan. Im Salon finden Sie Tassen und Kannen, die Ihre
               Teestunde auch zu Hause begleiten.
             </p>
-            <TextLink href="/tee-genuss/#geschirr">
+            <TextLink href="/tee-genuss#geschirr">
               Marias Auswahl entdecken
             </TextLink>
           </div>
@@ -257,7 +255,7 @@ export default function Salon() {
             Entdecken Sie Kalebassen und Bombillas im Salon. Maria erklärt Ihnen
             die Unterschiede und zeigt, wie daraus Ihr eigener Mate-Moment wird.
           </p>
-          <TextLink href="/tee-genuss/#mate">
+          <TextLink href="/tee-genuss#mate">
             Marias Mate-Welt entdecken
           </TextLink>
         </div>

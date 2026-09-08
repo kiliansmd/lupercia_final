@@ -1,7 +1,7 @@
 import Link from '../site-link';
-import type { Metadata } from 'next';
+import { legalMetadata } from '../seo';
 import { phone } from '../site-chrome';
-export const metadata: Metadata = { title: 'Impressum' };
+export const metadata = legalMetadata('/impressum', 'Impressum');
 export default function Imprint() {
   return (
     <main id="main-content" className="legal-page">

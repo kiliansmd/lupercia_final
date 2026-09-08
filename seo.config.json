@@ -1,0 +1,60 @@
+{
+  "origin": "https://lupercia.meindigitalerbetrieb.de",
+  "name": "Lupercia",
+  "pages": {
+    "/": {
+      "name": "Startseite",
+      "title": "Lupercia – Teesalon & Teeladen in Bonn-Südstadt",
+      "description": "Tee genießen und entdecken bei Lupercia in Bonn-Südstadt: rund 100 Teesorten, Tea Time und persönliche Beratung bei Maria Moreno. Planen Sie Ihren Besuch.",
+      "image": "/assets/images/hero/salon.webp",
+      "imageAlt": "Der Lupercia Teesalon in der Bonner Südstadt",
+      "width": 1200,
+      "height": 1420
+    },
+    "/salon": {
+      "name": "Salon & Tea Time",
+      "title": "Teesalon & Tea Time in Bonn-Südstadt | Lupercia",
+      "description": "Tea Time mit Scones, Gebäck und feinem Tee in Bonn-Südstadt. Besuchen Sie Lupercia in der Argelanderstraße 75 oder fragen Sie Ihren Tisch bei Maria an.",
+      "image": "/assets/images/salon/fensterplatz.webp",
+      "imageAlt": "Ein Fensterplatz für Tea Time bei Lupercia in Bonn",
+      "width": 1023,
+      "height": 1537
+    },
+    "/tee-genuss": {
+      "name": "Tee & Genuss",
+      "title": "Tee kaufen in Bonn: Tee, Mate & Porzellan | Lupercia",
+      "description": "Rund 100 Teesorten, argentinischer Mate, Porzellan und Feinkost: Entdecken Sie Lupercias Teeladen in Bonn-Südstadt mit persönlicher Beratung durch Maria.",
+      "image": "/assets/images/tee-genuss/porzellan-und-tee.webp",
+      "imageAlt": "Loser Tee und Porzellan aus Marias Auswahl bei Lupercia",
+      "width": 1000,
+      "height": 1357
+    },
+    "/maria": {
+      "name": "Maria Moreno",
+      "title": "Maria Moreno – Tee-Sommelière in Bonn | Lupercia",
+      "description": "Lernen Sie Maria Moreno kennen: Tee-Sommelière und Gastgeberin von Lupercia in Bonn-Südstadt. Ihre Geschichte, argentinische Wurzeln und das DW-Porträt.",
+      "image": "/assets/images/maria/maria-portrait.webp",
+      "imageAlt": "Maria Moreno mit einer Lupercia-Teedose in ihrem Salon",
+      "width": 1086,
+      "height": 1448
+    },
+    "/veranstaltungen": {
+      "name": "Teeverkostungen & Begegnungen",
+      "title": "Teeverkostungen & Veranstaltungen in Bonn | Lupercia",
+      "description": "Tee gemeinsam entdecken: Teeverkostungen, Workshops und private Teerunden bei Lupercia in Bonn-Südstadt. Termine und freie Plätze persönlich anfragen.",
+      "image": "/assets/images/hero/veranstaltungen.webp",
+      "imageAlt": "Teesorten und Teeschalen für eine Verkostung bei Lupercia",
+      "width": 1200,
+      "height": 827
+    },
+    "/geschenkbox": {
+      "name": "Geschenkboxen",
+      "title": "Tee-Geschenkboxen aus Bonn – individuell | Lupercia",
+      "description": "Tee, Porzellan und feine Kleinigkeiten verschenken: Maria stellt Ihre Geschenkbox individuell zusammen. Persönlich anfragen und in Bonn-Südstadt abholen.",
+      "image": "/assets/images/geschenkbox/rosenbox.webp",
+      "imageAlt": "Eine persönlich zusammengestellte Lupercia Geschenkbox",
+      "width": 1086,
+      "height": 1448
+    }
+  }
+}

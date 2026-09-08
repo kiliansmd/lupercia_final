@@ -12,14 +12,20 @@ export function Footer() {
           className="footer-brand"
           aria-label="Lupercia Startseite"
         >
-          <Image
-            className="footer-brand-mark"
-            src="/assets/lupercia-mark.png"
-            alt="Lupercia – Finest Teas & Tea Ceremonies"
-            width={930}
-            height={927}
-            loading="lazy"
-          />
+          <picture>
+            <source
+              srcSet="/assets/lupercia-mark-280.webp 280w, /assets/lupercia-mark-420.webp 420w, /assets/lupercia-mark-600.webp 600w, /assets/lupercia-mark.webp 930w"
+              sizes="220px"
+            />
+            <Image
+              className="footer-brand-mark"
+              src="/assets/lupercia-mark-420.webp"
+              alt="Lupercia – Finest Teas & Tea Ceremonies"
+              width={930}
+              height={927}
+              loading="lazy"
+            />
+          </picture>
         </Link>
         <p className="footer-signature">Eine Welt rund um Tee.</p>
       </div>
@@ -83,8 +89,8 @@ export function Footer() {
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Lupercia · Maria Moreno</span>
         <nav aria-label="Rechtliche Informationen">
-          <Link href="/impressum/">Impressum</Link>
-          <Link href="/datenschutz/">Datenschutz</Link>
+          <Link href="/impressum">Impressum</Link>
+          <Link href="/datenschutz">Datenschutz</Link>
         </nav>
       </div>
     </footer>
@@ -156,8 +162,9 @@ export function Visit({
           <em>beim Tee.</em>
         </h2>
         <p>
-          Ein heller Platz am Fenster, eine Kanne guter Tee und Zeit zum
-          Bleiben. Kommen Sie einfach vorbei.
+          Lupercia ist Ihr Teesalon und Teeladen in Bonn-Südstadt. Genießen
+          Sie eine Kanne Tee vor Ort oder lassen Sie sich bei der Auswahl für
+          zu Hause beraten. Kommen Sie einfach vorbei.
         </p>
         <div className="visit-details">
           <div>

@@ -37,7 +37,7 @@ export default function InstagramFeed() {
       </div>
       <p className="maria-journey-note">
         Einblicke aus unserem Alltag ·{' '}
-        <Link href="/datenschutz/#instagram-feed">Datenschutz zum Feed</Link>
+        <Link href="/datenschutz#instagram-feed">Datenschutz zum Feed</Link>
       </p>
       <Script
         id="elfsight-platform"

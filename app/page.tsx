@@ -1,12 +1,15 @@
+import { pageMetadata, PageSeo } from './seo';
 import Image from 'next/image';
 import Link from './site-link';
 import { ArrowUpRight } from 'lucide-react';
 import { TextLink, Visit } from './site-chrome';
 
+export const metadata = pageMetadata('/');
+
 const heroLinks = [
   {
     id: 'tea',
-    href: '/tee-genuss/',
+    href: '/tee-genuss',
     image: 'tee-genuss',
     width: 720,
     height: 1280,
@@ -17,7 +20,7 @@ const heroLinks = [
   },
   {
     id: 'maria',
-    href: '/maria/',
+    href: '/maria',
     image: 'maria',
     width: 1086,
     height: 1448,
@@ -28,7 +31,7 @@ const heroLinks = [
   },
   {
     id: 'gift',
-    href: '/geschenkbox/',
+    href: '/geschenkbox',
     image: 'geschenkbox',
     width: 1086,
     height: 1448,
@@ -39,7 +42,7 @@ const heroLinks = [
   },
   {
     id: 'salon',
-    href: '/salon/',
+    href: '/salon',
     image: 'salon',
     width: 1200,
     height: 1420,
@@ -50,7 +53,7 @@ const heroLinks = [
   },
   {
     id: 'events',
-    href: '/veranstaltungen/',
+    href: '/veranstaltungen',
     image: 'veranstaltungen',
     width: 1200,
     height: 827,
@@ -64,10 +67,9 @@ const heroLinks = [
 export default function Home() {
   return (
     <main id="main-content">
-      <h1 className="sr-only">
-        Lupercia – Marias Teesalon in der Bonner Südstadt
-      </h1>
+      <PageSeo path="/" />
       <section className="home-invitation page-width" aria-label="Eine Einladung zum Tee">
+        <h1 className="eyebrow home-location">Teesalon & Teeladen in Bonn-Südstadt</h1>
         <h2>
           Eine Tasse Tee ist eine Einladung.
           <br />
@@ -114,7 +116,7 @@ export default function Home() {
             <br />
             <em>willkommen zu sein.</em>
           </p>
-          <TextLink href="/maria/">Maria & ihre Geschichte</TextLink>
+          <TextLink href="/maria">Maria & ihre Geschichte</TextLink>
         </div>
       </section>
       <div className="home-visit page-width">

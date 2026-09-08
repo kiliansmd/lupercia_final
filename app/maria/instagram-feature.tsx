@@ -77,7 +77,7 @@ export default function InstagramFeature() {
         <Link href={postUrl} target="_blank" rel="noopener noreferrer">
           Auf Instagram ansehen <ArrowUpRight size={15} aria-hidden="true" />
         </Link>
-        <Link href="/datenschutz/#instagram">Instagram · Datenschutz</Link>
+        <Link href="/datenschutz#instagram">Instagram · Datenschutz</Link>
       </div>
     </div>
   );

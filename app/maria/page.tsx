@@ -1,23 +1,20 @@
 import Image from 'next/image';
 import Link from '../site-link';
-import type { Metadata } from 'next';
+import { pageMetadata, PageSeo } from '../seo';
 import { TextLink } from '../site-chrome';
 import InstagramFeature from './instagram-feature';
 import InstagramFeed from './instagram-feed';
 
-export const metadata: Metadata = {
-  title: 'Maria Moreno · Tee-Sommelière',
-  description:
-    'Lupercia trägt den Namen von Marias Großmutter. Lernen Sie Maria Moreno, ihre argentinischen Wurzeln und ihre persönliche Teewelt kennen.',
-};
+export const metadata = pageMetadata('/maria');
 
 export default function Maria() {
   return (
     <main id="main-content" className="page-width detail-page maria-page">
+      <PageSeo path='/maria' />
       <header className="maria-heading">
         <div>
           <span className="eyebrow">
-            Tee-Sommelière · Gastgeberin · Lupercia
+            Tee-Sommelière · Gastgeberin in Bonn
           </span>
           <h1>
             Maria <em>Moreno.</em>
@@ -26,8 +23,9 @@ export default function Maria() {
         </div>
         <div className="maria-heading-note">
           <p>
-            Mein Name ist Maria Moreno, ich bin Tee-Sommelière – und Lupercia
-            trägt den Namen meiner Großmutter.
+            Mein Name ist Maria Moreno. Als Tee-Sommelière begrüße ich Sie
+            bei Lupercia in der Bonner Südstadt. Mein Salon trägt den Namen
+            meiner Großmutter.
           </p>
           <Link className="text-link" href="#geschichte">
             Meine Geschichte <span aria-hidden="true">↓</span>
@@ -143,7 +141,7 @@ export default function Maria() {
             Charakter. Meine Verbindung zu Argentinien zeigt sich in
             ausgewählten Yerbas, Kalebassen, Bombillas und Delikatessen.
           </p>
-          <TextLink href="/tee-genuss/">Meine Auswahl entdecken</TextLink>
+          <TextLink href="/tee-genuss">Meine Auswahl entdecken</TextLink>
         </div>
         <figure className="maria-tea-detail">
           <Image
@@ -186,8 +184,8 @@ export default function Maria() {
           teile ich mein Wissen und bringe Menschen miteinander ins Gespräch.
         </p>
         <div className="link-pair">
-          <TextLink href="/salon/#besuch">Lupercia besuchen</TextLink>
-          <TextLink href="/veranstaltungen/">Begegnungen entdecken</TextLink>
+          <TextLink href="/salon#besuch">Lupercia besuchen</TextLink>
+          <TextLink href="/veranstaltungen">Begegnungen entdecken</TextLink>
         </div>
       </section>
       <InstagramFeed />

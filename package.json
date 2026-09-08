@@ -12,7 +12,10 @@
     "lint": "oxlint",
     "format": "oxfmt",
     "preview": "node scripts/serve.mjs",
-    "typecheck": "tsc --noEmit --incremental false"
+    "typecheck": "tsc --noEmit --incremental false",
+    "prebuild": "node scripts/generate-seo.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
+    "postbuild": "npm run check:seo"
   },
   "dependencies": {
     "react": "19.2.6",

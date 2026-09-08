@@ -1,18 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMetadata, PageSeo } from '../seo';
 import Image from 'next/image';
 import { TextLink, phone } from '../site-chrome';
 import { Invitation } from '../editorial';
-export const metadata: Metadata = {
-  title: 'Die persönliche Geschenkbox',
-  description:
-    'Tee, Porzellan und feine Kleinigkeiten: Maria stellt Ihre Lupercia Geschenkbox persönlich zusammen. Individuell abstimmen und im Salon in Bonn abholen.',
-};
+export const metadata = pageMetadata('/geschenkbox');
 export default function Gifts() {
   return (
     <main id="main-content" className="page-width detail-page gift-page">
+      <PageSeo path='/geschenkbox' />
       <section className="portrait-hero gift-hero">
         <div>
-          <span className="eyebrow">Die Lupercia Geschenkbox</span>
+          <span className="eyebrow">Geschenkboxen aus Bonn</span>
           <h1>
             Ein bisschen
             <br />
@@ -23,8 +20,9 @@ export default function Gifts() {
             </em>
           </h1>
           <p>
-            Individuell zusammengestellte Genussboxen für Geburtstage,
-            Einladungen oder einfach so – von Maria persönlich ausgewählt.
+            Tee-Geschenkboxen für Geburtstage, Einladungen oder einfach so –
+            von Maria persönlich zusammengestellt und im Salon in der Bonner
+            Südstadt abholbereit. Inhalt und Preis stimmen Sie gemeinsam ab.
           </p>
           <TextLink href={phone}>Ihre Geschenkbox anfragen</TextLink>
         </div>
@@ -104,7 +102,7 @@ export default function Gifts() {
             <br />
             <em>Große Freude.</em>
           </h2>
-          <TextLink href="/tee-genuss/">Das Sortiment ansehen</TextLink>
+          <TextLink href="/tee-genuss">Das Sortiment ansehen</TextLink>
         </div>
         <div className="contents-grid">
           <div>

@@ -41,15 +41,21 @@ export function Header() {
       </div>
       <div className="masthead">
         <Link href="/" className="brand" aria-label="Lupercia Startseite">
-          <Image
-            className="header-brand-mark"
-            src="/assets/lupercia-mark.png"
-            alt="Lupercia – Finest Teas & Tea Ceremonies"
-            width={930}
-            height={927}
-            loading="eager"
-            fetchPriority="high"
-          />
+          <picture>
+            <source
+              srcSet="/assets/lupercia-mark-280.webp 280w, /assets/lupercia-mark-420.webp 420w, /assets/lupercia-mark-600.webp 600w, /assets/lupercia-mark.webp 930w"
+              sizes="(max-width: 760px) 140px, (max-width: 1120px) 168px, (max-width: 1307px) 15vw, 196px"
+            />
+            <Image
+              className="header-brand-mark"
+              src="/assets/lupercia-mark-420.webp"
+              alt="Lupercia – Finest Teas & Tea Ceremonies"
+              width={930}
+              height={927}
+              loading="eager"
+              fetchPriority="high"
+            />
+          </picture>
         </Link>
         <button
           type="button"
@@ -70,7 +76,7 @@ export function Header() {
               key={href}
               href={href}
               aria-current={
-                pathname === href || pathname === href.slice(0, -1)
+                pathname.replace(/\/$/, '') === href
                   ? 'page'
                   : undefined
               }
@@ -81,7 +87,7 @@ export function Header() {
           ))}
           <Link
             className="nav-visit"
-            href="/salon/#besuch"
+            href="/salon#besuch"
             onClick={() => setOpen(false)}
           >
             Zu Besuch <ArrowUpRight size={16} />

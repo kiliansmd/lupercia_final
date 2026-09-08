@@ -1,14 +1,10 @@
-import type { Metadata } from 'next';
+import { pageMetadata, PageSeo } from '../seo';
 import Image from 'next/image';
 import Link from '../site-link';
 import { Invitation } from '../editorial';
 import { TextLink } from '../site-chrome';
 
-export const metadata: Metadata = {
-  title: 'Tee & Genuss · Marias Auswahl',
-  description:
-    'Rund 100 Teesorten, Mate aus Argentinien, ausgewähltes Porzellan und Feinkost. Entdecken Sie Marias persönliche Auswahl bei Lupercia in Bonn.',
-};
+export const metadata = pageMetadata('/tee-genuss');
 
 const teas = [
   ['Schwarzer Tee', 'Kräftig, malzig oder fein und duftig.'],
@@ -76,18 +72,19 @@ function TeaPhoto({
 export default function Tea() {
   return (
     <main id="main-content" className="page-width detail-page tea-page">
+      <PageSeo path='/tee-genuss' />
       <header className="tea-still-life">
         <div className="tea-still-life-copy">
-          <span className="eyebrow">Tee & Genuss · Marias Auswahl</span>
+          <span className="eyebrow">Tee kaufen in Bonn · Marias Auswahl</span>
           <h1>
             Rund um
             <br />
             <em>die Tasse.</em>
           </h1>
           <p>
-            Tee steht im Mittelpunkt. Argentinien gibt Lupercia seine
-            persönliche Handschrift. Entdecken Sie Marias Auswahl für Ihren
-            nächsten Teemoment.
+            Rund 100 Teesorten, Mate aus Argentinien und ausgewähltes Porzellan:
+            Entdecken Sie Ihren Lieblingstee in unserem Teeladen in der Bonner
+            Südstadt. Maria berät Sie persönlich zu Geschmack und Zubereitung.
           </p>
           <Link className="tea-explore" href="#tee">
             Die Teewelt entdecken <span aria-hidden="true">↓</span>
@@ -172,7 +169,7 @@ export default function Tea() {
             Maria erklärt Ihnen persönlich, was sie ausmacht – und wie aus dem
             Aufgießen ein gemeinsamer Moment wird.
           </p>
-          <TextLink href="/maria/#geschichte">Die Geschichte dahinter</TextLink>
+          <TextLink href="/maria#geschichte">Die Geschichte dahinter</TextLink>
         </div>
         <figure>
           <TeaPhoto name="kuchen-und-mate" />
@@ -209,7 +206,7 @@ export default function Tea() {
             Persönlichkeit: Entdecken Sie im Salon, was zu Ihnen und Ihrem Tee
             passt.
           </p>
-          <TextLink href="/salon/#porzellan">Im Salon entdecken</TextLink>
+          <TextLink href="/salon#porzellan">Im Salon entdecken</TextLink>
         </div>
       </section>
 
@@ -238,7 +235,7 @@ export default function Tea() {
               <li>Sandwiches & hausgemachter Kuchen</li>
               <li>Marmelade & weitere Begleiter</li>
             </ul>
-            <TextLink href="/salon/#tea-time">Zeit für eine Tea Time</TextLink>
+            <TextLink href="/salon#tea-time">Tea Time in Bonn anfragen</TextLink>
           </div>
           <figure className="tea-feast-main">
             <TeaPhoto name="tea-time-etagere" />

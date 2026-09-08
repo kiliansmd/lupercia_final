@@ -1,13 +1,9 @@
 import Link from '../site-link';
-import type { Metadata } from 'next';
+import { pageMetadata, PageSeo } from '../seo';
 import { Plus } from 'lucide-react';
 import { PageIntro, Invitation } from '../editorial';
 import { Photo, TextLink, phone } from '../site-chrome';
-export const metadata: Metadata = {
-  title: 'Begegnungen & Veranstaltungen',
-  description:
-    'Teerunden, Verkostungen, Tea & Books und Tango & Tea bei Lupercia in Bonn. Termine und private Runden stimmen Sie persönlich mit Maria ab.',
-};
+export const metadata = pageMetadata('/veranstaltungen');
 const formats = [
   {
     name: 'Lupercias Teerunde',
@@ -38,8 +34,9 @@ const formats = [
 export default function Events() {
   return (
     <main id="main-content" className="page-width detail-page">
+      <PageSeo path='/veranstaltungen' />
       <PageIntro
-        eyebrow="Begegnungen & Veranstaltungen"
+        eyebrow="Teeverkostungen & Veranstaltungen in Bonn"
         title={
           <>
             Tee bringt
@@ -47,7 +44,7 @@ export default function Events() {
             <em>Menschen zusammen.</em>
           </>
         }
-        description="Verkostungen, Gespräche, Bücher und argentinische Kultur – immer mit einer Kanne Tee in der Mitte."
+        description="Teeverkostungen, Workshops und private Teerunden in der Bonner Südstadt – bei Lupercia in der Argelanderstraße 75. Termine und freie Plätze erfahren Sie direkt bei Maria."
       />
       <figure className="wide-photo">
         <Photo

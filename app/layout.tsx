@@ -3,12 +3,14 @@ import type { Metadata } from 'next';
 import { Footer } from './site-chrome';
 import { Header } from './header';
 import './globals.css';
+import { siteOrigin, SiteSchema } from './seo';
 
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteOrigin),
   title: {
-    default: 'Lupercia — Tee. Genuss. Begegnung. In Bonn.',
+    default: 'Lupercia – Teesalon & Teeladen in Bonn-Südstadt',
     template: '%s — Lupercia',
   },
   description:
@@ -21,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body>
+        <SiteSchema />
         <Link className="skip-link" href="#main-content">
           Zum Inhalt
         </Link>

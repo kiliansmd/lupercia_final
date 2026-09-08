@@ -1,7 +1,7 @@
 import Link from '../site-link';
-import type { Metadata } from 'next';
+import { legalMetadata } from '../seo';
 import { phone } from '../site-chrome';
-export const metadata: Metadata = { title: 'Datenschutz' };
+export const metadata = legalMetadata('/datenschutz', 'Datenschutz');
 export default function Privacy() {
   return (
     <main id="main-content" className="legal-page">

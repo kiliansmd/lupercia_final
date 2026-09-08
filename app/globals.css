@@ -3516,3 +3516,40 @@ figcaption {
     line-height: 1.6;
   }
 }
+
+/* Local context and crawlable hierarchy, integrated into the editorial layout. */
+.home-invitation .home-location {
+  margin: 0 0 16px;
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+.breadcrumbs {
+  padding-top: 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.breadcrumbs li + li::before {
+  content: '/';
+  margin-right: 12px;
+  opacity: 0.5;
+}
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-underline-offset: 4px;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
