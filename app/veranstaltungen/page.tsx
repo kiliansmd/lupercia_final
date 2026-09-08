@@ -1,3 +1,4 @@
+import { DetailPhoto } from '../detail-photo';
 import Link from '../site-link';
 import { pageMetadata, PageSeo } from '../seo';
 import { Plus } from 'lucide-react';
@@ -68,6 +69,10 @@ export default function Events() {
             Aktuelle Termine und freie Plätze erfahren Sie persönlich bei Maria.
           </p>
           <TextLink href={phone}>Termine anfragen</TextLink>
+          <figure className="events-encounter">
+            <DetailPhoto name="gemeinsam-tee-trinken" sizes="(max-width: 760px) 90vw, 30vw" />
+            <figcaption>Tee teilen. Ins Gespräch kommen.</figcaption>
+          </figure>
         </div>
         <div className="event-list">
           {formats.map((f, i) => (
@@ -103,6 +108,16 @@ export default function Events() {
           Konditionen besprechen Sie direkt miteinander.
         </p>
         <TextLink href={phone}>Eine private Runde anfragen</TextLink>
+        <div className="private-round-photos">
+          <figure>
+            <DetailPhoto name="gedeckte-teetafel" sizes="(max-width: 760px) 50vw, 42vw" />
+            <figcaption>Liebevoll gedeckt, gemeinsam genossen.</figcaption>
+          </figure>
+          <figure>
+            <DetailPhoto name="scones-tablett" sizes="(max-width: 760px) 32vw, 28vw" />
+            <figcaption>Feine Begleiter zur Teestunde.</figcaption>
+          </figure>
+        </div>
       </section>
       <Invitation
         title={

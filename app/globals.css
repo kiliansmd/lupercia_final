@@ -3735,3 +3735,159 @@ html:has(.consent-dialog[open]) { overflow: hidden; }
   .consent-dialog .consent-actions { flex-direction: column; }
 }
 @media print { .consent-banner, .consent-dialog, .consent-storage-notice, .privacy-settings-link { display: none; } }
+
+/* Additional salon photographs: native responsive images, without a carousel. */
+.detail-photo {
+  display: block;
+}
+.detail-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.salon-welcome-illustrated {
+  grid-template-columns: 0.8fr 1fr 1fr;
+  gap: 42px;
+  padding-inline: 0;
+}
+.salon-shelf-detail {
+  max-width: 310px;
+}
+.salon-welcome-illustrated h2 {
+  font-size: clamp(30px, 3vw, 44px);
+}
+.salon-seasons {
+  border-top: 1px solid var(--line);
+  padding: 65px 35px 80px;
+}
+.salon-seasons h2 {
+  margin: 22px 0 40px;
+  font-size: clamp(30px, 3.5vw, 48px);
+}
+.salon-seasons-photos {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 55px;
+  align-items: start;
+}
+.salon-seasons-photos figure:first-child {
+  padding-right: 40px;
+}
+.salon-seasons-photos figure:last-child {
+  margin-top: 75px;
+}
+.tea-aroma-photos {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  align-items: center;
+  gap: 65px;
+  max-width: 890px;
+  margin: 65px auto 0;
+}
+.tea-aroma-photos figure:first-child img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 42%;
+}
+.tea-mate-vessels {
+  margin-top: 35px;
+  max-width: 270px;
+}
+.tea-mate-vessels img {
+  width: 100%;
+  height: auto;
+}
+.maria-ritual-illustrated {
+  align-items: center;
+  grid-template-columns: 0.8fr 1.2fr;
+}
+.maria-ritual-illustrated > figure {
+  max-width: 350px;
+}
+.maria-ritual-illustrated h2 {
+  margin-top: 22px;
+}
+.events-encounter {
+  margin-top: 40px;
+  max-width: 390px;
+}
+.private-round-photos {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  align-items: center;
+  gap: 45px;
+  margin-top: 45px;
+}
+@media (max-width: 1000px) {
+  .salon-welcome-illustrated {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 25px 40px;
+  }
+  .salon-shelf-detail {
+    grid-row: span 2;
+  }
+  .salon-welcome-illustrated .salon-welcome-text {
+    grid-column: 2;
+  }
+  .maria-ritual-illustrated {
+    gap: 45px;
+    padding-inline: 0;
+  }
+}
+@media (max-width: 760px) {
+  .salon-welcome-illustrated {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .salon-shelf-detail {
+    grid-row: auto;
+    width: 65%;
+    justify-self: end;
+    order: 3;
+  }
+  .salon-welcome-illustrated .salon-welcome-text {
+    grid-column: auto;
+  }
+  .salon-seasons {
+    padding: 45px 0;
+  }
+  .salon-seasons-photos {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .salon-seasons-photos figure:first-child {
+    padding: 0;
+  }
+  .salon-seasons-photos figure:last-child {
+    margin-top: 48px;
+  }
+  .tea-aroma-photos {
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .tea-mate-vessels {
+    max-width: 230px;
+    width: 75%;
+    margin-top: 30px;
+  }
+  .maria-ritual-illustrated {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .maria-ritual-illustrated > figure {
+    width: 78%;
+    justify-self: center;
+    order: 2;
+  }
+  .events-encounter {
+    max-width: 360px;
+    margin-inline: auto;
+  }
+  .private-round-photos {
+    gap: 15px;
+    margin-top: 32px;
+  }
+  .private-round-photos figcaption {
+    font-size: 12px;
+  }
+}

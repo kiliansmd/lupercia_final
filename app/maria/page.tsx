@@ -1,3 +1,4 @@
+import { DetailPhoto } from '../detail-photo';
 import Image from 'next/image';
 import Link from '../site-link';
 import { pageMetadata, PageSeo } from '../seo';
@@ -156,9 +157,13 @@ export default function Maria() {
         </figure>
       </section>
 
-      <section className="maria-ritual">
-        <span className="eyebrow">Porzellan mit Persönlichkeit</span>
+      <section className="maria-ritual maria-ritual-illustrated">
+        <figure>
+          <DetailPhoto name="porzellan-rosen" sizes="(max-width: 760px) 70vw, 28vw" />
+          <figcaption>Kleine Lieblingsstücke am Salonfenster.</figcaption>
+        </figure>
         <div>
+          <span className="eyebrow">Porzellan mit Persönlichkeit</span>
           <h2>
             Auch das Gefäß
             <br />

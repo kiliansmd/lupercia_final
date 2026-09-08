@@ -1,3 +1,4 @@
+import { DetailPhoto } from '../detail-photo';
 import { pageMetadata, PageSeo } from '../seo';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
@@ -119,7 +120,11 @@ export default function Salon() {
         </figure>
       </section>
 
-      <section className="salon-welcome">
+      <section className="salon-welcome salon-welcome-illustrated">
+        <figure className="salon-shelf-detail">
+          <DetailPhoto name="teeregal" sizes="(max-width: 760px) 65vw, 24vw" />
+          <figcaption>Eine ganze Welt in unseren Teedosen.</figcaption>
+        </figure>
         <div>
           <span className="eyebrow">Willkommen bei Lupercia</span>
           <h2>
@@ -260,6 +265,23 @@ export default function Salon() {
           <TextLink href="/tee-genuss#mate">
             Marias Mate-Welt entdecken
           </TextLink>
+        </div>
+      </section>
+
+      <section className="salon-seasons" aria-labelledby="salon-seasons-title">
+        <header>
+          <span className="eyebrow">Mitten in der Südstadt</span>
+          <h2 id="salon-seasons-title">Draußen die Jahreszeiten.<br /><em>Drinnen ein Platz für Sie.</em></h2>
+        </header>
+        <div className="salon-seasons-photos">
+          <figure>
+            <DetailPhoto name="schaufenster-sommer" sizes="(max-width: 760px) 43vw, 32vw" />
+            <figcaption>Sommerlicht im Schaufenster.</figcaption>
+          </figure>
+          <figure>
+            <DetailPhoto name="fensterplatz-winter" sizes="(max-width: 760px) 43vw, 42vw" />
+            <figcaption>Ein warmer Fensterplatz an Wintertagen.</figcaption>
+          </figure>
         </div>
       </section>
 

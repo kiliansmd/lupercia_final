@@ -1,0 +1,92 @@
+{
+  "teeregal": {
+    "width": 720,
+    "height": 960,
+    "alt": "Schwarze Lupercia-Teedosen in einem sonnenbeschienenen Holzregal",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
+  },
+  "tee-und-magnolie": {
+    "width": 720,
+    "height": 960,
+    "alt": "Lupercia-Teedose mit einer Schaufel Früchtetee, floraler Teekanne und Magnolienzweig",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
+  },
+  "gemeinsam-tee-trinken": {
+    "width": 720,
+    "height": 1081,
+    "alt": "Maria und ein Gast genießen gemeinsam Tee am Fenster des Salons",
+    "widths": [
+      400,
+      720,
+      1066
+    ]
+  },
+  "fruechtetee": {
+    "width": 720,
+    "height": 960,
+    "alt": "Eine silberne Teeschaufel mit einer leuchtend orangefarbenen Früchteteemischung",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
+  },
+  "schaufenster-sommer": {
+    "width": 720,
+    "height": 1279,
+    "alt": "Lupercias Schaufenster mit floralem Logo und gespiegelten Häusern der Bonner Südstadt",
+    "widths": [
+      400,
+      720,
+      941
+    ]
+  },
+  "porzellan-rosen": {
+    "width": 720,
+    "height": 1199,
+    "alt": "Florale Porzellantassen und rosa Rosen auf einer Etagere am Salonfenster",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
+  },
+  "scones-tablett": {
+    "width": 720,
+    "height": 960,
+    "alt": "Scones, Konfitüre und Creme auf einem gedeckten Tablett mit floralem Porzellan",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
+  },
+  "gedeckte-teetafel": {
+    "width": 720,
+    "height": 960,
+    "alt": "Festlich gedeckte Teetafel mit Kanne, Macarons, Gebäck und Sandwiches auf einer Etagere",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
+  },
+  "fensterplatz-winter": {
+    "width": 720,
+    "height": 960,
+    "alt": "Gemütlicher Fensterplatz mit grünen Kissen und Blick in die verschneite Bonner Südstadt",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
+  }
+}

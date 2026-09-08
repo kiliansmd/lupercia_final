@@ -1,3 +1,4 @@
+import { DetailPhoto } from '../detail-photo';
 import { pageMetadata, PageSeo } from '../seo';
 import Image from 'next/image';
 import Link from '../site-link';
@@ -149,6 +150,16 @@ export default function Tea() {
             </li>
           ))}
         </ul>
+        <div className="tea-aroma-photos">
+          <figure>
+            <DetailPhoto name="tee-und-magnolie" sizes="(max-width: 760px) 52vw, 42vw" />
+            <figcaption>Ein Duft, der neugierig macht.</figcaption>
+          </figure>
+          <figure>
+            <DetailPhoto name="fruechtetee" sizes="(max-width: 760px) 34vw, 25vw" />
+            <figcaption>Früchte, Farben, feine Details.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section className="tea-mate" id="mate" aria-labelledby="tea-mate-title">
@@ -170,6 +181,12 @@ export default function Tea() {
             Aufgießen ein gemeinsamer Moment wird.
           </p>
           <TextLink href="/maria#geschichte">Die Geschichte dahinter</TextLink>
+          <figure className="tea-mate-vessels">
+            <Image src="/assets/images/salon/mategefaesse.webp" width={1100} height={1343}
+              alt="Hölzerne Mategefäße mit verzierten Metallrändern und Bombillas bei Lupercia"
+              loading="lazy" decoding="async" />
+            <figcaption>Kalebassen und Bombillas. Das Ritual beginnt beim Gefäß.</figcaption>
+          </figure>
         </div>
         <figure>
           <TeaPhoto name="kuchen-und-mate" />
