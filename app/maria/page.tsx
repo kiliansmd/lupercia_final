@@ -36,14 +36,7 @@ export default function Maria() {
 
       <div className="maria-biography">
         <figure className="maria-portrait">
-          <Image
-            src="/assets/images/maria/maria-portrait.webp"
-            alt="Maria Moreno lächelt mit einer Lupercia-Teedose in den Händen vor ihrem Teeregal"
-            width={1086}
-            height={1448}
-            loading="eager"
-            fetchPriority="high"
-          />
+          <DetailPhoto name="maria-teetafel" sizes="(max-width: 760px) 85vw, (max-width: 1440px) 42vw, 560px" eager />
           <figcaption>Maria Moreno. Ihre Gastgeberin bei Lupercia.</figcaption>
         </figure>
         <section

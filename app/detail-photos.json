@@ -88,5 +88,15 @@
       720,
       1080
     ]
+  },
+  "maria-teetafel": {
+    "width": 720,
+    "height": 960,
+    "alt": "Maria Moreno steht neben einer liebevoll gedeckten Teetafel mit Porzellan, Gebäck und Blumen im Salon",
+    "widths": [
+      400,
+      720,
+      1080
+    ]
   }
 }

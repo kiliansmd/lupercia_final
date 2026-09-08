@@ -261,7 +261,8 @@ svg {
 .home-mosaic > * {
   min-width: 0;
 }
-.home-mosaic .photo-link > img {
+.home-mosaic .photo-link > img,
+.home-mosaic .photo-link > picture {
   position: absolute;
   inset: 0;
 }
@@ -3901,4 +3902,8 @@ html:has(.consent-dialog[open]) { overflow: hidden; }
     aspect-ratio: 3 / 4;
     object-position: center 30%;
   }
+}
+
+.home-mosaic .photo-link > picture img {
+  height: 100%;
 }

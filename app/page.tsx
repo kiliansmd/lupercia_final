@@ -1,3 +1,4 @@
+import { DetailPhoto } from './detail-photo';
 import { pageMetadata, PageSeo } from './seo';
 import Image from 'next/image';
 import Link from './site-link';
@@ -21,10 +22,10 @@ const heroLinks = [
   {
     id: 'maria',
     href: '/maria',
-    image: 'maria',
+    image: 'maria-teetafel',
     width: 1086,
     height: 1448,
-    alt: 'Maria Moreno mit einer Lupercia-Teedose vor ihrem Teeregal',
+    alt: 'Maria Moreno neben einer gedeckten Teetafel mit Porzellan und Blumen',
     eyebrow: 'Die Gastgeberin',
     title: 'Maria.',
     cta: 'Ihre Geschichte kennenlernen',
@@ -86,6 +87,9 @@ export default function Home() {
             className={`photo-link mosaic-${tile.id}`}
             href={tile.href}
           >
+            {tile.id === 'maria' ? (
+              <DetailPhoto name="maria-teetafel" sizes="(max-width: 760px) 46vw, (max-width: 1440px) 30vw, 420px" eager />
+            ) : (
             <Image
               src={`/assets/images/hero/${tile.image}.webp`}
               alt={tile.alt}
@@ -95,6 +99,7 @@ export default function Home() {
               fetchPriority={index === 0 ? 'high' : undefined}
               decoding="async"
             />
+            )}
             <div className="photo-label">
               <span className="eyebrow">{tile.eyebrow}</span>
               <h2>
