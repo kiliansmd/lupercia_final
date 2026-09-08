@@ -55,10 +55,10 @@ const heroLinks = [
   {
     id: 'events',
     href: '/veranstaltungen',
-    image: 'veranstaltungen',
-    width: 1200,
-    height: 827,
-    alt: 'Drei ausgewählte Teesorten und feine Teeschalen auf einem vorbereiteten Verkostungstisch',
+    image: 'gemeinsam-tee-trinken',
+    width: 1066,
+    height: 1600,
+    alt: 'Maria und ein Gast genießen gemeinsam Tee am Fenster des Salons',
     eyebrow: 'Verkostungen & Veranstaltungen',
     title: 'Begegnungen.',
     cta: 'Gemeinsam Tee entdecken',
@@ -89,6 +89,8 @@ export default function Home() {
           >
             {tile.id === 'maria' ? (
               <DetailPhoto name="maria-teetafel" sizes="(max-width: 760px) 46vw, (max-width: 1440px) 30vw, 420px" eager />
+            ) : tile.id === 'events' ? (
+              <DetailPhoto name="gemeinsam-tee-trinken" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 30vw" />
             ) : (
             <Image
               src={`/assets/images/hero/${tile.image}.webp`}

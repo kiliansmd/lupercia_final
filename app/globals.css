@@ -378,7 +378,7 @@ svg {
   grid-area: events;
 }
 .mosaic-events img {
-  object-position: 51% 42%;
+  object-position: 50% 15%;
 }
 .mosaic-note {
   grid-area: note;
