@@ -34,7 +34,7 @@ const heroLinks = [
     height: 1448,
     alt: 'Eine Lupercia Geschenkbox mit Rosentee, Blütenporzellan, Gebäck und Rosenkonfitüre',
     eyebrow: 'Persönlich zusammengestellt',
-    title: 'Geschenkboxen.',
+    title: 'Geschenk\u00adboxen.',
     cta: 'Freude verschenken',
   },
   {
@@ -99,7 +99,7 @@ export default function Home() {
                 <em>{tile.title}</em>
               </h2>
               <span className="photo-cta">
-                {tile.cta}
+                <span className="photo-cta-label">{tile.cta}</span>
                 <ArrowUpRight size={20} aria-hidden="true" />
               </span>
             </div>
