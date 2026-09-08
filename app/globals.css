@@ -1283,14 +1283,14 @@ figcaption {
   font-size: 12px;
 }
 .instagram-feature {
-  container-type: inline-size;
   min-width: 0;
   width: 100%;
 }
 .instagram-stage {
   position: relative;
-  /* Reserve the landscape video plus Instagram's header and controls. */
-  height: calc(56.25cqw + 208px);
+  /* Percentage padding also works on iOS versions without container units. */
+  height: 0;
+  padding-top: calc(56.25% + 208px);
   background: white;
 }
 .instagram-poster {
@@ -1362,6 +1362,8 @@ figcaption {
   margin-bottom: 8px;
 }
 .instagram-frame {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -1408,6 +1410,7 @@ figcaption {
   text-underline-offset: 4px;
 }
 .instagram-notice {
+  display: block;
   margin: 8px 0 0;
   font-size: 12px;
   line-height: 1.6;
@@ -3444,6 +3447,7 @@ figcaption {
   .footer-bottom a,
   .footer-link,
   .instagram-actions > a,
+  .instagram-actions > button,
   .tea-explore {
     display: inline-flex;
     align-items: center;
