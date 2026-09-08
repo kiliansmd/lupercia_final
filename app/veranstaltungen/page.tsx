@@ -3,7 +3,7 @@ import Link from '../site-link';
 import { pageMetadata, PageSeo } from '../seo';
 import { Plus } from 'lucide-react';
 import { PageIntro, Invitation } from '../editorial';
-import { Photo, TextLink, phone } from '../site-chrome';
+import { TextLink, phone } from '../site-chrome';
 export const metadata = pageMetadata('/veranstaltungen');
 const formats = [
   {
@@ -47,15 +47,9 @@ export default function Events() {
         }
         description="Teeverkostungen, Workshops und private Teerunden in der Bonner Südstadt – bei Lupercia in der Argelanderstraße 75. Termine und freie Plätze erfahren Sie direkt bei Maria."
       />
-      <figure className="wide-photo">
-        <Photo
-          file="lupercia-fensterplatz-bonn"
-          alt="Ein einladender Tisch am hellen Fenster im Lupercia Salon"
-          eager
-        />
-        <figcaption>
-          Ein Tisch für gute Gespräche. In der Bonner Südstadt.
-        </figcaption>
+      <figure className="events-hero-photo">
+        <DetailPhoto name="gemeinsam-tee-trinken" sizes="(max-width: 760px) 90vw, (max-width: 1032px) 89vw, 920px" eager />
+        <figcaption>Tee teilen. Ins Gespräch kommen. Bei Lupercia in Bonn.</figcaption>
       </figure>
       <section className="events-section">
         <div>
@@ -69,10 +63,6 @@ export default function Events() {
             Aktuelle Termine und freie Plätze erfahren Sie persönlich bei Maria.
           </p>
           <TextLink href={phone}>Termine anfragen</TextLink>
-          <figure className="events-encounter">
-            <DetailPhoto name="gemeinsam-tee-trinken" sizes="(max-width: 760px) 90vw, 30vw" />
-            <figcaption>Tee teilen. Ins Gespräch kommen.</figcaption>
-          </figure>
         </div>
         <div className="event-list">
           {formats.map((f, i) => (

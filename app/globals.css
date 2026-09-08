@@ -3807,10 +3807,6 @@ html:has(.consent-dialog[open]) { overflow: hidden; }
 .maria-ritual-illustrated h2 {
   margin-top: 22px;
 }
-.events-encounter {
-  margin-top: 40px;
-  max-width: 390px;
-}
 .private-round-photos {
   display: grid;
   grid-template-columns: 1.25fr 0.85fr;
@@ -3879,15 +3875,30 @@ html:has(.consent-dialog[open]) { overflow: hidden; }
     justify-self: center;
     order: 2;
   }
-  .events-encounter {
-    max-width: 360px;
-    margin-inline: auto;
-  }
   .private-round-photos {
     gap: 15px;
     margin-top: 32px;
   }
   .private-round-photos figcaption {
     font-size: 12px;
+  }
+}
+
+.events-hero-photo {
+  max-width: 920px;
+  margin-inline: auto;
+}
+.events-hero-photo img {
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  object-position: center 15%;
+}
+@media (max-width: 760px) {
+  .events-hero-photo {
+    max-width: 480px;
+  }
+  .events-hero-photo img {
+    aspect-ratio: 3 / 4;
+    object-position: center 30%;
   }
 }

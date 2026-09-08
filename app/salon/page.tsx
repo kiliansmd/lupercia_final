@@ -8,11 +8,6 @@ import { TextLink, Visit, phone } from '../site-chrome';
 export const metadata = pageMetadata('/salon');
 
 const photos = {
-  fensterplatz: {
-    width: 1023,
-    height: 1537,
-    alt: 'Ein heller Fensterplatz mit Teekanne, Teetasse und Blick auf Gäste unter den Bäumen der Bonner Südstadt',
-  },
   'kuchen-und-mate': {
     width: 1200,
     height: 1124,
@@ -111,8 +106,8 @@ export default function Salon() {
           </figcaption>
         </figure>
         <figure className="salon-opening-window">
-          <SalonPhoto name="fensterplatz" />
-          <figcaption>Ein Fensterplatz. Und Zeit für sich.</figcaption>
+          <DetailPhoto name="gemeinsam-tee-trinken" sizes="(max-width: 760px) 44vw, 28vw" />
+          <figcaption>Ein Fensterplatz. Und Zeit füreinander.</figcaption>
         </figure>
         <figure className="salon-opening-maria">
           <SalonPhoto name="maria-teeberatung" />
