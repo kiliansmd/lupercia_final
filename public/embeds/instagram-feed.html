@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Lupercia Instagram-Feed</title>
+<style>html,body{margin:0;background:#fffefa;color:#252721;font:16px/1.6 system-ui,sans-serif}#feed{display:flow-root;min-height:240px}#status{padding:24px;text-align:center}a{color:inherit}</style></head><body>
+<div id="feed"><p id="status">Der Feed wird nach Ihrer Einwilligung geladen. <a href="https://www.instagram.com/lupercia.de/" target="_blank" rel="noopener noreferrer">Instagram direkt öffnen ↗</a></p></div>
+<script>
+// The parent creates this isolated frame only after consent. Direct URL visits do not load the provider.
+let enabled = false;
+window.addEventListener('message', function(event) {
+  if (enabled || window.parent === window || event.source !== window.parent || event.origin !== window.location.origin || event.data?.type !== 'lupercia-feed-enable') return;
+  enabled = true;
+  const widget = document.createElement('div');
+  widget.className = 'elfsight-app-eea1093c-dd61-4d51-a3f2-c1a335162a59';
+  widget.setAttribute('data-elfsight-app-lazy', '');
+  document.getElementById('feed').appendChild(widget);
+  const script = document.createElement('script');
+  script.src = 'https://elfsightcdn.com/platform.js';
+  script.async = true;
+  script.onerror = () => { document.getElementById('status').firstChild.textContent = 'Der Feed ist gerade nicht erreichbar. '; };
+  document.body.appendChild(script);
+  const observer = new MutationObserver(() => {
+    if (widget.children.length) document.getElementById('status').hidden = true;
+  });
+  observer.observe(widget, { childList: true });
+  new ResizeObserver(() => window.parent.postMessage({ type: 'lupercia-feed-height', height: Math.max(240, document.getElementById('feed').getBoundingClientRect().height) }, window.location.origin)).observe(document.getElementById('feed'));
+});
+</script></body></html>

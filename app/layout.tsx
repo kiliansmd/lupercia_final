@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Footer } from './site-chrome';
 import { Header } from './header';
 import './globals.css';
+import { ConsentProvider } from './consent';
 import { siteOrigin, SiteSchema } from './seo';
 
 export const dynamic = 'force-static';
@@ -27,9 +28,11 @@ export default function RootLayout({
         <Link className="skip-link" href="#main-content">
           Zum Inhalt
         </Link>
-        <Header />
-        {children}
-        <Footer />
+        <ConsentProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ConsentProvider>
       </body>
     </html>
   );

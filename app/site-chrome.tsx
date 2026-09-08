@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { CookieSettingsButton } from './consent';
 import Link from './site-link';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { phone, maps, links } from './site-config';
@@ -91,6 +92,7 @@ export function Footer() {
         <nav aria-label="Rechtliche Informationen">
           <Link href="/impressum">Impressum</Link>
           <Link href="/datenschutz">Datenschutz</Link>
+          <CookieSettingsButton />
         </nav>
       </div>
     </footer>

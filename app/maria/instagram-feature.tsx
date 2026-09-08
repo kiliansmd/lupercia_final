@@ -3,25 +3,50 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, RotateCcw } from 'lucide-react';
 import Link from '../site-link';
+import { ExternalMedia } from '../consent';
 
 const postUrl = 'https://www.instagram.com/reel/DLHhmNIhJKO/';
 
 export default function InstagramFeature() {
+  return (
+    <ExternalMedia service="instagram">
+      <InstagramPlayer />
+    </ExternalMedia>
+  );
+}
+
+function InstagramPlayer() {
   const frame = useRef<HTMLIFrameElement>(null);
   const [attempt, setAttempt] = useState(0);
-  const [status, setStatus] = useState<'loading' | 'loaded' | 'slow' | 'error'>('loading');
+  const [status, setStatus] = useState<'loading' | 'loaded' | 'slow' | 'error'>(
+    'loading',
+  );
   const [height, setHeight] = useState<number>();
 
   useEffect(() => {
     // Instagram's embed reports its own height as controls and media mount.
     function receive(event: MessageEvent) {
-      if (event.origin !== 'https://www.instagram.com' || event.source !== frame.current?.contentWindow) return;
+      if (
+        event.origin !== 'https://www.instagram.com' ||
+        event.source !== frame.current?.contentWindow
+      )
+        return;
       try {
-        const message = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-        if (!message || (message.type !== 'MOUNTED' && message.type !== 'MEASURE')) return;
+        const message =
+          typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (
+          !message ||
+          (message.type !== 'MOUNTED' && message.type !== 'MEASURE')
+        )
+          return;
         setStatus('loaded');
         const measured = message.details?.height;
-        if (typeof measured === 'number' && Number.isFinite(measured) && measured >= 200 && measured <= 1800) {
+        if (
+          typeof measured === 'number' &&
+          Number.isFinite(measured) &&
+          measured >= 200 &&
+          measured <= 1800
+        ) {
           setHeight(Math.ceil(measured));
         }
       } catch {
@@ -30,7 +55,7 @@ export default function InstagramFeature() {
     }
     window.addEventListener('message', receive);
     const timeout = window.setTimeout(() => {
-      setStatus(current => current === 'loading' ? 'slow' : current);
+      setStatus((current) => (current === 'loading' ? 'slow' : current));
     }, 15000);
     return () => {
       window.removeEventListener('message', receive);
@@ -41,7 +66,7 @@ export default function InstagramFeature() {
   function reload() {
     setStatus('loading');
     setHeight(undefined);
-    setAttempt(current => current + 1);
+    setAttempt((current) => current + 1);
   }
 
   return (
@@ -67,11 +92,16 @@ export default function InstagramFeature() {
       </div>
       {(status === 'slow' || status === 'error') && (
         <output className="instagram-notice">
-          Der Instagram-Player lädt gerade nicht. Versuchen Sie es erneut oder öffnen Sie den Beitrag direkt auf Instagram.
+          Der Instagram-Player lädt gerade nicht. Versuchen Sie es erneut oder
+          öffnen Sie den Beitrag direkt auf Instagram.
         </output>
       )}
       <div className="instagram-actions">
-        <button type="button" onClick={reload} aria-controls="dw-instagram-player">
+        <button
+          type="button"
+          onClick={reload}
+          aria-controls="dw-instagram-player"
+        >
           <RotateCcw size={15} aria-hidden="true" /> Video neu laden
         </button>
         <Link href={postUrl} target="_blank" rel="noopener noreferrer">

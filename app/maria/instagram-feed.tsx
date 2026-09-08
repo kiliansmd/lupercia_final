@@ -1,4 +1,4 @@
-import Script from 'next/script';
+import { InstagramFeedPlayer } from './instagram-feed-player';
 import Link from '../site-link';
 import { TextLink } from '../site-chrome';
 
@@ -30,20 +30,12 @@ export default function InstagramFeed() {
         </div>
       </header>
       <div className="maria-journey-feed">
-        <div
-          className="elfsight-app-eea1093c-dd61-4d51-a3f2-c1a335162a59"
-          data-elfsight-app-lazy=""
-        />
+        <InstagramFeedPlayer />
       </div>
       <p className="maria-journey-note">
         Einblicke aus unserem Alltag ·{' '}
         <Link href="/datenschutz#instagram-feed">Datenschutz zum Feed</Link>
       </p>
-      <Script
-        id="elfsight-platform"
-        src="https://elfsightcdn.com/platform.js"
-        strategy="afterInteractive"
-      />
     </section>
   );
 }

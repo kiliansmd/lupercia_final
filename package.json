@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit --incremental false",
     "prebuild": "node scripts/generate-seo.mjs",
     "check:seo": "node scripts/check-seo.mjs",
-    "postbuild": "npm run check:seo"
+    "postbuild": "npm run check:seo && npm run check:privacy",
+    "check:privacy": "node --experimental-strip-types --test tests/consent.test.mjs"
   },
   "dependencies": {
     "react": "19.2.6",
