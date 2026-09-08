@@ -16,7 +16,13 @@ export const metadata: Metadata = {
   },
   description:
     'Ein Platz am Fenster, eine Kanne guter Tee und Zeit zum Bleiben. Entdecken Sie Marias Teesalon, Tea Time und rund 100 Teesorten in der Bonner Südstadt.',
-  icons: { icon: '/assets/favicon.png' },
+  icons: {
+    icon: [
+      { url: '/assets/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/assets/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: { url: '/assets/icon-180.png', sizes: '180x180', type: 'image/png' },
+  },
 };
 export default function RootLayout({
   children,

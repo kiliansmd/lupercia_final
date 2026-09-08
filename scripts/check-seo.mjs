@@ -1,10 +1,14 @@
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
+import sharp from 'sharp';
 
 const config = JSON.parse(
   await readFile(new URL('../seo.config.json', import.meta.url), 'utf8'),
 );
 const output = new URL('../dist/client/', import.meta.url);
+const previews = JSON.parse(
+  await readFile(new URL('../social-previews.json', import.meta.url), 'utf8'),
+);
 const paths = [
   ...Object.keys(config.pages),
   '/impressum',
@@ -49,6 +53,7 @@ const descriptions = new Set();
 let linksChecked = 0;
 for (const path of paths) {
   const source = html[path];
+  const head = source.match(/<head\b[^>]*>(.*?)<\/head>/s)?.[1] || '';
   const indexable = Object.hasOwn(config.pages, path);
   assert.match(source, /<html[^>]+lang="de"/, `${path}: language missing`);
   assert.equal(
@@ -66,6 +71,44 @@ for (const path of paths) {
     `${path}: robots missing`,
   );
   if (path !== '/404') {
+    const title = decode(head.match(/<title>(.*?)<\/title>/s)?.[1] || '');
+    const description = meta(head, 'description');
+    assert.ok(title.length > 0, `${path}: server-rendered title missing`);
+    assert.equal(description.length, 1, `${path}: description count`);
+    assert.ok(description[0].length > 50, `${path}: description missing`);
+    const preview = previews[path];
+    const imageUrl = new URL(preview.image, config.origin).href;
+    for (const [key, expected] of Object.entries({
+      'og:title': title,
+      'og:description': description[0],
+      'og:site_name': config.name,
+      'og:locale': 'de_DE',
+      'og:type': 'website',
+      'og:url': new URL(path, config.origin).href,
+      'og:image': imageUrl,
+      'og:image:width': '1200',
+      'og:image:height': '630',
+      'og:image:type': 'image/jpeg',
+      'og:image:alt': preview.alt,
+      'twitter:card': 'summary_large_image',
+      'twitter:title': title,
+      'twitter:description': description[0],
+      'twitter:image': imageUrl,
+      'twitter:image:alt': preview.alt,
+    })) {
+      const values = meta(head, key);
+      assert.deepEqual(
+        key === 'og:url' ? values.map((value) => new URL(value).href) : values,
+        [expected],
+        `${path}: ${key}`,
+      );
+    }
+    const data = await readFile(new URL(`.${preview.image}`, output));
+    const actual = await sharp(data).metadata();
+    assert.equal(actual.width, 1200, `${path}: preview width`);
+    assert.equal(actual.height, 630, `${path}: preview height`);
+    assert.equal(actual.format, 'jpeg', `${path}: preview format`);
+    assert.ok(data.length < 300 * 1024, `${path}: preview exceeds 300 KB`);
     const canonical = tags(source, 'link').filter(
       (tag) => tag.rel === 'canonical',
     );
@@ -96,9 +139,6 @@ for (const path of paths) {
       meta(source, 'og:url').map((url) => new URL(url).href),
       [new URL(path, config.origin).href],
     );
-    assert.deepEqual(meta(source, 'og:image'), [
-      new URL(page.image, config.origin).href,
-    ]);
     assert.deepEqual(meta(source, 'twitter:card'), ['summary_large_image']);
     const graph = [
       ...source.matchAll(
@@ -160,6 +200,20 @@ for (const path of paths) {
     );
     if (image.src?.startsWith('/'))
       await access(new URL(`.${image.src}`, output));
+  }
+  for (const tag of [...tags(source, 'script'), ...tags(source, 'link')]) {
+    const asset = tag.src || tag.href;
+    if (asset?.startsWith('/') && !asset.startsWith('//')) {
+      await access(
+        new URL(`.${new URL(asset, config.origin).pathname}`, output),
+      );
+    }
+  }
+  for (const tag of [...tags(source, 'source'), ...tags(source, 'img')]) {
+    for (const candidate of (tag.srcSet || tag.srcset || '').split(',')) {
+      const src = candidate.trim().split(/\s/)[0];
+      if (src.startsWith('/')) await access(new URL(`.${src}`, output));
+    }
   }
 }
 const sitemap = await readFile(new URL('sitemap.xml', output), 'utf8');

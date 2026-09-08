@@ -1,0 +1,58 @@
+{
+  "/": {
+    "image": "/assets/social/startseite-5e7bb8d2a9.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Eine Welt rund um Tee. Bonn-Südstadt."
+  },
+  "/salon": {
+    "image": "/assets/social/salon-c6396607c7.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Der Salon. Ein Platz zum Bleiben. Bonn-Südstadt."
+  },
+  "/tee-genuss": {
+    "image": "/assets/social/tee-genuss-f98f712a79.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Tee & Genuss. Rund um die Tasse. Bonn-Südstadt."
+  },
+  "/maria": {
+    "image": "/assets/social/maria-44e1dec6e1.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Maria Moreno. Ihre Gastgeberin. Bonn-Südstadt."
+  },
+  "/veranstaltungen": {
+    "image": "/assets/social/veranstaltungen-37d23b6241.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Tee teilen. Menschen begegnen. Bonn-Südstadt."
+  },
+  "/geschenkbox": {
+    "image": "/assets/social/geschenkbox-abef41c1d9.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Freude verschenken. Persönlich ausgewählt. Bonn-Südstadt."
+  },
+  "/impressum": {
+    "image": "/assets/social/impressum-9c24ba5f81.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Impressum. Lupercia · Maria Moreno. Bonn-Südstadt."
+  },
+  "/datenschutz": {
+    "image": "/assets/social/datenschutz-26f7de678f.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Datenschutz. Ihre Privatsphäre. Bonn-Südstadt."
+  }
+}

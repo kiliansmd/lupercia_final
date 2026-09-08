@@ -1,0 +1,52 @@
+{
+  "/": {
+    "slug": "startseite",
+    "lines": ["Eine Welt rund um Tee."],
+    "left": "/assets/images/salon/salon.webp",
+    "right": "/assets/images/tee-genuss/tee-im-glas.webp"
+  },
+  "/salon": {
+    "slug": "salon",
+    "lines": ["Der Salon.", "Ein Platz zum Bleiben."],
+    "left": "/assets/images/salon/salon.webp",
+    "right": "/assets/images/salon/bluetenporzellan.webp"
+  },
+  "/tee-genuss": {
+    "slug": "tee-genuss",
+    "lines": ["Tee & Genuss.", "Rund um die Tasse."],
+    "left": "/assets/images/einblicke/tee-und-magnolie-1080.webp",
+    "right": "/assets/images/tee-genuss/tea-time-etagere.webp"
+  },
+  "/maria": {
+    "slug": "maria",
+    "lines": ["Maria Moreno.", "Ihre Gastgeberin."],
+    "left": "/assets/images/einblicke/maria-teetafel-1080.webp",
+    "leftPosition": "28% 45%",
+    "right": "/assets/images/maria/teeperlen.webp"
+  },
+  "/veranstaltungen": {
+    "slug": "veranstaltungen",
+    "lines": ["Tee teilen.", "Menschen begegnen."],
+    "left": "/assets/images/einblicke/gemeinsam-tee-trinken-1066.webp",
+    "leftPosition": "24% 40%",
+    "right": "/assets/images/einblicke/gedeckte-teetafel-1080.webp"
+  },
+  "/geschenkbox": {
+    "slug": "geschenkbox",
+    "lines": ["Freude verschenken.", "Persönlich ausgewählt."],
+    "left": "/assets/images/geschenkbox/rosenbox.webp",
+    "right": "/assets/images/geschenkbox/kleine-aufmerksamkeit.webp"
+  },
+  "/impressum": {
+    "slug": "impressum",
+    "lines": ["Impressum.", "Lupercia · Maria Moreno."],
+    "left": "/assets/images/salon/salon.webp",
+    "right": "/assets/images/tee-genuss/tee-im-glas.webp"
+  },
+  "/datenschutz": {
+    "slug": "datenschutz",
+    "lines": ["Datenschutz.", "Ihre Privatsphäre."],
+    "left": "/assets/images/salon/salon.webp",
+    "right": "/assets/images/tee-genuss/tee-im-glas.webp"
+  }
+}

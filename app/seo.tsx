@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import config from '../seo.config.json';
+import previews from '../social-previews.json';
 import Link from './site-link';
 import { maps, phone } from './site-config';
 
@@ -9,35 +10,47 @@ const absolute = (path: string) => new URL(path, siteOrigin).href;
 const businessId = absolute('/#lupercia');
 const websiteId = absolute('/#website');
 
-export function pageMetadata(path: PagePath): Metadata {
-  const page = config.pages[path];
+function socialMetadata(
+  path: keyof typeof previews,
+  title: string,
+  description: string,
+): Metadata {
   const url = absolute(path);
+  const preview = previews[path];
   const image = {
-    url: absolute(page.image),
-    width: page.width,
-    height: page.height,
-    alt: page.imageAlt,
+    url: absolute(preview.image),
+    width: preview.width,
+    height: preview.height,
+    type: preview.type,
+    alt: preview.alt,
   };
   return {
-    title: { absolute: page.title },
-    description: page.description,
-    alternates: { canonical: url },
-    robots: { index: true, follow: true, 'max-image-preview': 'large' },
     openGraph: {
       type: 'website',
       locale: 'de_DE',
       siteName: config.name,
-      title: page.title,
-      description: page.description,
+      title,
+      description,
       url,
       images: [image],
     },
     twitter: {
       card: 'summary_large_image',
-      title: page.title,
-      description: page.description,
-      images: [image.url],
+      title,
+      description,
+      images: [{ url: image.url, alt: image.alt }],
     },
+  };
+}
+
+export function pageMetadata(path: PagePath): Metadata {
+  const page = config.pages[path];
+  return {
+    title: { absolute: page.title },
+    description: page.description,
+    alternates: { canonical: absolute(path) },
+    robots: { index: true, follow: true, 'max-image-preview': 'large' },
+    ...socialMetadata(path, page.title, page.description),
   };
 }
 
@@ -45,10 +58,17 @@ export function legalMetadata(
   path: '/impressum' | '/datenschutz',
   title: string,
 ): Metadata {
+  const fullTitle = `${title} — Lupercia`;
+  const description =
+    path === '/impressum'
+      ? 'Impressum und Kontaktangaben von Lupercia, dem Teesalon und Teeladen von Maria Moreno in der Bonner Südstadt.'
+      : 'Informationen zum Datenschutz bei Lupercia: Ihre Rechte, die Verarbeitung personenbezogener Daten und Ihre Auswahl zu externen Medien.';
   return {
-    title,
+    title: { absolute: fullTitle },
+    description,
     alternates: { canonical: absolute(path) },
     robots: { index: false, follow: true },
+    ...socialMetadata(path, fullTitle, description),
   };
 }
 

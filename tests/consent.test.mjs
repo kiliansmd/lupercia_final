@@ -11,7 +11,7 @@ import {
 } from '../app/consent-state.ts';
 const now = 1800000000000;
 
-test('fresh, corrupt, expired and future choices never enable a service', () => {
+await test('fresh, corrupt, expired and future choices never enable a service', () => {
   const valid = createConsent({ instagram: true, elfsight: true }, now);
   for (const raw of [
     null,
@@ -31,7 +31,7 @@ test('fresh, corrupt, expired and future choices never enable a service', () => 
     assert.equal(parseConsent(raw, now), null);
   }
 });
-test('denial, independent provider choice, expiry and withdrawal round-trip', () => {
+await test('denial, independent provider choice, expiry and withdrawal round-trip', () => {
   for (const services of [
     denied,
     { instagram: true, elfsight: false },
@@ -50,7 +50,7 @@ test('denial, independent provider choice, expiry and withdrawal round-trip', ()
     denied,
   );
 });
-test('isolated feed rejects unrelated senders and never loads on direct access', () => {
+await test('isolated feed rejects unrelated senders and never loads on direct access', () => {
   const html = readFileSync(
     new URL('../public/embeds/instagram-feed.html', import.meta.url),
     'utf8',
@@ -106,7 +106,7 @@ test('isolated feed rejects unrelated senders and never loads on direct access',
   assert.equal(scripts[0].src, 'https://elfsightcdn.com/platform.js');
 });
 
-test('all exported pages ship without external scripts, media frames or connection hints', () => {
+await test('all exported pages ship without external scripts, media frames or connection hints', () => {
   for (const page of [
     'index',
     'salon',

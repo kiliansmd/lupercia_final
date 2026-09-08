@@ -1,4 +1,12 @@
 import Link from './site-link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: { absolute: 'Seite nicht gefunden — Lupercia' },
+  description:
+    'Diese Seite ist nicht verfügbar. Zurück zu Lupercia, Ihrem Teesalon in der Bonner Südstadt.',
+  robots: { index: false, follow: true },
+};
 export default function NotFound() {
   return (
     <main id="main-content" className="not-found page-width">
