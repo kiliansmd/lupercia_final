@@ -95,6 +95,22 @@ export function Footer() {
           <CookieSettingsButton />
         </nav>
       </div>
+      <a
+        className="footer-agency"
+        href="https://www.meindigitalerbetrieb.de/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>Konzept, Design & Umsetzung von</span>
+        <Image
+          src="/assets/mdb-logo.svg"
+          alt="mdb – Mein Digitaler Betrieb"
+          width={2103}
+          height={748}
+          loading="lazy"
+          unoptimized
+        />
+      </a>
     </footer>
   );
 }
