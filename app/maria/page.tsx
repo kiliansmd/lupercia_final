@@ -24,9 +24,9 @@ export default function Maria() {
         </div>
         <div className="maria-heading-note">
           <p>
-            Mein Name ist Maria Moreno. Als Tee-Sommelière begrüße ich Sie
-            bei Lupercia in der Bonner Südstadt. Mein Salon trägt den Namen
-            meiner Großmutter.
+            Mein Name ist Maria Moreno und ich bin die Gründerin von Lupercia.
+            Als Tee-Sommelière begrüße ich Sie in der Bonner Südstadt.
+            Mein Teeladen trägt den Namen meiner Großmutter.
           </p>
           <Link className="text-link" href="#geschichte">
             Meine Geschichte <span aria-hidden="true">↓</span>
@@ -44,21 +44,27 @@ export default function Maria() {
           id="geschichte"
           aria-labelledby="maria-story-title"
         >
-          <span className="eyebrow">Argentinien im Herzen · Bonn zu Hause</span>
+          <span className="eyebrow">Wo meine Geschichte beginnt</span>
           <h2 id="maria-story-title">
-            Meine Erinnerung
+            Wie ich zum Tee
             <br />
-            <em>an meine Großmutter.</em>
+            <em>gefunden habe.</em>
           </h2>
           <p>
-            Ich bin in Argentinien aufgewachsen, wo Mate zum Leben gehört wie
-            das Brot auf dem Tisch.
+            Mein Weg zum Tee begann schon in meiner Kindheit. Meine Großmutter
+            hieß Lupercia. Nachmittags deckte sie den Teetisch für uns
+            Enkelkinder und bereitete den Tee vor, den wir gemeinsam tranken.
           </p>
           <p>
-            Nachmittags füllte meine Großmutter die Kalebasse, goss den Mate auf
-            und versammelte ihre Enkel um sich. Sie erzählte Geschichten, und
-            wir haben viel gelacht. Jedes Mal, wenn ich heute einen Mate
-            aufgieße, kehren diese Momente zurück.
+            Bei diesen Zusammenkünften erzählte sie uns Anekdoten aus ihrer
+            Kindheit, und wir haben sehr viel gelacht. Diese unvergesslichen
+            Momente haben mich immer begleitet. Jedes Mal, wenn ich heute Tee
+            vorbereite, erinnere ich mich daran.
+          </p>
+          <p>
+            Wenn ich den Teetisch für meine Gäste decke, ist es ein bisschen so,
+            als würde ich die Tradition meiner Großmutter fortsetzen.
+            So lasse ich diese Erinnerungen wieder aufleben.
           </p>
           <div className="maria-name-note">
             <span className="eyebrow">Der Name Lupercia</span>
@@ -69,9 +75,9 @@ export default function Maria() {
 
       <figure className="maria-quote">
         <blockquote>
-          „Mate war für mich nie nur ein Getränk,
+          „Es bedeutet, diese Erinnerungen
           <br />
-          <em>sondern ein Moment des Teilens.“</em>
+          <em>wieder aufleben zu lassen.“</em>
         </blockquote>
         <figcaption>Maria Moreno</figcaption>
       </figure>
@@ -125,15 +131,15 @@ export default function Maria() {
             <em>Mit Freude geteilt.</em>
           </h2>
           <p>
-            Als Tee-Sommelière verbinde ich fachliche Auswahl mit
+            Vor mehr als zehn Jahren habe ich einen Tee-Sommelier-Kurs gemacht.
+            Heute verbinde ich als Tee-Sommelière fachliche Auswahl mit
             verständlicher, persönlicher Beratung. Ich mache Herkunft, Charakter
             und Zubereitung zugänglich.
           </p>
           <p>
-            Tee, Mate, Geschirr und Feinkost wähle ich als zusammenhängende
-            Genusswelt aus – mit nachvollziehbarer Qualität und eigenem
-            Charakter. Meine Verbindung zu Argentinien zeigt sich in
-            ausgewählten Yerbas, Kalebassen, Bombillas und Delikatessen.
+            Bei Lupercia finden Sie viele verschiedene Teesorten, Teegeschirr,
+            Accessoires und Delikatessen. Meine Verbindung zu Argentinien zeigt
+            sich auch in ausgewählten Yerbas, Kalebassen und Bombillas.
           </p>
           <TextLink href="/tee-genuss">Meine Auswahl entdecken</TextLink>
         </div>
@@ -177,9 +183,9 @@ export default function Maria() {
           <em>Platz zu nehmen.</em>
         </h2>
         <p>
-          Gastgeberin zu sein heißt für mich, einen ruhigen Rahmen für
-          Begegnungen zu schaffen. Bei Tea Time, Teerunden und Verkostungen
-          teile ich mein Wissen und bringe Menschen miteinander ins Gespräch.
+          Bei Tea Time, Workshops und Teezeremonien teile ich mein Wissen
+          und bringe Menschen miteinander ins Gespräch. Ich lade Sie ein,
+          mich und Lupercia in dieser magischen Welt des Tees zu begleiten.
         </p>
         <div className="link-pair">
           <TextLink href="/salon#besuch">Lupercia besuchen</TextLink>
