@@ -3132,6 +3132,225 @@ figcaption {
   }
 }
 
+/* Mate: a warm editorial introduction to Maria's Argentinian ritual. */
+.mate-page figure img {
+  width: 100%;
+  height: auto;
+}
+.mate-page figcaption {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.mate-page section[id] {
+  scroll-margin-top: 30px;
+}
+.mate-hero {
+  padding: 68px 0 82px;
+}
+.mate-hero-copy {
+  max-width: 850px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+.mate-hero h1 {
+  margin: 25px 0 28px;
+  font-size: clamp(52px, 6.2vw, 92px);
+}
+.mate-hero-copy > p {
+  max-width: 55ch;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 18px;
+}
+.mate-hero > figure img {
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+}
+.mate-intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  padding: 100px 7%;
+  border-top: 1px solid var(--line);
+}
+.mate-intro h2,
+.mate-world h2,
+.mate-ritual h2 {
+  margin-top: 22px;
+}
+.mate-intro-copy {
+  align-self: center;
+  color: var(--muted);
+  font-size: 18px;
+}
+.mate-intro-copy .text-link {
+  margin-top: 10px;
+}
+.mate-intro-gallery {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+  gap: 40px;
+  margin-top: 20px;
+}
+.mate-intro-gallery figure:first-child {
+  width: 76%;
+}
+.mate-intro-gallery figure:last-child {
+  width: 82%;
+  justify-self: end;
+  margin-top: 90px;
+}
+.mate-intro-gallery img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.mate-world {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 90px;
+  padding: 78px 7%;
+  background: #f3ede2;
+}
+.mate-world > figure {
+  max-width: 500px;
+}
+.mate-essentials {
+  margin: 38px 0 0;
+}
+.mate-essentials > div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 25px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(34, 31, 27, 0.18);
+}
+.mate-essentials dt {
+  font-family: var(--serif);
+  font-size: 22px;
+}
+.mate-essentials dd {
+  margin: 0;
+  color: var(--muted);
+}
+.mate-ritual {
+  padding: 110px 0 70px;
+}
+.mate-ritual > header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 75px;
+  padding-inline: 7%;
+}
+.mate-ritual > header > p {
+  color: var(--muted);
+  font-size: 17px;
+}
+.mate-ritual ol {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 65px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mate-ritual li {
+  padding: 25px 8px 0;
+  border-top: 1px solid var(--line);
+}
+.mate-ritual li > span {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+.mate-ritual h3 {
+  margin: 18px 0 12px;
+  font-size: 25px;
+}
+.mate-ritual li p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.mate-page .invitation {
+  margin-top: 60px;
+}
+@media (max-width: 800px) {
+  .mate-hero {
+    padding: 42px 0 58px;
+  }
+  .mate-hero-copy {
+    margin-bottom: 38px;
+    padding-inline: 12px;
+  }
+  .mate-hero h1 {
+    font-size: clamp(46px, 10vw, 70px);
+  }
+  .mate-intro,
+  .mate-world {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 62px 8%;
+  }
+  .mate-intro-gallery {
+    gap: 18px;
+    margin-top: 0;
+  }
+  .mate-intro-gallery figure:first-child,
+  .mate-intro-gallery figure:last-child {
+    width: 100%;
+  }
+  .mate-intro-gallery figure:last-child {
+    margin-top: 55px;
+  }
+  .mate-world > figure {
+    width: 82%;
+    justify-self: center;
+  }
+  .mate-intro-gallery {
+    grid-template-columns: 1fr 0.72fr;
+    margin-inline: -4%;
+  }
+  .mate-ritual {
+    padding-top: 70px;
+  }
+  .mate-ritual > header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .mate-ritual ol {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 22px;
+    margin-top: 45px;
+  }
+}
+@media (max-width: 480px) {
+  .mate-hero-copy > p,
+  .mate-intro-copy {
+    font-size: 16px;
+  }
+  .mate-intro h2,
+  .mate-world h2,
+  .mate-ritual h2 {
+    font-size: 40px;
+  }
+  .mate-world > figure {
+    width: 100%;
+  }
+  .mate-essentials > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .mate-ritual ol {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 /* Maria: a personal portrait, a film interlude and details of her craft. */
 .maria-page figure,
 .maria-page section > div {

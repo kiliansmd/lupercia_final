@@ -5,94 +5,206 @@ import { TextLink } from '../site-chrome';
 
 export const metadata = pageMetadata('/mate');
 
+const ritual = [
+  [
+    '01',
+    'Yerba einfüllen',
+    'Die Kalebasse wird etwa zu zwei Dritteln mit Mateblättern gefüllt.',
+  ],
+  [
+    '02',
+    'Blätter neigen',
+    'Durch sanftes Schütteln entsteht an einer Seite Platz für die Bombilla.',
+  ],
+  [
+    '03',
+    'Wasser aufgießen',
+    'Heißes, nicht kochendes Wasser wird behutsam an derselben Stelle aufgegossen.',
+  ],
+  [
+    '04',
+    'Teilen & nachgießen',
+    'Der Mate wird immer wieder aufgegossen und in Gesellschaft weitergereicht.',
+  ],
+];
+
 export default function Mate() {
   return (
-    <main id="main-content" className="page-width detail-page tea-page">
+    <main id="main-content" className="page-width detail-page mate-page">
       <PageSeo path="/mate" />
-      <header className="tea-still-life">
-        <figure className="tea-still-life-green">
-          <Image
-            src="/assets/images/salon/mategefaesse.webp"
-            width={1100}
-            height={1343}
-            alt="Hölzerne Mategefäße mit verzierten Metallrändern und Bombillas bei Lupercia"
-            loading="eager"
-            fetchPriority="high"
-          />
-          <figcaption>
-            Kalebassen und Bombillas. Das Ritual beginnt beim Gefäß.
-          </figcaption>
-        </figure>
-        <div className="tea-still-life-copy">
+
+      <header className="mate-hero">
+        <div className="mate-hero-copy">
           <span className="eyebrow">Mate aus Argentinien · Marias Auswahl</span>
           <h1>
-            Ein Stück Argentinien.
+            Mehr als ein Getränk.
             <br />
-            <em>Mitten in Bonn.</em>
+            <em>Ein Ritual, das verbindet.</em>
           </h1>
           <p>
-            Mate ist Marias persönliche Verbindung zu ihrer Heimat und eine
-            charakteristische Besonderheit bei Lupercia.
+            Mate gehört zu Marias argentinischer Heimat. Bei Lupercia finden Sie
+            ausgewählte Yerbas, Kalebassen und Bombillas – und eine persönliche
+            Einführung in die traditionelle Zubereitung.
           </p>
-          <a className="tea-explore" href="#mate-welt">
-            Die Mate-Welt entdecken <span aria-hidden="true">↓</span>
+          <a className="tea-explore" href="#mate-entdecken">
+            Mate entdecken <span aria-hidden="true">↓</span>
           </a>
-        </div>
-        <figure className="tea-still-life-amber">
-          <Image
-            src="/assets/images/tee-genuss/kuchen-und-mate.webp"
-            width={1100}
-            height={1031}
-            alt="Goldbrauner Kuchen neben einem traditionellen Mategefäß mit Bombilla"
-          />
-          <figcaption>Mate und etwas Süßes. Ein Moment zum Teilen.</figcaption>
-        </figure>
-      </header>
-
-      <section className="tea-mate" id="mate-welt" aria-labelledby="mate-title">
-        <div className="tea-mate-copy">
-          <span className="eyebrow">Yerba · Kalebasse · Bombilla</span>
-          <h2 id="mate-title">
-            Ein Gefäß.
-            <br />
-            <em>Ein gemeinsames Ritual.</em>
-          </h2>
-          <p>
-            Unsere Welt beginnt beim Tee. Und manchmal führt sie bis nach
-            Argentinien. Mate ist Marias persönliche Verbindung zu ihrer Heimat
-            und eine charakteristische Besonderheit bei Lupercia.
-          </p>
-          <p>
-            Ausgewählte Yerbas, Kalebassen und Bombillas gehören zu dieser Welt.
-            Maria erklärt Ihnen persönlich, was sie ausmacht – und wie aus dem
-            Aufgießen ein gemeinsamer Moment wird.
-          </p>
-          <TextLink href="/maria#geschichte">Die Geschichte dahinter</TextLink>
         </div>
         <figure>
           <Image
-            src="/assets/images/tee-genuss/kuchen-und-mate.webp"
-            width={1100}
-            height={1031}
-            alt="Traditionelles Mategefäß mit Bombilla neben einem goldbraunen Kuchen"
-            loading="lazy"
+            src="/assets/images/mate-trinkgefaesse-hero.webp"
+            width={1600}
+            height={837}
+            alt="Vier farbig eingefasste Mategefäße aus Holz mit verzierten Bombillas"
+            loading="eager"
+            fetchPriority="high"
+            sizes="(max-width: 760px) 100vw, 88vw"
           />
           <figcaption>
-            Mate entdecken, zubereiten und miteinander teilen.
+            Kalebasse und Bombilla. Bereit für den ersten Aufguss.
           </figcaption>
         </figure>
+      </header>
+
+      <section
+        className="mate-intro"
+        id="mate-entdecken"
+        aria-labelledby="mate-intro-title"
+      >
+        <div>
+          <span className="eyebrow">Marias Stück Argentinien</span>
+          <h2 id="mate-intro-title">
+            Ein Geschmack.
+            <br />
+            <em>Viele Begegnungen.</em>
+          </h2>
+        </div>
+        <div className="mate-intro-copy">
+          <p>
+            In Argentinien ist Mate Teil des Alltags: Man bereitet ihn
+            füreinander zu, reicht ihn weiter und nimmt sich Zeit. Nicht die
+            Eile, sondern das Miteinander bestimmt den Rhythmus.
+          </p>
+          <p>
+            Maria ist mit dieser Kultur aufgewachsen. Im Salon zeigt sie, wie
+            unterschiedlich Yerba schmecken kann und wie Gefäß, Bombilla und
+            Aufguss zusammenspielen.
+          </p>
+          <TextLink href="/maria#geschichte">
+            Marias Geschichte kennenlernen
+          </TextLink>
+        </div>
+        <div className="mate-intro-gallery">
+          <figure>
+            <Image
+              src="/assets/images/maria/teeperlen.webp"
+              width={800}
+              height={1067}
+              alt="Lose gerollte Blätter in einer silbernen Schale vor dem Lupercia-Regal"
+              loading="lazy"
+              sizes="(max-width: 760px) 58vw, 38vw"
+            />
+            <figcaption>
+              Die Auswahl beginnt bei Duft, Blatt und Charakter.
+            </figcaption>
+          </figure>
+          <figure>
+            <Image
+              src="/assets/images/tee-genuss/gruener-tee.webp"
+              width={960}
+              height={1331}
+              alt="Glaskanne und Glas auf einem Aufgusstablett im hellen Lupercia-Salon"
+              loading="lazy"
+              sizes="(max-width: 760px) 38vw, 29vw"
+            />
+            <figcaption>
+              Zeit, Temperatur und Wasser machen den Aufguss.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="mate-world" aria-labelledby="mate-world-title">
+        <figure>
+          <Image
+            src="/assets/images/einblicke/teeregal-1080.webp"
+            width={1080}
+            height={1440}
+            alt="Das hohe Lupercia-Regal mit sorgfältig beschrifteten schwarzen Vorratsdosen"
+            loading="lazy"
+            sizes="(max-width: 760px) 88vw, 42vw"
+          />
+          <figcaption>
+            Persönlich ausgewählt und im Salon für Sie bereit.
+          </figcaption>
+        </figure>
+        <div>
+          <span className="eyebrow">Die Mate-Welt bei Lupercia</span>
+          <h2 id="mate-world-title">
+            Alles für Ihren
+            <br />
+            <em>eigenen Mate-Moment.</em>
+          </h2>
+          <dl className="mate-essentials">
+            <div>
+              <dt>Yerba Mate</dt>
+              <dd>
+                Ausgewählte Sorten mit eigenem Charakter – von sanft bis kräftig
+                und herb.
+              </dd>
+            </div>
+            <div>
+              <dt>Kalebassen</dt>
+              <dd>
+                Gefäße in traditionellen und modernen Formen, die gut in der
+                Hand liegen.
+              </dd>
+            </div>
+            <div>
+              <dt>Bombillas</dt>
+              <dd>
+                Das typische Trinkrohr mit Sieb, passend zu Gefäß und
+                persönlichem Ritual.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section className="mate-ritual" aria-labelledby="mate-ritual-title">
+        <header>
+          <span className="eyebrow">Schritt für Schritt</span>
+          <h2 id="mate-ritual-title">
+            So beginnt
+            <br />
+            <em>das Ritual.</em>
+          </h2>
+          <p>
+            Die Zubereitung wird mit ein wenig Übung zur vertrauten Geste. Maria
+            zeigt Ihnen im Salon jeden Schritt und beantwortet Ihre Fragen.
+          </p>
+        </header>
+        <ol>
+          {ritual.map(([number, title, description]) => (
+            <li key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <Invitation
-        eyebrow="Persönliche Beratung"
+        eyebrow="Persönliche Mate-Beratung"
         title={
           <>
-            Welcher Mate
+            Neugierig auf
             <br />
-            <em>passt zu Ihnen?</em>
+            <em>Ihren ersten Mate?</em>
           </>
         }
-        description="Entdecken Sie Marias Auswahl im Salon. Sie berät Sie zu Yerba, Gefäß, Bombilla und der traditionellen Zubereitung."
+        description="Besuchen Sie Maria im Salon. Gemeinsam finden Sie eine Yerba, ein passendes Gefäß und die Bombilla für Ihren Mate-Moment zu Hause."
       />
     </main>
   );

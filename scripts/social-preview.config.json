@@ -20,8 +20,8 @@
   "/mate": {
     "slug": "mate",
     "lines": ["Mate aus Argentinien.", "Mitten in Bonn."],
-    "left": "/assets/images/salon/mategefaesse.webp",
-    "right": "/assets/images/tee-genuss/kuchen-und-mate.webp"
+    "left": "/assets/images/mate-trinkgefaesse-hero.webp",
+    "right": "/assets/images/einblicke/teeregal-1080.webp"
   },
   "/maria": {
     "slug": "maria",
