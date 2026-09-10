@@ -73,7 +73,7 @@ function TeaPhoto({
 export default function Tea() {
   return (
     <main id="main-content" className="page-width detail-page tea-page">
-      <PageSeo path='/tee-genuss' />
+      <PageSeo path="/tee-genuss" />
       <header className="tea-still-life">
         <div className="tea-still-life-copy">
           <span className="eyebrow">Tee kaufen in Bonn · Marias Auswahl</span>
@@ -83,9 +83,9 @@ export default function Tea() {
             <em>die Tasse.</em>
           </h1>
           <p>
-            Rund 100 Teesorten, Mate aus Argentinien und ausgewähltes Porzellan:
-            Entdecken Sie Ihren Lieblingstee in unserem Teeladen in der Bonner
-            Südstadt. Maria berät Sie persönlich zu Geschmack und Zubereitung.
+            Rund 100 Teesorten und ausgewähltes Porzellan: Entdecken Sie Ihren
+            Lieblingstee in unserem Teeladen in der Bonner Südstadt. Maria berät
+            Sie persönlich zu Geschmack und Zubereitung.
           </p>
           <Link className="tea-explore" href="#tee">
             Die Teewelt entdecken <span aria-hidden="true">↓</span>
@@ -105,14 +105,11 @@ export default function Tea() {
         <Link href="#tee">
           <span>01</span> Tee
         </Link>
-        <Link href="#mate">
-          <span>02</span> Mate
-        </Link>
         <Link href="#geschirr">
-          <span>03</span> Geschirr
+          <span>02</span> Geschirr
         </Link>
         <Link href="#feinkost">
-          <span>04</span> Feinkost & Tea Time
+          <span>03</span> Feinkost & Tea Time
         </Link>
       </nav>
 
@@ -152,46 +149,20 @@ export default function Tea() {
         </ul>
         <div className="tea-aroma-photos">
           <figure>
-            <DetailPhoto name="tee-und-magnolie" sizes="(max-width: 760px) 52vw, 42vw" />
+            <DetailPhoto
+              name="tee-und-magnolie"
+              sizes="(max-width: 760px) 52vw, 42vw"
+            />
             <figcaption>Ein Duft, der neugierig macht.</figcaption>
           </figure>
           <figure>
-            <DetailPhoto name="fruechtetee" sizes="(max-width: 760px) 34vw, 25vw" />
+            <DetailPhoto
+              name="fruechtetee"
+              sizes="(max-width: 760px) 34vw, 25vw"
+            />
             <figcaption>Früchte, Farben, feine Details.</figcaption>
           </figure>
         </div>
-      </section>
-
-      <section className="tea-mate" id="mate" aria-labelledby="tea-mate-title">
-        <div className="tea-mate-copy">
-          <span className="eyebrow">02 — Mate aus Argentinien</span>
-          <h2 id="tea-mate-title">
-            Ein Stück Argentinien.
-            <br />
-            <em>Mitten in Bonn.</em>
-          </h2>
-          <p>
-            Unsere Welt beginnt beim Tee. Und manchmal führt sie bis nach
-            Argentinien. Mate ist Marias persönliche Verbindung zu ihrer Heimat
-            und eine charakteristische Besonderheit bei Lupercia.
-          </p>
-          <p>
-            Ausgewählte Yerbas, Kalebassen und Bombillas gehören zu dieser Welt.
-            Maria erklärt Ihnen persönlich, was sie ausmacht – und wie aus dem
-            Aufgießen ein gemeinsamer Moment wird.
-          </p>
-          <TextLink href="/maria#geschichte">Die Geschichte dahinter</TextLink>
-          <figure className="tea-mate-vessels">
-            <Image src="/assets/images/salon/mategefaesse.webp" width={1100} height={1343}
-              alt="Hölzerne Mategefäße mit verzierten Metallrändern und Bombillas bei Lupercia"
-              loading="lazy" decoding="async" />
-            <figcaption>Kalebassen und Bombillas. Das Ritual beginnt beim Gefäß.</figcaption>
-          </figure>
-        </div>
-        <figure>
-          <TeaPhoto name="kuchen-und-mate" />
-          <figcaption>Mate und etwas Süßes. Ein Moment zum Teilen.</figcaption>
-        </figure>
       </section>
 
       <section
@@ -200,7 +171,7 @@ export default function Tea() {
         aria-labelledby="tea-porcelain-title"
       >
         <div className="tea-porcelain-heading">
-          <span className="eyebrow">03 — Geschirr</span>
+          <span className="eyebrow">02 — Geschirr</span>
           <h2 id="tea-porcelain-title">
             Für die
             <br />
@@ -233,7 +204,7 @@ export default function Tea() {
         aria-labelledby="tea-feast-title"
       >
         <header className="tea-feast-heading">
-          <span className="eyebrow">04 — Feinkost & Tea Time</span>
+          <span className="eyebrow">03 — Feinkost & Tea Time</span>
           <h2 id="tea-feast-title">
             Die kleinen,
             <br />
@@ -252,7 +223,9 @@ export default function Tea() {
               <li>Sandwiches & hausgemachter Kuchen</li>
               <li>Marmelade & weitere Begleiter</li>
             </ul>
-            <TextLink href="/salon#tea-time">Tea Time in Bonn anfragen</TextLink>
+            <TextLink href="/salon#tea-time">
+              Tea Time in Bonn anfragen
+            </TextLink>
           </div>
           <figure className="tea-feast-main">
             <TeaPhoto name="tea-time-etagere" />

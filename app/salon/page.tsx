@@ -257,7 +257,7 @@ export default function Salon() {
             Entdecken Sie Kalebassen und Bombillas im Salon. Maria erklärt Ihnen
             die Unterschiede und zeigt, wie daraus Ihr eigener Mate-Moment wird.
           </p>
-          <TextLink href="/tee-genuss#mate">
+          <TextLink href="/mate">
             Marias Mate-Welt entdecken
           </TextLink>
         </div>
