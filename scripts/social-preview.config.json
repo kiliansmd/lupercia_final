@@ -17,6 +17,12 @@
     "left": "/assets/images/einblicke/tee-und-magnolie-1080.webp",
     "right": "/assets/images/tee-genuss/tea-time-etagere.webp"
   },
+  "/mate": {
+    "slug": "mate",
+    "lines": ["Mate aus Argentinien.", "Mitten in Bonn."],
+    "left": "/assets/images/salon/mategefaesse.webp",
+    "right": "/assets/images/tee-genuss/kuchen-und-mate.webp"
+  },
   "/maria": {
     "slug": "maria",
     "lines": ["Maria Moreno.", "Ihre Gastgeberin."],
