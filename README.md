@@ -39,7 +39,8 @@ Vercel ist mit diesem Repository verbunden. Änderungen auf `main` werden automa
 
 - `/` — fotografische Startseite
 - `/salon/` — Salon, Tea Time und Besuchsinformationen
-- `/tee-genuss/` — Tee, Mate, Geschirr und Feinkost
+- `/tee-genuss/` — Tee, Geschirr und Feinkost
+- `/mate/` — Mate aus Argentinien, Yerbas, Kalebassen und Bombillas
 - `/maria/` — Maria Moreno und die Geschichte des Namens Lupercia
 - `/veranstaltungen/` — Teerunden, Workshops und Kultur; zugängliche Aufklappbereiche
 - `/geschenkbox/` — Inhalte, Ablauf und persönliche Anfrage
