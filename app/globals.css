@@ -3252,6 +3252,24 @@ figcaption {
   margin: 0;
   color: var(--muted);
 }
+.mate-moment {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(55px, 8vw, 110px);
+  padding: 110px 7% 80px;
+}
+.mate-moment > figure {
+  max-width: 570px;
+}
+.mate-moment h2 {
+  margin: 22px 0 28px;
+}
+.mate-moment p {
+  max-width: 43ch;
+  color: var(--muted);
+  font-size: 17px;
+}
 .mate-ritual {
   padding: 110px 0 70px;
 }
@@ -3327,6 +3345,15 @@ figcaption {
     width: 82%;
     justify-self: center;
   }
+  .mate-moment {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 70px 8% 45px;
+  }
+  .mate-moment > figure {
+    width: 82%;
+    justify-self: center;
+  }
   .mate-intro-gallery {
     grid-template-columns: 1fr 0.72fr;
     margin-inline: -4%;
@@ -3355,6 +3382,9 @@ figcaption {
     font-size: 40px;
   }
   .mate-world > figure {
+    width: 100%;
+  }
+  .mate-moment > figure {
     width: 100%;
   }
   .mate-essentials > div {

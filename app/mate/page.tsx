@@ -171,6 +171,36 @@ export default function Mate() {
         </div>
       </section>
 
+      <section className="mate-moment" aria-labelledby="mate-moment-title">
+        <figure>
+          <Image
+            src="/assets/images/mate-moment.svg"
+            width={960}
+            height={1280}
+            alt="Mategefäß mit Bombilla, Rosen und einem Stück Kuchen im Lupercia-Salon"
+            loading="lazy"
+            sizes="(max-width: 760px) 88vw, 44vw"
+            unoptimized
+          />
+          <figcaption>
+            Ein Mate, etwas Süßes und Zeit für den Augenblick.
+          </figcaption>
+        </figure>
+        <div>
+          <span className="eyebrow">Im Salon oder zu Hause</span>
+          <h2 id="mate-moment-title">
+            Ein kleiner Moment.
+            <br />
+            <em>Ganz in Ruhe.</em>
+          </h2>
+          <p>
+            Mate darf ein gemeinsames Ritual sein – oder eine persönliche Pause.
+            Maria zeigt Ihnen, wie Sie die Zubereitung so gestalten, dass sie zu
+            Ihrem Alltag und Ihrem Geschmack passt.
+          </p>
+        </div>
+      </section>
+
       <section className="mate-ritual" aria-labelledby="mate-ritual-title">
         <header>
           <span className="eyebrow">Schritt für Schritt</span>
