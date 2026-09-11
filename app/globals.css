@@ -260,8 +260,8 @@ svg {
 .home-mosaic {
   display: grid;
   grid-template-columns: 1.08fr 1fr 1fr;
-  grid-template-rows: repeat(2, clamp(320px, 28vw, 390px)) auto;
-  grid-template-areas: 'tea maria gift' 'tea salon events' 'note note note';
+  grid-template-rows: repeat(2, clamp(320px, 28vw, 390px)) clamp(250px, 24vw, 330px) auto;
+  grid-template-areas: 'tea maria gift' 'tea salon events' 'mate mate mate' 'note note note';
   gap: 24px;
   margin-top: 0;
 }
@@ -386,6 +386,15 @@ svg {
 }
 .mosaic-events img {
   object-position: 50% 15%;
+}
+.mosaic-mate {
+  grid-area: mate;
+}
+.mosaic-mate img {
+  object-position: 50% 48%;
+}
+.home-mosaic .mosaic-mate .photo-label {
+  max-width: 560px;
 }
 .mosaic-note {
   grid-area: note;
@@ -766,8 +775,8 @@ figcaption {
   }
   .home-mosaic {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 340px 340px 350px auto;
-    grid-template-areas: 'tea maria' 'tea gift' 'salon events' 'note note';
+    grid-template-rows: 340px 340px 350px 290px auto;
+    grid-template-areas: 'tea maria' 'tea gift' 'salon events' 'mate mate' 'note note';
     gap: 20px;
   }
   .home-mosaic .photo-label {
@@ -867,7 +876,7 @@ figcaption {
     margin-top: 0;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 'tea' 'maria' 'gift' 'salon' 'events' 'note';
+    grid-template-areas: 'tea' 'maria' 'gift' 'salon' 'events' 'mate' 'note';
     gap: 18px;
   }
   .home-mosaic .photo-link {
@@ -878,6 +887,9 @@ figcaption {
   }
   .home-mosaic .mosaic-events {
     aspect-ratio: 6/5;
+  }
+  .home-mosaic .mosaic-mate {
+    aspect-ratio: 8/5;
   }
   .home-mosaic .photo-label h2 {
     font-size: clamp(32px, 9.4vw, 43px);
@@ -1048,7 +1060,7 @@ figcaption {
   .home-mosaic {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto;
-    grid-template-areas: 'tea maria' 'gift salon' 'events events' 'note note';
+    grid-template-areas: 'tea maria' 'gift salon' 'events events' 'mate mate' 'note note';
     gap: 12px;
   }
   .home-mosaic .photo-link,
@@ -1056,6 +1068,10 @@ figcaption {
     aspect-ratio: 2 / 3;
   }
   .home-mosaic .mosaic-events {
+    aspect-ratio: 8 / 5;
+    max-height: 340px;
+  }
+  .home-mosaic .mosaic-mate {
     aspect-ratio: 8 / 5;
     max-height: 340px;
   }
@@ -2744,7 +2760,7 @@ figcaption {
 }
 .tea-index {
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.4fr;
+  grid-template-columns: repeat(2, 1fr) 1.4fr;
   border-block: 1px solid var(--line);
   column-gap: 22px;
 }
@@ -3129,6 +3145,225 @@ figcaption {
   .tea-page .text-link {
     font-size: 14px;
     gap: 18px;
+  }
+}
+
+/* Mate: a warm editorial introduction to Maria's Argentinian ritual. */
+.mate-page figure img {
+  width: 100%;
+  height: auto;
+}
+.mate-page figcaption {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.mate-page section[id] {
+  scroll-margin-top: 30px;
+}
+.mate-hero {
+  padding: 68px 0 82px;
+}
+.mate-hero-copy {
+  max-width: 850px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+.mate-hero h1 {
+  margin: 25px 0 28px;
+  font-size: clamp(52px, 6.2vw, 92px);
+}
+.mate-hero-copy > p {
+  max-width: 55ch;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 18px;
+}
+.mate-hero > figure img {
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+}
+.mate-intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  padding: 100px 7%;
+  border-top: 1px solid var(--line);
+}
+.mate-intro h2,
+.mate-world h2,
+.mate-ritual h2 {
+  margin-top: 22px;
+}
+.mate-intro-copy {
+  align-self: center;
+  color: var(--muted);
+  font-size: 18px;
+}
+.mate-intro-copy .text-link {
+  margin-top: 10px;
+}
+.mate-intro-gallery {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+  gap: 40px;
+  margin-top: 20px;
+}
+.mate-intro-gallery figure:first-child {
+  width: 76%;
+}
+.mate-intro-gallery figure:last-child {
+  width: 82%;
+  justify-self: end;
+  margin-top: 90px;
+}
+.mate-intro-gallery img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.mate-world {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 90px;
+  padding: 78px 7%;
+  background: #f3ede2;
+}
+.mate-world > figure {
+  max-width: 500px;
+}
+.mate-essentials {
+  margin: 38px 0 0;
+}
+.mate-essentials > div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 25px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(34, 31, 27, 0.18);
+}
+.mate-essentials dt {
+  font-family: var(--serif);
+  font-size: 22px;
+}
+.mate-essentials dd {
+  margin: 0;
+  color: var(--muted);
+}
+.mate-ritual {
+  padding: 110px 0 70px;
+}
+.mate-ritual > header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 75px;
+  padding-inline: 7%;
+}
+.mate-ritual > header > p {
+  color: var(--muted);
+  font-size: 17px;
+}
+.mate-ritual ol {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 65px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mate-ritual li {
+  padding: 25px 8px 0;
+  border-top: 1px solid var(--line);
+}
+.mate-ritual li > span {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+.mate-ritual h3 {
+  margin: 18px 0 12px;
+  font-size: 25px;
+}
+.mate-ritual li p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.mate-page .invitation {
+  margin-top: 60px;
+}
+@media (max-width: 800px) {
+  .mate-hero {
+    padding: 42px 0 58px;
+  }
+  .mate-hero-copy {
+    margin-bottom: 38px;
+    padding-inline: 12px;
+  }
+  .mate-hero h1 {
+    font-size: clamp(46px, 10vw, 70px);
+  }
+  .mate-intro,
+  .mate-world {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 62px 8%;
+  }
+  .mate-intro-gallery {
+    gap: 18px;
+    margin-top: 0;
+  }
+  .mate-intro-gallery figure:first-child,
+  .mate-intro-gallery figure:last-child {
+    width: 100%;
+  }
+  .mate-intro-gallery figure:last-child {
+    margin-top: 55px;
+  }
+  .mate-world > figure {
+    width: 82%;
+    justify-self: center;
+  }
+  .mate-intro-gallery {
+    grid-template-columns: 1fr 0.72fr;
+    margin-inline: -4%;
+  }
+  .mate-ritual {
+    padding-top: 70px;
+  }
+  .mate-ritual > header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .mate-ritual ol {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 22px;
+    margin-top: 45px;
+  }
+}
+@media (max-width: 480px) {
+  .mate-hero-copy > p,
+  .mate-intro-copy {
+    font-size: 16px;
+  }
+  .mate-intro h2,
+  .mate-world h2,
+  .mate-ritual h2 {
+    font-size: 40px;
+  }
+  .mate-world > figure {
+    width: 100%;
+  }
+  .mate-essentials > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .mate-ritual ol {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
