@@ -63,14 +63,30 @@ const heroLinks = [
     title: 'Begegnungen.',
     cta: 'Gemeinsam Tee entdecken',
   },
+  {
+    id: 'mate',
+    href: '/mate',
+    image: 'mate-trinkgefaesse-hero',
+    width: 1600,
+    height: 837,
+    alt: 'Vier farbig eingefasste Mategefäße aus Holz mit verzierten Bombillas',
+    eyebrow: 'Ein Stück Argentinien',
+    title: 'Mate.',
+    cta: 'Marias Mate-Welt entdecken',
+  },
 ];
 
 export default function Home() {
   return (
     <main id="main-content">
       <PageSeo path="/" />
-      <section className="home-invitation page-width" aria-label="Eine Einladung zum Tee">
-        <h1 className="eyebrow home-location">Teesalon & Teeladen in Bonn-Südstadt</h1>
+      <section
+        className="home-invitation page-width"
+        aria-label="Eine Einladung zum Tee"
+      >
+        <h1 className="eyebrow home-location">
+          Teesalon & Teeladen in Bonn-Südstadt
+        </h1>
         <h2>
           Eine Tasse Tee ist eine Einladung.
           <br />
@@ -88,19 +104,35 @@ export default function Home() {
             href={tile.href}
           >
             {tile.id === 'maria' ? (
-              <DetailPhoto name="maria-teetafel" sizes="(max-width: 760px) 46vw, (max-width: 1440px) 30vw, 420px" eager />
+              <DetailPhoto
+                name="maria-teetafel"
+                sizes="(max-width: 760px) 46vw, (max-width: 1440px) 30vw, 420px"
+                eager
+              />
             ) : tile.id === 'events' ? (
-              <DetailPhoto name="gemeinsam-tee-trinken" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 30vw" />
+              <DetailPhoto
+                name="gemeinsam-tee-trinken"
+                sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 30vw"
+              />
             ) : (
-            <Image
-              src={`/assets/images/hero/${tile.image}.webp`}
-              alt={tile.alt}
-              width={tile.width}
-              height={tile.height}
-              loading={index < 3 ? 'eager' : 'lazy'}
-              fetchPriority={index === 0 ? 'high' : undefined}
-              decoding="async"
-            />
+              <Image
+                src={
+                  tile.id === 'mate'
+                    ? `/assets/images/${tile.image}.webp`
+                    : `/assets/images/hero/${tile.image}.webp`
+                }
+                alt={tile.alt}
+                width={tile.width}
+                height={tile.height}
+                loading={index < 3 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : undefined}
+                decoding="async"
+                sizes={
+                  tile.id === 'mate'
+                    ? '(max-width: 760px) 92vw, (max-width: 1100px) calc(100vw - 64px), 88vw'
+                    : undefined
+                }
+              />
             )}
             <div className="photo-label">
               <span className="eyebrow">{tile.eyebrow}</span>

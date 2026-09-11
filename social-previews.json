@@ -54,5 +54,12 @@
     "height": 630,
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Datenschutz. Ihre Privatsphäre. Bonn-Südstadt."
+  },
+  "/mate": {
+    "image": "/assets/social/tee-genuss-f98f712a79.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Mate aus Argentinien. Mitten in Bonn. Bonn-Südstadt."
   }
 }

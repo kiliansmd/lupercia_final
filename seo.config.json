@@ -22,12 +22,21 @@
     },
     "/tee-genuss": {
       "name": "Tee & Genuss",
-      "title": "Tee kaufen in Bonn: Tee, Mate & Porzellan | Lupercia",
-      "description": "Rund 100 Teesorten, argentinischer Mate, Porzellan und Feinkost: Entdecken Sie Lupercias Teeladen in Bonn-Südstadt mit persönlicher Beratung durch Maria.",
+      "title": "Tee kaufen in Bonn: Tee & Porzellan | Lupercia",
+      "description": "Rund 100 Teesorten, Porzellan und Feinkost: Entdecken Sie Lupercias Teeladen in Bonn-Südstadt mit persönlicher Beratung durch Maria.",
       "image": "/assets/images/tee-genuss/porzellan-und-tee.webp",
       "imageAlt": "Loser Tee und Porzellan aus Marias Auswahl bei Lupercia",
       "width": 1000,
       "height": 1357
+    },
+    "/mate": {
+      "name": "Mate",
+      "title": "Argentinischen Mate kaufen in Bonn | Lupercia",
+      "description": "Ausgewählte Yerbas, Kalebassen und Bombillas: Entdecken Sie Marias argentinische Mate-Welt bei Lupercia in Bonn-Südstadt.",
+      "image": "/assets/images/mate-trinkgefaesse-hero.webp",
+      "imageAlt": "Mategefäße aus Holz mit verzierten Bombillas bei Lupercia",
+      "width": 1600,
+      "height": 837
     },
     "/maria": {
       "name": "Maria Moreno",
