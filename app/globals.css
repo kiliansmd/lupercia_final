@@ -242,6 +242,48 @@ svg {
   gap: 9px;
   color: var(--accent);
 }
+.nav-wrap nav .nav-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--accent);
+  transition:
+    color 0.25s,
+    background-color 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
+}
+.nav-wrap nav .nav-instagram::after {
+  display: none;
+}
+.nav-instagram span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.nav-wrap nav .nav-instagram:hover {
+  color: white;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.nav-instagram svg {
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.25);
+}
+.nav-instagram:hover svg {
+  transform: scale(1.08) rotate(-5deg);
+}
 .menu-toggle {
   display: none;
   background: none;
@@ -871,6 +913,29 @@ figcaption {
   }
   .nav-visit {
     justify-content: space-between;
+  }
+  .nav-wrap nav .nav-instagram {
+    width: auto;
+    height: auto;
+    justify-content: space-between;
+    border: 0;
+    border-radius: 0;
+    color: var(--accent);
+  }
+  .nav-instagram span {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    order: -1;
+  }
+  .nav-wrap nav .nav-instagram:hover {
+    color: var(--accent);
+    background: transparent;
+    transform: none;
   }
   .home-mosaic {
     margin-top: 0;

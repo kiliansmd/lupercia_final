@@ -5,6 +5,27 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { phone, maps, links } from './site-config';
+
+function InstagramIcon() {
+  return (
+    <svg
+      width="19"
+      height="19"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="18" height="18" x="3" y="3" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.4" cy="6.6" r="0.8" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -76,9 +97,7 @@ export function Header() {
               key={href}
               href={href}
               aria-current={
-                pathname.replace(/\/$/, '') === href
-                  ? 'page'
-                  : undefined
+                pathname.replace(/\/$/, '') === href ? 'page' : undefined
               }
               onClick={() => setOpen(false)}
             >
@@ -91,6 +110,16 @@ export function Header() {
             onClick={() => setOpen(false)}
           >
             Zu Besuch <ArrowUpRight size={16} />
+          </Link>
+          <Link
+            className="nav-instagram"
+            href="/maria#lupercias-reise"
+            aria-label="Zur eingebetteten Instagram-Sektion"
+            title="Instagram-Einblicke"
+            onClick={() => setOpen(false)}
+          >
+            <InstagramIcon />
+            <span>Instagram</span>
           </Link>
         </nav>
       </div>
