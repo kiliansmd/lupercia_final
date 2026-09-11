@@ -260,8 +260,8 @@ svg {
 .home-mosaic {
   display: grid;
   grid-template-columns: 1.08fr 1fr 1fr;
-  grid-template-rows: repeat(2, clamp(320px, 28vw, 390px)) auto;
-  grid-template-areas: 'tea maria gift' 'tea salon events' 'note note note';
+  grid-template-rows: repeat(2, clamp(320px, 28vw, 390px)) clamp(250px, 24vw, 330px) auto;
+  grid-template-areas: 'tea maria gift' 'tea salon events' 'mate mate mate' 'note note note';
   gap: 24px;
   margin-top: 0;
 }
@@ -386,6 +386,15 @@ svg {
 }
 .mosaic-events img {
   object-position: 50% 15%;
+}
+.mosaic-mate {
+  grid-area: mate;
+}
+.mosaic-mate img {
+  object-position: 50% 48%;
+}
+.home-mosaic .mosaic-mate .photo-label {
+  max-width: 560px;
 }
 .mosaic-note {
   grid-area: note;
@@ -766,8 +775,8 @@ figcaption {
   }
   .home-mosaic {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 340px 340px 350px auto;
-    grid-template-areas: 'tea maria' 'tea gift' 'salon events' 'note note';
+    grid-template-rows: 340px 340px 350px 290px auto;
+    grid-template-areas: 'tea maria' 'tea gift' 'salon events' 'mate mate' 'note note';
     gap: 20px;
   }
   .home-mosaic .photo-label {
@@ -867,7 +876,7 @@ figcaption {
     margin-top: 0;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 'tea' 'maria' 'gift' 'salon' 'events' 'note';
+    grid-template-areas: 'tea' 'maria' 'gift' 'salon' 'events' 'mate' 'note';
     gap: 18px;
   }
   .home-mosaic .photo-link {
@@ -878,6 +887,9 @@ figcaption {
   }
   .home-mosaic .mosaic-events {
     aspect-ratio: 6/5;
+  }
+  .home-mosaic .mosaic-mate {
+    aspect-ratio: 8/5;
   }
   .home-mosaic .photo-label h2 {
     font-size: clamp(32px, 9.4vw, 43px);
@@ -1048,7 +1060,7 @@ figcaption {
   .home-mosaic {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto;
-    grid-template-areas: 'tea maria' 'gift salon' 'events events' 'note note';
+    grid-template-areas: 'tea maria' 'gift salon' 'events events' 'mate mate' 'note note';
     gap: 12px;
   }
   .home-mosaic .photo-link,
@@ -1056,6 +1068,10 @@ figcaption {
     aspect-ratio: 2 / 3;
   }
   .home-mosaic .mosaic-events {
+    aspect-ratio: 8 / 5;
+    max-height: 340px;
+  }
+  .home-mosaic .mosaic-mate {
     aspect-ratio: 8 / 5;
     max-height: 340px;
   }
