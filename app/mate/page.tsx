@@ -94,34 +94,20 @@ export default function Mate() {
             Marias Geschichte kennenlernen
           </TextLink>
         </div>
-        <div className="mate-intro-gallery">
-          <figure>
-            <Image
-              src="/assets/images/maria/teeperlen.webp"
-              width={800}
-              height={1067}
-              alt="Lose gerollte Blätter in einer silbernen Schale vor dem Lupercia-Regal"
-              loading="lazy"
-              sizes="(max-width: 760px) 58vw, 38vw"
-            />
-            <figcaption>
-              Die Auswahl beginnt bei Duft, Blatt und Charakter.
-            </figcaption>
-          </figure>
-          <figure>
-            <Image
-              src="/assets/images/tee-genuss/gruener-tee.webp"
-              width={960}
-              height={1331}
-              alt="Glaskanne und Glas auf einem Aufgusstablett im hellen Lupercia-Salon"
-              loading="lazy"
-              sizes="(max-width: 760px) 38vw, 29vw"
-            />
-            <figcaption>
-              Zeit, Temperatur und Wasser machen den Aufguss.
-            </figcaption>
-          </figure>
-        </div>
+        <figure className="mate-intro-gallery">
+          <Image
+            src="/assets/images/mate/yerba-mate-sorten-im-regal.svg"
+            width={1600}
+            height={1200}
+            alt="Verschiedene farbenfrohe Yerba-Mate-Sorten in Marias Regal"
+            loading="lazy"
+            sizes="(max-width: 760px) 88vw, 86vw"
+            unoptimized
+          />
+          <figcaption>
+            Verschiedene Yerba-Mate-Sorten – von sanft bis kräftig und herb.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="mate-world" aria-labelledby="mate-world-title">

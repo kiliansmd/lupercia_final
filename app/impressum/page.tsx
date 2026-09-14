@@ -35,7 +35,7 @@ export default function Imprint() {
       <section aria-labelledby="kontakt">
         <h2 id="kontakt">Kontakt</h2>
         <p>
-          E-Mail: <Link href="mailto:maria@lupercia.de">maria@lupercia.de</Link>
+          E-Mail: <Link href="mailto:mdc.moreno@gmail.com">mdc.moreno@gmail.com</Link>
           <br />
           Telefon: <Link href={phone}>01516 7970350</Link>
         </p>
