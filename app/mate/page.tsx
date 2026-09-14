@@ -94,34 +94,20 @@ export default function Mate() {
             Marias Geschichte kennenlernen
           </TextLink>
         </div>
-        <div className="mate-intro-gallery">
-          <figure>
-            <Image
-              src="/assets/images/maria/teeperlen.webp"
-              width={800}
-              height={1067}
-              alt="Lose gerollte Blätter in einer silbernen Schale vor dem Lupercia-Regal"
-              loading="lazy"
-              sizes="(max-width: 760px) 58vw, 38vw"
-            />
-            <figcaption>
-              Die Auswahl beginnt bei Duft, Blatt und Charakter.
-            </figcaption>
-          </figure>
-          <figure>
-            <Image
-              src="/assets/images/tee-genuss/gruener-tee.webp"
-              width={960}
-              height={1331}
-              alt="Glaskanne und Glas auf einem Aufgusstablett im hellen Lupercia-Salon"
-              loading="lazy"
-              sizes="(max-width: 760px) 38vw, 29vw"
-            />
-            <figcaption>
-              Zeit, Temperatur und Wasser machen den Aufguss.
-            </figcaption>
-          </figure>
-        </div>
+        <figure className="mate-intro-gallery">
+          <Image
+            src="/assets/images/mate/yerba-mate-sorten-im-regal.svg"
+            width={1600}
+            height={1200}
+            alt="Verschiedene farbenfrohe Yerba-Mate-Sorten in Marias Regal"
+            loading="lazy"
+            sizes="(max-width: 760px) 88vw, 86vw"
+            unoptimized
+          />
+          <figcaption>
+            Verschiedene Yerba-Mate-Sorten – von sanft bis kräftig und herb.
+          </figcaption>
+        </figure>
       </section>
 
       <section className="mate-world" aria-labelledby="mate-world-title">
@@ -174,29 +160,30 @@ export default function Mate() {
       <section className="mate-moment" aria-labelledby="mate-moment-title">
         <figure>
           <Image
-            src="/assets/images/mate-moment.svg"
-            width={960}
-            height={1280}
-            alt="Mategefäß mit Bombilla, Rosen und einem Stück Kuchen im Lupercia-Salon"
+            src="/assets/images/mate/mate-miteinander.svg"
+            width={1354}
+            height={1162}
+            alt="Zwei Menschen reichen einander ein Mategefäß mit Bombilla"
             loading="lazy"
             sizes="(max-width: 760px) 88vw, 44vw"
             unoptimized
           />
           <figcaption>
-            Ein Mate, etwas Süßes und Zeit für den Augenblick.
+            Weitergereicht von Hand zu Hand – so wird Mate zum gemeinsamen Ritual.
           </figcaption>
         </figure>
         <div>
-          <span className="eyebrow">Im Salon oder zu Hause</span>
+          <span className="eyebrow">Ein Ritual des Miteinanders</span>
           <h2 id="mate-moment-title">
-            Ein kleiner Moment.
+            Eine Kalebasse.
             <br />
-            <em>Ganz in Ruhe.</em>
+            <em>Viele Begegnungen.</em>
           </h2>
           <p>
-            Mate darf ein gemeinsames Ritual sein – oder eine persönliche Pause.
-            Maria zeigt Ihnen, wie Sie die Zubereitung so gestalten, dass sie zu
-            Ihrem Alltag und Ihrem Geschmack passt.
+            Traditionell wird Mate in der Runde geteilt: Eine Person bereitet
+            ihn zu, gießt nach und reicht die Kalebasse weiter. Dieses einfache
+            Ritual schafft Nähe, lädt zum Gespräch ein und gibt dem gemeinsamen
+            Augenblick seinen eigenen Rhythmus.
           </p>
         </div>
       </section>

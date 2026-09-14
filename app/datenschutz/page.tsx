@@ -46,7 +46,7 @@ export default function Privacy() {
             Argelanderstraße 75, 53115 Bonn, Deutschland
             <br />
             E-Mail:{' '}
-            <Link href="mailto:maria@lupercia.de">maria@lupercia.de</Link>
+            <Link href="mailto:mdc.moreno@gmail.com">mdc.moreno@gmail.com</Link>
             <br />
             Telefon: <Link href={phone}>01516 7970350</Link>
           </p>
@@ -333,7 +333,7 @@ export default function Privacy() {
         </div>
         <p>
           Für die Ausübung Ihrer Rechte genügt eine Nachricht an{' '}
-          <Link href="mailto:maria@lupercia.de">maria@lupercia.de</Link> oder
+          <Link href="mailto:mdc.moreno@gmail.com">mdc.moreno@gmail.com</Link> oder
           die oben genannte Postadresse. Eine automatisierte
           Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22
           DSGVO findet durch uns auf dieser Website nicht statt.
