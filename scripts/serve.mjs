@@ -46,7 +46,16 @@ const server = http.createServer(async (req, res) => {
     }
     try {
       const s = await stat(file);
-      if (s.isDirectory()) file = resolve(file, 'index.html');
+      if (s.isDirectory()) {
+        // A locale has both a home page (es.html) and a directory of subpages.
+        const page = resolve(root, '.' + path.replace(/\/$/, '') + '.html');
+        try {
+          await stat(page);
+          file = page;
+        } catch {
+          file = resolve(file, 'index.html');
+        }
+      }
     } catch {
       file = resolve(root, '.' + path.replace(/\/$/, '') + '.html');
     }

@@ -1,9 +1,12 @@
 import { readFile, writeFile } from 'node:fs/promises';
+import { languages, localizedHref } from '../app/i18n-core.ts';
 const config = JSON.parse(
   await readFile(new URL('../seo.config.json', import.meta.url), 'utf8'),
 );
-const urls = Object.keys(config.pages).map(
-  (path) => new URL(path, config.origin).href,
+const urls = languages.flatMap((language) =>
+  Object.keys(config.pages).map(
+    (path) => new URL(localizedHref(path, language), config.origin).href,
+  ),
 );
 const escapeXml = (value) =>
   value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

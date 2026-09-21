@@ -1,4 +1,5 @@
 'use client';
+import { useTranslation } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { ExternalMedia } from '../consent';
 
@@ -11,8 +12,22 @@ export function InstagramFeedPlayer() {
 }
 
 function FeedFrame() {
+  const { t, language } = useTranslation();
   const frame = useRef<HTMLIFrameElement>(null);
   const [height, setHeight] = useState(640);
+  const copy = {
+    title: t('Lupercia Instagram-Feed'),
+    pending: t('Der Feed wird nach Ihrer Einwilligung geladen.'),
+    failed: t('Der Feed ist gerade nicht erreichbar.'),
+    link: t('Instagram direkt öffnen'),
+  };
+  const message = JSON.stringify({ language, copy });
+  useEffect(() => {
+    frame.current?.contentWindow?.postMessage(
+      { type: 'lupercia-feed-language', ...JSON.parse(message) },
+      window.location.origin,
+    );
+  }, [message]);
   useEffect(() => {
     function receive(event: MessageEvent) {
       if (
@@ -36,11 +51,11 @@ function FeedFrame() {
       ref={frame}
       className="instagram-feed-frame"
       src="/embeds/instagram-feed.html"
-      title="Instagram-Galerie von Lupercia, bereitgestellt durch Elfsight"
+      title={t('Instagram-Galerie von Lupercia, bereitgestellt durch Elfsight')}
       style={{ height }}
       onLoad={() =>
         frame.current?.contentWindow?.postMessage(
-          { type: 'lupercia-feed-enable' },
+          { type: 'lupercia-feed-enable', language, copy },
           window.location.origin,
         )
       }

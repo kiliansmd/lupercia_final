@@ -1,3 +1,5 @@
+'use client';
+import { useTranslation } from './i18n';
 import Image from 'next/image';
 import { CookieSettingsButton } from './consent';
 import Link from './site-link';
@@ -5,13 +7,14 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { phone, maps, links } from './site-config';
 export { phone, maps } from './site-config';
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="site-footer" id="footer">
       <div className="footer-identity">
         <Link
           href="/"
           className="footer-brand"
-          aria-label="Lupercia Startseite"
+          aria-label={t('Lupercia Startseite')}
         >
           <picture>
             <source
@@ -21,19 +24,19 @@ export function Footer() {
             <Image
               className="footer-brand-mark"
               src="/assets/lupercia-mark-420.webp"
-              alt="Lupercia – Finest Teas & Tea Ceremonies"
+              alt={t('Lupercia – Finest Teas & Tea Ceremonies')}
               width={930}
               height={927}
               loading="lazy"
             />
           </picture>
         </Link>
-        <p className="footer-signature">Eine Welt rund um Tee.</p>
+        <p className="footer-signature">{t('Eine Welt rund um Tee.')}</p>
       </div>
 
       <div className="footer-details">
         <section aria-labelledby="footer-visit-title">
-          <h2 id="footer-visit-title">Hier sind wir</h2>
+          <h2 id="footer-visit-title">{t('Hier sind wir')}</h2>
           <address>
             <Link
               className="footer-address"
@@ -41,29 +44,30 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              Argelanderstraße 75
+              {t('Argelanderstraße 75')}
               <br />
-              53115 Bonn <ArrowUpRight size={14} aria-hidden="true" />
+              {t('53115 Bonn ')}
+              <ArrowUpRight size={14} aria-hidden="true" />
             </Link>
           </address>
-          <p className="footer-small">Im Herzen der Südstadt</p>
+          <p className="footer-small">{t('Im Herzen der Südstadt')}</p>
         </section>
         <section aria-labelledby="footer-hours-title">
-          <h2 id="footer-hours-title">Zeit für Tee</h2>
+          <h2 id="footer-hours-title">{t('Zeit für Tee')}</h2>
           <dl className="footer-hours">
             <div>
-              <dt>Dienstag–Freitag</dt>
-              <dd>11–19 Uhr</dd>
+              <dt>{t('Dienstag–Freitag')}</dt>
+              <dd>{t('11–19 Uhr')}</dd>
             </div>
             <div>
-              <dt>Samstag</dt>
-              <dd>12–17 Uhr</dd>
+              <dt>{t('Samstag')}</dt>
+              <dd>{t('12–17 Uhr')}</dd>
             </div>
           </dl>
-          <p className="footer-small">Sonntag & Montag geschlossen</p>
+          <p className="footer-small">{t('Sonntag & Montag geschlossen')}</p>
         </section>
         <section aria-labelledby="footer-contact-title">
-          <h2 id="footer-contact-title">In Verbindung</h2>
+          <h2 id="footer-contact-title">{t('In Verbindung')}</h2>
           <div className="footer-contact">
             <Link className="footer-link" href={phone}>
               01516 7970350
@@ -74,24 +78,27 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              Instagram <ArrowUpRight size={14} aria-hidden="true" />
+              {t('Instagram ')}
+              <ArrowUpRight size={14} aria-hidden="true" />
             </Link>
           </div>
         </section>
       </div>
 
-      <nav className="footer-navigation" aria-label="Lupercia entdecken">
+      <nav className="footer-navigation" aria-label={t('Lupercia entdecken')}>
         {links.map(([href, text]) => (
           <Link href={href} key={href}>
-            {text}
+            {t(text)}
           </Link>
         ))}
       </nav>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} Lupercia · Maria Moreno</span>
-        <nav aria-label="Rechtliche Informationen">
-          <Link href="/impressum">Impressum</Link>
-          <Link href="/datenschutz">Datenschutz</Link>
+        <span>
+          © {new Date().getFullYear()} {t(' Lupercia · Maria Moreno')}
+        </span>
+        <nav aria-label={t('Rechtliche Informationen')}>
+          <Link href="/impressum">{t('Impressum')}</Link>
+          <Link href="/datenschutz">{t('Datenschutz')}</Link>
           <CookieSettingsButton />
         </nav>
       </div>
@@ -101,10 +108,10 @@ export function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span>Konzept, Design & Umsetzung von</span>
+        <span>{t('Konzept, Design & Umsetzung von')}</span>
         <Image
           src="/assets/mdb-logo.svg"
-          alt="mdb – Mein Digitaler Betrieb"
+          alt={t('mdb – Mein Digitaler Betrieb')}
           width={2103}
           height={748}
           loading="lazy"
@@ -145,13 +152,14 @@ export function Photo({
   className?: string;
   eager?: boolean;
 }) {
+  const { t } = useTranslation();
   return (
     <Image
       width={1200}
       height={1500}
       className={className}
       src={`/assets/images/${file}.webp`}
-      alt={alt}
+      alt={t(alt)}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
       fetchPriority={eager ? 'high' : undefined}
@@ -167,53 +175,55 @@ export function Visit({
   withPhoto?: boolean;
   photo?: React.ReactNode;
 }) {
+  const { t } = useTranslation();
   return (
     <section
       className={`visit-section ${compact ? 'compact' : ''} ${withPhoto ? '' : 'visit-without-photo'}`}
       id="besuch"
     >
       <div className="visit-copy">
-        <span className="eyebrow">Bonn Südstadt</span>
+        <span className="eyebrow">{t('Bonn Südstadt')}</span>
         <h2>
-          Wir sehen uns
+          {t('Wir sehen uns')}
           <br />
-          <em>beim Tee.</em>
+          <em>{t('beim Tee.')}</em>
         </h2>
         <p>
-          Lupercia ist Ihr Teesalon und Teeladen in Bonn-Südstadt. Genießen
-          Sie eine Kanne Tee vor Ort oder lassen Sie sich bei der Auswahl für
-          zu Hause beraten. Kommen Sie einfach vorbei.
+          {t(
+            'Lupercia ist Ihr Teesalon und Teeladen in Bonn-Südstadt. Genießen Sie eine Kanne Tee vor Ort oder lassen Sie sich bei der Auswahl für zu Hause beraten. Kommen Sie einfach vorbei.',
+          )}
         </p>
         <div className="visit-details">
           <div>
-            <h3>Hier finden Sie uns</h3>
+            <h3>{t('Hier finden Sie uns')}</h3>
             <Link href={maps} target="_blank" rel="noreferrer">
-              Argelanderstraße 75
+              {t('Argelanderstraße 75')}
               <br />
-              53115 Bonn <ArrowUpRight size={15} />
+              {t('53115 Bonn ')}
+              <ArrowUpRight size={15} />
             </Link>
           </div>
           <div>
-            <h3>Öffnungszeiten</h3>
+            <h3>{t('Öffnungszeiten')}</h3>
             <dl>
               <div>
-                <dt>Dienstag–Freitag</dt>
-                <dd>11–19 Uhr</dd>
+                <dt>{t('Dienstag–Freitag')}</dt>
+                <dd>{t('11–19 Uhr')}</dd>
               </div>
               <div>
-                <dt>Samstag</dt>
-                <dd>12–17 Uhr</dd>
+                <dt>{t('Samstag')}</dt>
+                <dd>{t('12–17 Uhr')}</dd>
               </div>
               <div>
-                <dt>Sonntag & Montag</dt>
-                <dd>geschlossen</dd>
+                <dt>{t('Sonntag & Montag')}</dt>
+                <dd>{t('geschlossen')}</dd>
               </div>
             </dl>
           </div>
         </div>
-        <TextLink href={phone}>Einen Tisch anfragen</TextLink>
+        <TextLink href={phone}>{t('Einen Tisch anfragen')}</TextLink>
         <p className="small-note">
-          Für mehrere Personen rufen Sie am besten kurz an.
+          {t('Für mehrere Personen rufen Sie am besten kurz an.')}
           <br />
           <Link href={phone}>01516 7970350</Link>
         </p>
@@ -222,7 +232,9 @@ export function Visit({
         (photo ?? (
           <Photo
             file="lupercia-fensterblick"
-            alt="Das blumengeschmückte Schaufenster von Lupercia mit Blick auf die Bonner Südstadt"
+            alt={t(
+              'Das blumengeschmückte Schaufenster von Lupercia mit Blick auf die Bonner Südstadt',
+            )}
           />
         ))}
     </section>

@@ -1,3 +1,5 @@
+'use client';
+import { useTranslation } from './i18n';
 import Image from 'next/image';
 import photos from './detail-photos.json';
 
@@ -11,16 +13,26 @@ export function DetailPhoto({
   sizes?: string;
   eager?: boolean;
 }) {
+  const { t } = useTranslation();
   const { widths, ...photo } = photos[name];
   const path = `/assets/images/einblicke/${name}`;
   return (
     <picture className="detail-photo">
       <source
         type="image/webp"
-        srcSet={widths.map((width) => `${path}-${width}.webp ${width}w`).join(', ')}
+        srcSet={widths
+          .map((width) => `${path}-${width}.webp ${width}w`)
+          .join(', ')}
         sizes={sizes}
       />
-      <Image src={`${path}-720.webp`} {...photo} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : undefined} decoding="async" />
+      <Image
+        src={`${path}-720.webp`}
+        {...photo}
+        alt={t(photo.alt)}
+        loading={eager ? 'eager' : 'lazy'}
+        fetchPriority={eager ? 'high' : undefined}
+        decoding="async"
+      />
     </picture>
   );
 }

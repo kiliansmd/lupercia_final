@@ -1,4 +1,5 @@
 import satori from 'satori';
+import { languages, localizedHref, translate } from '../app/i18n-core.ts';
 import sharp from 'sharp';
 import { readFile, writeFile, mkdir, readdir, unlink } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -35,136 +36,142 @@ const toData = async (path, portrait = false) =>
 const logo = await toData('/assets/lupercia-mark-600.webp');
 const manifest = {};
 const kept = new Set();
-for (const [path, card] of Object.entries(settings)) {
-  const [left, right] = await Promise.all([
-    toData(card.left, path === '/maria'),
-    toData(card.right),
-  ]);
-  const svg = await satori(
-    {
-      type: 'div',
-      props: {
-        style: {
-          display: 'flex',
-          width: '100%',
-          height: '100%',
-          backgroundColor: '#fffefa',
-          color: '#252721',
-        },
-        children: [
-          {
-            type: 'img',
-            props: {
-              src: left,
-              width: 270,
-              height: 630,
-              style: {
-                objectFit: 'cover',
-                objectPosition: card.leftPosition || '50% 50%',
-              },
-            },
+for (const [path, sourceCard] of Object.entries(settings)) {
+  for (const language of languages) {
+    const card = {
+      ...sourceCard,
+      lines: sourceCard.lines.map((line) => translate(line, language)),
+    };
+    const [left, right] = await Promise.all([
+      toData(card.left, path === '/maria'),
+      toData(card.right),
+    ]);
+    const svg = await satori(
+      {
+        type: 'div',
+        props: {
+          style: {
+            display: 'flex',
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#fffefa',
+            color: '#252721',
           },
-          {
-            type: 'div',
-            props: {
-              style: {
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                width: 660,
+          children: [
+            {
+              type: 'img',
+              props: {
+                src: left,
+                width: 270,
                 height: 630,
-                paddingTop: 58,
-                paddingLeft: 25,
-                paddingRight: 25,
+                style: {
+                  objectFit: 'cover',
+                  objectPosition: card.leftPosition || '50% 50%',
+                },
               },
-              children: [
-                {
-                  type: 'img',
-                  props: {
-                    src: logo,
-                    width: 285,
-                    height: 284,
-                    style: { objectFit: 'contain' },
-                  },
-                },
-                {
-                  type: 'div',
-                  props: {
-                    style: {
-                      width: 46,
-                      height: 1,
-                      backgroundColor: '#b89b5e',
-                      marginTop: 27,
-                      marginBottom: 24,
-                    },
-                  },
-                },
-                {
-                  type: 'div',
-                  props: {
-                    style: {
-                      display: 'flex',
-                      height: 116,
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontFamily: 'Fraunces',
-                      fontSize: 41,
-                      lineHeight: 1.24,
-                      textAlign: 'center',
-                    },
-                    children: card.lines.map((line) => ({
-                      type: 'div',
-                      props: { children: line },
-                    })),
-                  },
-                },
-                {
-                  type: 'div',
-                  props: {
-                    style: {
-                      marginTop: 25,
-                      fontFamily: 'SourceSans3',
-                      fontSize: 18,
-                      letterSpacing: 3,
-                      color: '#793c34',
-                    },
-                    children: 'BONN · SÜDSTADT',
-                  },
-                },
-              ],
             },
-          },
-          {
-            type: 'img',
-            props: {
-              src: right,
-              width: 270,
-              height: 630,
-              style: { objectFit: 'cover', objectPosition: '50% 50%' },
+            {
+              type: 'div',
+              props: {
+                style: {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  width: 660,
+                  height: 630,
+                  paddingTop: 58,
+                  paddingLeft: 25,
+                  paddingRight: 25,
+                },
+                children: [
+                  {
+                    type: 'img',
+                    props: {
+                      src: logo,
+                      width: 285,
+                      height: 284,
+                      style: { objectFit: 'contain' },
+                    },
+                  },
+                  {
+                    type: 'div',
+                    props: {
+                      style: {
+                        width: 46,
+                        height: 1,
+                        backgroundColor: '#b89b5e',
+                        marginTop: 27,
+                        marginBottom: 24,
+                      },
+                    },
+                  },
+                  {
+                    type: 'div',
+                    props: {
+                      style: {
+                        display: 'flex',
+                        height: 116,
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontFamily: 'Fraunces',
+                        fontSize: 41,
+                        lineHeight: 1.24,
+                        textAlign: 'center',
+                      },
+                      children: card.lines.map((line) => ({
+                        type: 'div',
+                        props: { children: line },
+                      })),
+                    },
+                  },
+                  {
+                    type: 'div',
+                    props: {
+                      style: {
+                        marginTop: 25,
+                        fontFamily: 'SourceSans3',
+                        fontSize: 18,
+                        letterSpacing: 3,
+                        color: '#793c34',
+                      },
+                      children: 'BONN · SÜDSTADT',
+                    },
+                  },
+                ],
+              },
             },
-          },
-        ],
+            {
+              type: 'img',
+              props: {
+                src: right,
+                width: 270,
+                height: 630,
+                style: { objectFit: 'cover', objectPosition: '50% 50%' },
+              },
+            },
+          ],
+        },
       },
-    },
-    { width: 1200, height: 630, fonts },
-  );
-  const jpeg = await sharp(Buffer.from(svg))
-    .flatten({ background: '#fffefa' })
-    .jpeg({ quality: 88, mozjpeg: true })
-    .toBuffer();
-  const hash = createHash('sha256').update(jpeg).digest('hex').slice(0, 10);
-  const name = `${card.slug}-${hash}.jpg`;
-  kept.add(name);
-  await writeFile(new URL(name, out), jpeg);
-  manifest[path] = {
-    image: `/assets/social/${name}`,
-    width: 1200,
-    height: 630,
-    type: 'image/jpeg',
-    alt: `Vollständiges Lupercia-Logo, ${card.lines.join(' ')} Bonn-Südstadt.`,
-  };
-  console.log(`${path}: ${name} (${Math.round(jpeg.length / 1024)} KB)`);
+      { width: 1200, height: 630, fonts },
+    );
+    const jpeg = await sharp(Buffer.from(svg))
+      .flatten({ background: '#fffefa' })
+      .jpeg({ quality: 88, mozjpeg: true })
+      .toBuffer();
+    const hash = createHash('sha256').update(jpeg).digest('hex').slice(0, 10);
+    const name = `${card.slug}${language === 'de' ? '' : `-${language}`}-${hash}.jpg`;
+    kept.add(name);
+    await writeFile(new URL(name, out), jpeg);
+    manifest[localizedHref(path, language)] = {
+      image: `/assets/social/${name}`,
+      width: 1200,
+      height: 630,
+      type: 'image/jpeg',
+      alt: `${{ de: 'Vollständiges Lupercia-Logo', en: 'Full Lupercia logo', es: 'Logotipo completo de Lupercia' }[language]}, ${card.lines.join(' ')} Bonn-Südstadt.`,
+    };
+    console.log(`${path}: ${name} (${Math.round(jpeg.length / 1024)} KB)`);
+  }
 }
 for (const name of await readdir(out))
   if (name.endsWith('.jpg') && !kept.has(name))

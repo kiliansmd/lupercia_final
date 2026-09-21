@@ -1,5 +1,5 @@
 'use client';
-
+import { useTranslation } from './i18n';
 import {
   createContext,
   useContext,
@@ -44,6 +44,7 @@ function useConsent() {
 }
 
 export function ConsentProvider({ children }: { children: ReactNode }) {
+  const { t } = useTranslation();
   const [consent, setConsent] = useState<Consent | null>(null);
   const [ready, setReady] = useState(false);
   const [banner, setBanner] = useState(false);
@@ -115,7 +116,11 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
     } catch {
       persisted = false;
       // A failed replacement must not leave an earlier opt-in active on the next visit.
-      try { localStorage.removeItem(CONSENT_KEY); } catch { /* Browser storage is unavailable. */ }
+      try {
+        localStorage.removeItem(CONSENT_KEY);
+      } catch {
+        /* Browser storage is unavailable. */
+      }
     }
     consentRef.current = next;
     setConsent(next);
@@ -133,32 +138,32 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
       {ready && banner && (
         <section className="consent-banner" aria-labelledby="consent-title">
           <div className="consent-copy">
-            <span className="eyebrow">Ihre Privatsphäre</span>
-            <h2 id="consent-title">Sie entscheiden, was mitlädt.</h2>
+            <span className="eyebrow">{t('Ihre Privatsphäre')}</span>
+            <h2 id="consent-title">{t('Sie entscheiden, was mitlädt.')}</h2>
             <p>
-              Die Website funktioniert ohne optionale Cookies. Mit Ihrer
-              Einwilligung laden wir das Instagram-Video (Meta) und den
-              Instagram-Feed (Elfsight). Dabei können Cookies und
-              Datenübermittlungen außerhalb der EU entstehen. Freiwillig und
-              jederzeit widerrufbar.
+              {t(
+                'Die Website funktioniert ohne optionale Cookies. Mit Ihrer Einwilligung laden wir das Instagram-Video (Meta) und den Instagram-Feed (Elfsight). Dabei können Cookies und Datenübermittlungen außerhalb der EU entstehen. Freiwillig und jederzeit widerrufbar.',
+              )}
             </p>
             <div className="consent-links">
-              <Link href="/datenschutz">Datenschutz & Dienstdetails</Link>
-              <Link href="/impressum">Impressum</Link>
+              <Link href="/datenschutz">
+                {t('Datenschutz & Dienstdetails')}
+              </Link>
+              <Link href="/impressum">{t('Impressum')}</Link>
             </div>
           </div>
           <div className="consent-actions">
             <button type="button" onClick={() => save(denied)}>
-              Alle ablehnen
+              {t('Alle ablehnen')}
             </button>
             <button type="button" onClick={openSettings}>
-              Auswahl anpassen
+              {t('Auswahl anpassen')}
             </button>
             <button
               type="button"
               onClick={() => save({ instagram: true, elfsight: true })}
             >
-              Alle akzeptieren
+              {t('Alle akzeptieren')}
             </button>
           </div>
         </section>
@@ -173,35 +178,36 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
       >
         <div className="consent-dialog-heading">
           <div>
-            <span className="eyebrow">Datenschutzeinstellungen</span>
-            <h2 id="privacy-settings-title">Ihre Auswahl.</h2>
+            <span className="eyebrow">{t('Datenschutzeinstellungen')}</span>
+            <h2 id="privacy-settings-title">{t('Ihre Auswahl.')}</h2>
           </div>
           <button
             type="button"
             className="consent-close"
             onClick={() => dialog.current?.close()}
-            aria-label="Einstellungen schließen"
+            aria-label={t('Einstellungen schließen')}
           >
             ×
           </button>
         </div>
         <p>
-          Optionale Inhalte bleiben ohne Einwilligung gesperrt. Sie können beide
-          Dienste getrennt erlauben oder eine frühere Einwilligung mit „Alle
-          ablehnen“ widerrufen. Schließen verändert Ihre Auswahl nicht.
+          {t(
+            'Optionale Inhalte bleiben ohne Einwilligung gesperrt. Sie können beide Dienste getrennt erlauben oder eine frühere Einwilligung mit „Alle ablehnen“ widerrufen. Schließen verändert Ihre Auswahl nicht.',
+          )}
         </p>
         <div className="consent-necessary">
-          <strong>Notwendige Funktionen</strong>
-          <span>Immer aktiv</span>
+          <strong>{t('Notwendige Funktionen')}</strong>
+          <span>{t('Immer aktiv')}</span>
           <p>
-            Seitenauslieferung und Speicherung Ihrer Datenschutz-Auswahl für 180
-            Tage in diesem Browser. Keine Besucheranalyse durch Lupercia.
+            {t(
+              'Seitenauslieferung und Speicherung Ihrer Datenschutz-Auswahl für 180 Tage in diesem Browser. Keine Besucheranalyse durch Lupercia.',
+            )}
           </p>
         </div>
         {(Object.keys(serviceDetails) as (keyof Services)[]).map((key) => (
           <div className="consent-service" key={key}>
             <label>
-              <strong>{serviceDetails[key].name}</strong>
+              <strong>{t(serviceDetails[key].name)}</strong>
               <input
                 type="checkbox"
                 checked={draft[key]}
@@ -215,43 +221,44 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
               />
             </label>
             <p id={`consent-${key}-description`}>
-              {serviceDetails[key].description}
+              {t(serviceDetails[key].description)}
             </p>
             <Link href={`/datenschutz#${serviceDetails[key].anchor}`}>
-              Anbieter, Zwecke und Datenschutz
+              {t('Anbieter, Zwecke und Datenschutz')}
             </Link>
           </div>
         ))}
         <p className="consent-footnote">
-          Grundlage: Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Ihre
-          Auswahl gilt für 180 Tage. Ändern oder widerrufen können Sie sie
-          jederzeit über „Datenschutzeinstellungen“ am Seitenende.
+          {t(
+            'Grundlage: Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Ihre Auswahl gilt für 180 Tage. Ändern oder widerrufen können Sie sie jederzeit über „Datenschutzeinstellungen“ am Seitenende.',
+          )}
         </p>
         <div className="consent-actions">
           <button type="button" onClick={() => save(denied)}>
-            Alle ablehnen
+            {t('Alle ablehnen')}
           </button>
           <button type="button" onClick={() => save(draft)}>
-            Auswahl speichern
+            {t('Auswahl speichern')}
           </button>
           <button
             type="button"
             onClick={() => save({ instagram: true, elfsight: true })}
           >
-            Alle akzeptieren
+            {t('Alle akzeptieren')}
           </button>
         </div>
         <div className="consent-links">
-          <Link href="/datenschutz">Datenschutz</Link>
-          <Link href="/impressum">Impressum</Link>
+          <Link href="/datenschutz">{t('Datenschutz')}</Link>
+          <Link href="/impressum">{t('Impressum')}</Link>
         </div>
       </dialog>
       {storageNotice && (
         <output className="consent-storage-notice">
-          Ihre Auswahl gilt für diesen Seitenaufruf. Ihr Browser erlaubt keine
-          dauerhafte Speicherung.
+          {t(
+            'Ihre Auswahl gilt für diesen Seitenaufruf. Ihr Browser erlaubt keine dauerhafte Speicherung.',
+          )}
           <button type="button" onClick={() => setStorageNotice(false)}>
-            Schließen
+            {t('Schließen')}
           </button>
         </output>
       )}
@@ -260,6 +267,7 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
 }
 
 export function CookieSettingsButton() {
+  const { t } = useTranslation();
   const { openSettings } = useConsent();
   return (
     <button
@@ -267,7 +275,7 @@ export function CookieSettingsButton() {
       className="privacy-settings-link"
       onClick={openSettings}
     >
-      Datenschutzeinstellungen
+      {t('Datenschutzeinstellungen')}
     </button>
   );
 }
@@ -279,19 +287,22 @@ export function ExternalMedia({
   service: keyof Services;
   children: ReactNode;
 }) {
+  const { t } = useTranslation();
   const { services, openSettings } = useConsent();
   if (services[service]) return children;
   return (
     <div className="external-media-consent">
-      <span className="eyebrow">Ein Einblick, wenn Sie möchten</span>
+      <span className="eyebrow">{t('Ein Einblick, wenn Sie möchten')}</span>
       <h3>
-        {service === 'instagram'
-          ? 'Maria im Film.'
-          : 'Lupercias Reise in Bildern.'}
+        {t(
+          service === 'instagram'
+            ? 'Maria im Film.'
+            : 'Lupercias Reise in Bildern.',
+        )}
       </h3>
-      <p>{serviceDetails[service].description}</p>
+      <p>{t(serviceDetails[service].description)}</p>
       <button type="button" onClick={openSettings}>
-        Datenschutz-Auswahl öffnen
+        {t('Datenschutz-Auswahl öffnen')}
       </button>
       <Link
         href={
@@ -302,11 +313,12 @@ export function ExternalMedia({
         target="_blank"
         rel="noopener noreferrer"
       >
-        Direkt auf Instagram ansehen ↗
+        {t('Direkt auf Instagram ansehen ↗')}
       </Link>
       <noscript>
-        Zum Laden hier auf der Seite werden JavaScript und Ihre Einwilligung
-        benötigt.
+        {t(
+          'Zum Laden hier auf der Seite werden JavaScript und Ihre Einwilligung benötigt.',
+        )}
       </noscript>
     </div>
   );

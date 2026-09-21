@@ -1,33 +1,52 @@
 import type { Metadata } from 'next';
 import config from '../seo.config.json';
 import previews from '../social-previews.json';
-import Link from './site-link';
-import { maps, phone } from './site-config';
+import {
+  languages,
+  localizedHref,
+  translate,
+  type Language,
+} from './i18n-core';
 
 export const siteOrigin = config.origin;
-type PagePath = keyof typeof config.pages;
+export type PagePath = keyof typeof config.pages;
 const absolute = (path: string) => new URL(path, siteOrigin).href;
-const businessId = absolute('/#lupercia');
-const websiteId = absolute('/#website');
+
+function alternates(path: string, language: Language) {
+  return {
+    canonical: absolute(localizedHref(path, language)),
+    languages: Object.fromEntries([
+      ...languages.map((locale) => [
+        locale,
+        absolute(localizedHref(path, locale)),
+      ]),
+      ['x-default', absolute(path)],
+    ]),
+  };
+}
 
 function socialMetadata(
   path: keyof typeof previews,
   title: string,
   description: string,
+  language: Language,
 ): Metadata {
-  const url = absolute(path);
-  const preview = previews[path];
+  const url = absolute(localizedHref(path, language));
+  const preview =
+    (previews as Record<string, (typeof previews)['/']>)[
+      localizedHref(path, language)
+    ] ?? previews[path];
   const image = {
     url: absolute(preview.image),
     width: preview.width,
     height: preview.height,
     type: preview.type,
-    alt: preview.alt,
+    alt: translate(preview.alt, language),
   };
   return {
     openGraph: {
       type: 'website',
-      locale: 'de_DE',
+      locale: { de: 'de_DE', en: 'en_GB', es: 'es_ES' }[language],
       siteName: config.name,
       title,
       description,
@@ -43,163 +62,63 @@ function socialMetadata(
   };
 }
 
-export function pageMetadata(path: PagePath): Metadata {
+export function pageMetadata(
+  path: PagePath,
+  language: Language = 'de',
+): Metadata {
   const page = config.pages[path];
+  const title = translate(page.title, language);
+  const description = translate(page.description, language);
   return {
-    title: { absolute: page.title },
-    description: page.description,
-    alternates: { canonical: absolute(path) },
+    title: { absolute: title },
+    description,
+    alternates: alternates(path, language),
     robots: { index: true, follow: true, 'max-image-preview': 'large' },
-    ...socialMetadata(path, page.title, page.description),
+    ...socialMetadata(path, title, description, language),
   };
 }
 
 export function legalMetadata(
   path: '/impressum' | '/datenschutz',
   title: string,
+  language: Language = 'de',
 ): Metadata {
-  const fullTitle = `${title} — Lupercia`;
-  const description =
+  const fullTitle = `${translate(title, language)} — Lupercia`;
+  const description = translate(
     path === '/impressum'
       ? 'Impressum und Kontaktangaben von Lupercia, dem Teesalon und Teeladen von Maria Moreno in der Bonner Südstadt.'
-      : 'Informationen zum Datenschutz bei Lupercia: Ihre Rechte, die Verarbeitung personenbezogener Daten und Ihre Auswahl zu externen Medien.';
+      : 'Informationen zum Datenschutz bei Lupercia: Ihre Rechte, die Verarbeitung personenbezogener Daten und Ihre Auswahl zu externen Medien.',
+    language,
+  );
   return {
     title: { absolute: fullTitle },
     description,
-    alternates: { canonical: absolute(path) },
+    alternates: alternates(path, language),
     robots: { index: false, follow: true },
-    ...socialMetadata(path, fullTitle, description),
+    ...socialMetadata(path, fullTitle, description, language),
   };
 }
 
-function JsonLd({ data }: { data: Record<string, unknown> }) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data).replace(/</g, '\\u003c'),
-      }}
-    />
-  );
+export function notFoundMetadata(language: Language = 'de'): Metadata {
+  return {
+    title: {
+      absolute: `${translate('Seite nicht gefunden', language)} — Lupercia`,
+    },
+    description: translate(
+      'Diese Seite ist nicht verfügbar. Zurück zu Lupercia, Ihrem Teesalon in der Bonner Südstadt.',
+      language,
+    ),
+    robots: { index: false, follow: false },
+  };
 }
 
-export function SiteSchema() {
-  return (
-    <JsonLd
-      data={{
-        '@context': 'https://schema.org',
-        '@graph': [
-          {
-            '@type': ['CafeOrCoffeeShop', 'Store'],
-            '@id': businessId,
-            name: config.name,
-            url: absolute('/'),
-            description:
-              'Teesalon und Teeladen in der Bonner Südstadt mit persönlicher Teeberatung, Tea Time, Mate, Porzellan und Geschenkboxen.',
-            telephone: phone.replace('tel:', ''),
-            image: absolute(config.pages['/'].image),
-            logo: absolute('/assets/lupercia-mark.webp'),
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'Argelanderstraße 75',
-              postalCode: '53115',
-              addressLocality: 'Bonn',
-              addressRegion: 'Nordrhein-Westfalen',
-              addressCountry: 'DE',
-            },
-            hasMap: maps,
-            openingHoursSpecification: [
-              {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                opens: '11:00',
-                closes: '19:00',
-              },
-              {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: 'Saturday',
-                opens: '12:00',
-                closes: '17:00',
-              },
-            ],
-            sameAs: ['https://www.instagram.com/lupercia.de/'],
-          },
-          {
-            '@type': 'WebSite',
-            '@id': websiteId,
-            name: config.name,
-            url: absolute('/'),
-            inLanguage: 'de-DE',
-            publisher: { '@id': businessId },
-          },
-        ],
-      }}
-    />
-  );
-}
-
-export function PageSeo({ path }: { path: PagePath }) {
-  const page = config.pages[path];
-  const url = absolute(path);
-  const breadcrumbId = `${url}#breadcrumb`;
-  return (
-    <>
-      <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@graph': [
-            {
-              '@type': path === '/maria' ? 'AboutPage' : 'WebPage',
-              '@id': `${url}#webpage`,
-              url,
-              name: page.title,
-              description: page.description,
-              inLanguage: 'de-DE',
-              isPartOf: { '@id': websiteId },
-              about: { '@id': businessId },
-              primaryImageOfPage: {
-                '@type': 'ImageObject',
-                url: absolute(page.image),
-                width: page.width,
-                height: page.height,
-              },
-              ...(path === '/' ? {} : { breadcrumb: { '@id': breadcrumbId } }),
-            },
-            ...(path === '/'
-              ? []
-              : [
-                  {
-                    '@type': 'BreadcrumbList',
-                    '@id': breadcrumbId,
-                    itemListElement: [
-                      {
-                        '@type': 'ListItem',
-                        position: 1,
-                        name: config.name,
-                        item: absolute('/'),
-                      },
-                      {
-                        '@type': 'ListItem',
-                        position: 2,
-                        name: page.name,
-                        item: url,
-                      },
-                    ],
-                  },
-                ]),
-          ],
-        }}
-      />
-      {path !== '/' && (
-        <nav className="breadcrumbs" aria-label="Brotkrümelnavigation">
-          <ol>
-            <li>
-              <Link href="/">Lupercia</Link>
-            </li>
-            <li aria-current="page">{page.name}</li>
-          </ol>
-        </nav>
-      )}
-    </>
-  );
+export function metadataForPath(path: string, language: Language): Metadata {
+  if (path in config.pages) return pageMetadata(path as PagePath, language);
+  if (path === '/impressum' || path === '/datenschutz')
+    return legalMetadata(
+      path,
+      path === '/impressum' ? 'Impressum' : 'Datenschutz',
+      language,
+    );
+  return notFoundMetadata(language);
 }

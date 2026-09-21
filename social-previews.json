@@ -6,12 +6,40 @@
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Eine Welt rund um Tee. Bonn-Südstadt."
   },
+  "/en": {
+    "image": "/assets/social/startseite-en-155a8a2cbc.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, A world of tea. Bonn-Südstadt."
+  },
+  "/es": {
+    "image": "/assets/social/startseite-es-ed65f6fbdb.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Un mundo alrededor del té. Bonn-Südstadt."
+  },
   "/salon": {
     "image": "/assets/social/salon-c6396607c7.jpg",
     "width": 1200,
     "height": 630,
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Der Salon. Ein Platz zum Bleiben. Bonn-Südstadt."
+  },
+  "/en/salon": {
+    "image": "/assets/social/salon-en-07696b3aec.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, The tea room. A place to linger. Bonn-Südstadt."
+  },
+  "/es/salon": {
+    "image": "/assets/social/salon-es-08624e2dda.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, El salón. Un lugar para quedarse. Bonn-Südstadt."
   },
   "/tee-genuss": {
     "image": "/assets/social/tee-genuss-f98f712a79.jpg",
@@ -20,12 +48,61 @@
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Tee & Genuss. Rund um die Tasse. Bonn-Südstadt."
   },
+  "/en/tee-genuss": {
+    "image": "/assets/social/tee-genuss-en-4210c79aaa.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, Tea & treats. All about the cup. Bonn-Südstadt."
+  },
+  "/es/tee-genuss": {
+    "image": "/assets/social/tee-genuss-es-f52e390c49.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Té y delicias. Alrededor de la taza. Bonn-Südstadt."
+  },
+  "/mate": {
+    "image": "/assets/social/mate-d792328110.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Vollständiges Lupercia-Logo, Mate aus Argentinien. Mitten in Bonn. Bonn-Südstadt."
+  },
+  "/en/mate": {
+    "image": "/assets/social/mate-en-54794ce05d.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, Mate from Argentina. In the heart of Bonn. Bonn-Südstadt."
+  },
+  "/es/mate": {
+    "image": "/assets/social/mate-es-1bc891c9e4.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Mate de Argentina. En pleno Bonn. Bonn-Südstadt."
+  },
   "/maria": {
     "image": "/assets/social/maria-44e1dec6e1.jpg",
     "width": 1200,
     "height": 630,
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Maria Moreno. Ihre Gastgeberin. Bonn-Südstadt."
+  },
+  "/en/maria": {
+    "image": "/assets/social/maria-en-021465e6ba.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, Maria Moreno. Your host. Bonn-Südstadt."
+  },
+  "/es/maria": {
+    "image": "/assets/social/maria-es-c001f5bd6a.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Maria Moreno. Tu anfitriona. Bonn-Südstadt."
   },
   "/veranstaltungen": {
     "image": "/assets/social/veranstaltungen-37d23b6241.jpg",
@@ -34,12 +111,40 @@
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Tee teilen. Menschen begegnen. Bonn-Südstadt."
   },
+  "/en/veranstaltungen": {
+    "image": "/assets/social/veranstaltungen-en-b140a70d47.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, Share tea. Meet people. Bonn-Südstadt."
+  },
+  "/es/veranstaltungen": {
+    "image": "/assets/social/veranstaltungen-es-6076fa182f.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Compartir té. Conocer personas. Bonn-Südstadt."
+  },
   "/geschenkbox": {
     "image": "/assets/social/geschenkbox-abef41c1d9.jpg",
     "width": 1200,
     "height": 630,
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Freude verschenken. Persönlich ausgewählt. Bonn-Südstadt."
+  },
+  "/en/geschenkbox": {
+    "image": "/assets/social/geschenkbox-en-d1a404c2b9.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, Give a little joy. Personally selected. Bonn-Südstadt."
+  },
+  "/es/geschenkbox": {
+    "image": "/assets/social/geschenkbox-es-ab8702661c.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Regalar alegría. Elegido personalmente. Bonn-Südstadt."
   },
   "/impressum": {
     "image": "/assets/social/impressum-9c24ba5f81.jpg",
@@ -48,6 +153,20 @@
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Impressum. Lupercia · Maria Moreno. Bonn-Südstadt."
   },
+  "/en/impressum": {
+    "image": "/assets/social/impressum-en-5eaecd6fbe.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Full Lupercia logo, Legal notice. Lupercia · Maria Moreno. Bonn-Südstadt."
+  },
+  "/es/impressum": {
+    "image": "/assets/social/impressum-es-02ab105489.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Aviso legal. Lupercia · Maria Moreno. Bonn-Südstadt."
+  },
   "/datenschutz": {
     "image": "/assets/social/datenschutz-26f7de678f.jpg",
     "width": 1200,
@@ -55,11 +174,18 @@
     "type": "image/jpeg",
     "alt": "Vollständiges Lupercia-Logo, Datenschutz. Ihre Privatsphäre. Bonn-Südstadt."
   },
-  "/mate": {
-    "image": "/assets/social/tee-genuss-f98f712a79.jpg",
+  "/en/datenschutz": {
+    "image": "/assets/social/datenschutz-en-0079ee0747.jpg",
     "width": 1200,
     "height": 630,
     "type": "image/jpeg",
-    "alt": "Vollständiges Lupercia-Logo, Mate aus Argentinien. Mitten in Bonn. Bonn-Südstadt."
+    "alt": "Full Lupercia logo, Privacy policy. Your privacy. Bonn-Südstadt."
+  },
+  "/es/datenschutz": {
+    "image": "/assets/social/datenschutz-es-be277ca1c9.jpg",
+    "width": 1200,
+    "height": 630,
+    "type": "image/jpeg",
+    "alt": "Logotipo completo de Lupercia, Política de privacidad. Tu privacidad. Bonn-Südstadt."
   }
 }
