@@ -13,11 +13,13 @@
     "format": "oxfmt",
     "preview": "node scripts/serve.mjs",
     "typecheck": "tsc --noEmit --incremental false",
-    "prebuild": "npm run check:i18n && node scripts/generate-social-previews.mjs && node scripts/generate-seo.mjs",
+    "prebuild": "node scripts/generate-responsive-images.mjs && npm run check:i18n && node scripts/generate-social-previews.mjs && node scripts/generate-seo.mjs",
     "check:seo": "node scripts/check-seo.mjs",
-    "postbuild": "npm run check:seo && npm run check:privacy",
+    "postbuild": "npm run check:seo && npm run check:privacy && npm run check:images",
     "check:privacy": "node --experimental-strip-types --test tests/consent.test.mjs",
-    "check:i18n": "node scripts/check-i18n.mjs"
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "predev": "node scripts/generate-responsive-images.mjs",
+    "check:images": "node scripts/check-images.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

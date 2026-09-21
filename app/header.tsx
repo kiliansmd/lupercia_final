@@ -3,7 +3,7 @@ import { useTranslation } from './i18n';
 import Link from './site-link';
 import { LanguageSwitcher } from './language-switcher';
 import { basePath } from './i18n-core';
-import Image from 'next/image';
+import Image from './responsive-image';
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
@@ -55,6 +55,13 @@ export function Header() {
   }, []);
   return (
     <header className="site-header">
+      <noscript>
+        <style>
+          {
+            '@media(max-width:760px){.site-header .nav-wrap nav{display:flex;flex-direction:column}.site-header .menu-toggle{display:none}}'
+          }
+        </style>
+      </noscript>
       <div className="topline">
         <Link href={maps} target="_blank" rel="noreferrer">
           {t('Argelanderstraße 75 · Bonn Südstadt ')}
@@ -69,21 +76,16 @@ export function Header() {
       <div className="masthead">
         <LanguageSwitcher />
         <Link href="/" className="brand" aria-label={t('Lupercia Startseite')}>
-          <picture>
-            <source
-              srcSet="/assets/lupercia-mark-280.webp 280w, /assets/lupercia-mark-420.webp 420w, /assets/lupercia-mark-600.webp 600w, /assets/lupercia-mark.webp 930w"
-              sizes="(max-width: 760px) 140px, (max-width: 1120px) 168px, (max-width: 1307px) 15vw, 196px"
-            />
-            <Image
-              className="header-brand-mark"
-              src="/assets/lupercia-mark-420.webp"
-              alt={t('Lupercia – Finest Teas & Tea Ceremonies')}
-              width={930}
-              height={927}
-              loading="eager"
-              fetchPriority="high"
-            />
-          </picture>
+          <Image
+            className="header-brand-mark"
+            src="/assets/lupercia-mark.webp"
+            alt={t('Lupercia – Finest Teas & Tea Ceremonies')}
+            sizes="(max-width: 760px) 140px, (max-width: 1120px) 168px, (max-width: 1307px) 15vw, 196px"
+            width={930}
+            height={927}
+            loading="eager"
+            fetchPriority="high"
+          />
         </Link>
         <button
           type="button"

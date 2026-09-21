@@ -7,6 +7,7 @@ import {
   basePath,
   localizedHref,
   translate,
+  languageTags,
 } from '../app/i18n-core.ts';
 
 const config = JSON.parse(
@@ -184,6 +185,20 @@ for (const path of paths) {
       graph.some((node) => node['@type'] === 'WebSite'),
       `${path}: website schema missing`,
     );
+    assert.deepEqual(
+      graph.find((node) => node['@type'] === 'WebSite').inLanguage,
+      languages.map((language) => languageTags[language]),
+    );
+    const webPage = graph.find((node) =>
+      ['WebPage', 'AboutPage'].includes(node['@type']),
+    );
+    assert.equal(webPage.inLanguage, languageTags[language]);
+    assert.equal(webPage.primaryImageOfPage.caption, t(page.imageAlt));
+    const primaryImage = await sharp(
+      await readFile(new URL(`.${page.image}`, output)),
+    ).metadata();
+    assert.equal(webPage.primaryImageOfPage.width, primaryImage.width);
+    assert.equal(webPage.primaryImageOfPage.height, primaryImage.height);
     if (base !== '/') {
       const breadcrumb = graph.find(
         (node) => node['@type'] === 'BreadcrumbList',
@@ -244,6 +259,29 @@ for (const path of paths) {
   }
 }
 const sitemap = await readFile(new URL('sitemap.xml', output), 'utf8');
+for (const [, entry] of sitemap.matchAll(/<url>(.*?)<\/url>/gs)) {
+  const location = decode(entry.match(/<loc>(.*?)<\/loc>/)[1]);
+  const path = basePath(new URL(location).pathname);
+  const alternatives = tags(entry, 'xhtml:link');
+  assert.equal(
+    alternatives.length,
+    4,
+    `${location}: sitemap language alternatives`,
+  );
+  for (const locale of [...languages, 'x-default']) {
+    assert.equal(
+      alternatives.find((tag) => tag.hreflang === locale)?.href,
+      new URL(
+        localizedHref(path, locale === 'x-default' ? 'de' : locale),
+        config.origin,
+      ).href,
+    );
+  }
+  assert.equal(
+    decode(entry.match(/<image:loc>(.*?)<\/image:loc>/)[1]),
+    new URL(config.pages[path].image, config.origin).href,
+  );
+}
 assert.deepEqual(
   [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => decode(match[1])),
   languages.flatMap((language) =>

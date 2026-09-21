@@ -1,6 +1,6 @@
 'use client';
 import { useTranslation } from './i18n';
-import Image from 'next/image';
+import Image from './responsive-image';
 import { CookieSettingsButton } from './consent';
 import Link from './site-link';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
@@ -16,20 +16,15 @@ export function Footer() {
           className="footer-brand"
           aria-label={t('Lupercia Startseite')}
         >
-          <picture>
-            <source
-              srcSet="/assets/lupercia-mark-280.webp 280w, /assets/lupercia-mark-420.webp 420w, /assets/lupercia-mark-600.webp 600w, /assets/lupercia-mark.webp 930w"
-              sizes="220px"
-            />
-            <Image
-              className="footer-brand-mark"
-              src="/assets/lupercia-mark-420.webp"
-              alt={t('Lupercia – Finest Teas & Tea Ceremonies')}
-              width={930}
-              height={927}
-              loading="lazy"
-            />
-          </picture>
+          <Image
+            className="footer-brand-mark"
+            src="/assets/lupercia-mark.webp"
+            alt={t('Lupercia – Finest Teas & Tea Ceremonies')}
+            sizes="(max-width: 760px) 176px, 220px"
+            width={930}
+            height={927}
+            loading="lazy"
+          />
         </Link>
         <p className="footer-signature">{t('Eine Welt rund um Tee.')}</p>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 import { useTranslation } from '../i18n';
 import { PageSeo } from '../seo-content';
-import Image from 'next/image';
+import Image from '../responsive-image';
 import { TextLink, phone } from '../site-chrome';
 import { Invitation } from '../editorial';
 export default function Gifts() {
