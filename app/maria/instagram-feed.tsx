@@ -1,8 +1,11 @@
+'use client';
+import { useTranslation } from '../i18n';
 import { InstagramFeedPlayer } from './instagram-feed-player';
 import Link from '../site-link';
 import { TextLink } from '../site-chrome';
 
 export default function InstagramFeed() {
+  const { t } = useTranslation();
   return (
     <section
       className="maria-journey"
@@ -11,21 +14,21 @@ export default function InstagramFeed() {
     >
       <header className="maria-journey-heading">
         <div>
-          <span className="eyebrow">Unsere Geschichte geht weiter</span>
+          <span className="eyebrow">{t('Unsere Geschichte geht weiter')}</span>
           <h2 id="maria-journey-title">
-            Kleine Einblicke.
+            {t('Kleine Einblicke.')}
             <br />
-            <em>Eine Reise voller Tee.</em>
+            <em>{t('Eine Reise voller Tee.')}</em>
           </h2>
         </div>
         <div className="maria-journey-copy">
           <p>
-            Neue Tees, Begegnungen im Salon und die kleinen Freuden dazwischen.
-            Begleiten Sie Maria und Lupercia auf Instagram und bleiben Sie Teil
-            unserer Geschichte.
+            {t(
+              'Neue Tees, Begegnungen im Salon und die kleinen Freuden dazwischen. Begleiten Sie Maria und Lupercia auf Instagram und bleiben Sie Teil unserer Geschichte.',
+            )}
           </p>
           <TextLink href="https://www.instagram.com/lupercia.de/" external>
-            @lupercia.de folgen
+            {t('@lupercia.de folgen')}
           </TextLink>
         </div>
       </header>
@@ -33,8 +36,10 @@ export default function InstagramFeed() {
         <InstagramFeedPlayer />
       </div>
       <p className="maria-journey-note">
-        Einblicke aus unserem Alltag ·{' '}
-        <Link href="/datenschutz#instagram-feed">Datenschutz zum Feed</Link>
+        {t('Einblicke aus unserem Alltag ·')}{' '}
+        <Link href="/datenschutz#instagram-feed">
+          {t('Datenschutz zum Feed')}
+        </Link>
       </p>
     </section>
   );

@@ -1,6 +1,13 @@
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import sharp from 'sharp';
+import {
+  languages,
+  languageFromPath,
+  basePath,
+  localizedHref,
+  translate,
+} from '../app/i18n-core.ts';
 
 const config = JSON.parse(
   await readFile(new URL('../seo.config.json', import.meta.url), 'utf8'),
@@ -9,12 +16,15 @@ const output = new URL('../dist/client/', import.meta.url);
 const previews = JSON.parse(
   await readFile(new URL('../social-previews.json', import.meta.url), 'utf8'),
 );
-const paths = [
+const sourcePaths = [
   ...Object.keys(config.pages),
   '/impressum',
   '/datenschutz',
   '/404',
 ];
+const paths = languages.flatMap((language) =>
+  sourcePaths.map((path) => localizedHref(path, language)),
+);
 const html = Object.fromEntries(
   await Promise.all(
     paths.map(async (path) => [
@@ -36,7 +46,7 @@ const decode = (text) =>
 const attrs = (tag) =>
   Object.fromEntries(
     [...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(([, key, value]) => [
-      key,
+      key.toLowerCase(),
       decode(value),
     ]),
   );
@@ -53,9 +63,12 @@ const descriptions = new Set();
 let linksChecked = 0;
 for (const path of paths) {
   const source = html[path];
+  const language = languageFromPath(path);
+  const base = basePath(path);
+  const t = (text) => translate(text, language);
   const head = source.match(/<head\b[^>]*>(.*?)<\/head>/s)?.[1] || '';
-  const indexable = Object.hasOwn(config.pages, path);
-  assert.match(source, /<html[^>]+lang="de"/, `${path}: language missing`);
+  const indexable = Object.hasOwn(config.pages, base);
+  assert.ok(source.includes(`lang="${language}"`), `${path}: language missing`);
   assert.equal(
     (source.match(/<h1\b/g) || []).length,
     1,
@@ -70,7 +83,7 @@ for (const path of paths) {
     indexable ? robots.includes('index') : true,
     `${path}: robots missing`,
   );
-  if (path !== '/404') {
+  if (base !== '/404') {
     const title = decode(head.match(/<title>(.*?)<\/title>/s)?.[1] || '');
     const description = meta(head, 'description');
     assert.ok(title.length > 0, `${path}: server-rendered title missing`);
@@ -82,7 +95,7 @@ for (const path of paths) {
       'og:title': title,
       'og:description': description[0],
       'og:site_name': config.name,
-      'og:locale': 'de_DE',
+      'og:locale': { de: 'de_DE', en: 'en_GB', es: 'es_ES' }[language],
       'og:type': 'website',
       'og:url': new URL(path, config.origin).href,
       'og:image': imageUrl,
@@ -118,23 +131,37 @@ for (const path of paths) {
       new URL(path, config.origin).href,
       `${path}: canonical URL`,
     );
+    const alternates = tags(head, 'link').filter(
+      (tag) => tag.rel === 'alternate' && tag.hreflang,
+    );
+    assert.equal(alternates.length, 4, `${path}: language alternatives count`);
+    for (const locale of [...languages, 'x-default']) {
+      assert.equal(
+        new URL(alternates.find((tag) => tag.hreflang === locale)?.href).href,
+        new URL(
+          localizedHref(base, locale === 'x-default' ? 'de' : locale),
+          config.origin,
+        ).href,
+        `${path}: ${locale} alternative`,
+      );
+    }
   }
   if (indexable) {
-    const page = config.pages[path];
+    const page = config.pages[base];
     const title = decode(source.match(/<title>(.*?)<\/title>/s)[1]);
-    assert.equal(title, page.title, `${path}: title`);
+    assert.equal(title, t(page.title), `${path}: title`);
     assert.ok(!titles.has(title), `${path}: duplicate title`);
     titles.add(title);
     assert.deepEqual(
       meta(source, 'description'),
-      [page.description],
+      [t(page.description)],
       `${path}: description`,
     );
     assert.ok(
-      !descriptions.has(page.description),
+      !descriptions.has(t(page.description)),
       `${path}: duplicate description`,
     );
-    descriptions.add(page.description);
+    descriptions.add(t(page.description));
     assert.deepEqual(
       meta(source, 'og:url').map((url) => new URL(url).href),
       [new URL(path, config.origin).href],
@@ -157,7 +184,7 @@ for (const path of paths) {
       graph.some((node) => node['@type'] === 'WebSite'),
       `${path}: website schema missing`,
     );
-    if (path !== '/') {
+    if (base !== '/') {
       const breadcrumb = graph.find(
         (node) => node['@type'] === 'BreadcrumbList',
       );
@@ -165,7 +192,7 @@ for (const path of paths) {
         breadcrumb.itemListElement[1].item,
         new URL(path, config.origin).href,
       );
-      assert.match(source, /aria-label="Brotkrümelnavigation"/);
+      assert.ok(source.includes(`aria-label="${t('Brotkrümelnavigation')}"`));
     }
   }
   for (const link of tags(source, 'a').filter(
@@ -219,7 +246,11 @@ for (const path of paths) {
 const sitemap = await readFile(new URL('sitemap.xml', output), 'utf8');
 assert.deepEqual(
   [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => decode(match[1])),
-  Object.keys(config.pages).map((path) => new URL(path, config.origin).href),
+  languages.flatMap((language) =>
+    Object.keys(config.pages).map(
+      (path) => new URL(localizedHref(path, language), config.origin).href,
+    ),
+  ),
 );
 const robots = await readFile(new URL('robots.txt', output), 'utf8');
 assert.ok(robots.includes(`Sitemap: ${config.origin}/sitemap.xml`));

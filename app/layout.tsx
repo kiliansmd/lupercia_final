@@ -1,10 +1,11 @@
-import Link from './site-link';
+import { LanguageDocument, SkipLink } from './i18n';
 import type { Metadata } from 'next';
 import { Footer } from './site-chrome';
 import { Header } from './header';
 import './globals.css';
 import { ConsentProvider } from './consent';
-import { siteOrigin, SiteSchema } from './seo';
+import { siteOrigin } from './seo';
+import { SiteSchema } from './seo-content';
 
 export const dynamic = 'force-static';
 
@@ -28,18 +29,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de">
+    <LanguageDocument>
       <body>
         <SiteSchema />
-        <Link className="skip-link" href="#main-content">
-          Zum Inhalt
-        </Link>
+        <SkipLink />
         <ConsentProvider>
           <Header />
           {children}
           <Footer />
         </ConsentProvider>
       </body>
-    </html>
+    </LanguageDocument>
   );
 }

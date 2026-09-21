@@ -4095,6 +4095,11 @@ body:has(.consent-dialog[open]) { overflow: hidden; }
 @media print { .consent-banner, .consent-dialog, .consent-storage-notice, .privacy-settings-link { display: none; } }
 
 /* Additional salon photographs: native responsive images, without a carousel. */
+#tea-feast-title {
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
 .detail-photo {
   display: block;
 }
@@ -4263,4 +4268,23 @@ body:has(.consent-dialog[open]) { overflow: hidden; }
 
 .home-mosaic .photo-link > picture img {
   height: 100%;
+}
+
+/* Language links remain visible beside the brand, including with the menu closed. */
+.language-switcher { margin: 0; min-inline-size: 0; display: flex; gap: 2px; align-items: center; position: absolute; right: 56px; top: 50%; transform: translateY(-50%); padding: 3px; border: 1px solid var(--line); border-radius: 24px; }
+.language-switcher a { display: grid; place-items: center; width: 34px; min-height: 40px; font-size: 12px; font-weight: 600; border-radius: 50%; }
+.language-switcher a[aria-current="true"] { color: var(--paper); background: var(--accent); }
+.language-switcher a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (min-width: 761px) {
+  .nav-wrap nav { flex-wrap: wrap; gap: 0 clamp(14px, 2.4vw, 43px); padding-inline: 20px; }
+}
+@media (max-width: 760px) {
+  .language-switcher { right: auto; left: 16px; }
+  .language-switcher a { width: 27px; min-height: 38px; font-size: 11px; }
+}
+@media (max-width: 360px) {
+  .language-switcher { left: 8px; }
+  .language-switcher a { width: 24px; }
+  .header-brand-mark { width: 116px; }
+  .menu-toggle { right: 8px; }
 }

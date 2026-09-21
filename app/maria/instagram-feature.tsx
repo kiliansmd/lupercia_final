@@ -1,5 +1,5 @@
 'use client';
-
+import { useTranslation } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, RotateCcw } from 'lucide-react';
 import Link from '../site-link';
@@ -16,6 +16,7 @@ export default function InstagramFeature() {
 }
 
 function InstagramPlayer() {
+  const { t } = useTranslation();
   const frame = useRef<HTMLIFrameElement>(null);
   const [attempt, setAttempt] = useState(0);
   const [status, setStatus] = useState<'loading' | 'loaded' | 'slow' | 'error'>(
@@ -81,7 +82,7 @@ function InstagramPlayer() {
           ref={frame}
           className="instagram-frame"
           src={`${postUrl}embed/?cr=1&v=14`}
-          title="DW Volos: Maria und die Mate-Kultur bei Lupercia"
+          title={t('DW Volos: Maria und die Mate-Kultur bei Lupercia')}
           loading="eager"
           allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
           allowFullScreen
@@ -92,8 +93,9 @@ function InstagramPlayer() {
       </div>
       {(status === 'slow' || status === 'error') && (
         <output className="instagram-notice">
-          Der Instagram-Player lädt gerade nicht. Versuchen Sie es erneut oder
-          öffnen Sie den Beitrag direkt auf Instagram.
+          {t(
+            'Der Instagram-Player lädt gerade nicht. Versuchen Sie es erneut oder öffnen Sie den Beitrag direkt auf Instagram.',
+          )}
         </output>
       )}
       <div className="instagram-actions">
@@ -102,12 +104,15 @@ function InstagramPlayer() {
           onClick={reload}
           aria-controls="dw-instagram-player"
         >
-          <RotateCcw size={15} aria-hidden="true" /> Video neu laden
+          <RotateCcw size={15} aria-hidden="true" /> {t(' Video neu laden')}
         </button>
         <Link href={postUrl} target="_blank" rel="noopener noreferrer">
-          Auf Instagram ansehen <ArrowUpRight size={15} aria-hidden="true" />
+          {t('Auf Instagram ansehen ')}
+          <ArrowUpRight size={15} aria-hidden="true" />
         </Link>
-        <Link href="/datenschutz#instagram">Instagram · Datenschutz</Link>
+        <Link href="/datenschutz#instagram">
+          {t('Instagram · Datenschutz')}
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
 'use client';
+import { useTranslation } from './i18n';
 import Link from './site-link';
+import { LanguageSwitcher } from './language-switcher';
+import { basePath } from './i18n-core';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
@@ -27,6 +30,7 @@ function InstagramIcon() {
 }
 
 export function Header() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const toggle = useRef<HTMLButtonElement>(null);
@@ -53,15 +57,18 @@ export function Header() {
     <header className="site-header">
       <div className="topline">
         <Link href={maps} target="_blank" rel="noreferrer">
-          Argelanderstraße 75 · Bonn Südstadt <ArrowUpRight size={12} />
+          {t('Argelanderstraße 75 · Bonn Südstadt ')}
+          <ArrowUpRight size={12} />
         </Link>
         <span>
-          Di–Fr 11–19 Uhr <span className="dot">·</span> Sa 12–17 Uhr
+          {t('Di–Fr 11–19 Uhr ')}
+          <span className="dot">·</span> {t(' Sa 12–17 Uhr')}
         </span>
         <Link href={phone}>01516 7970350</Link>
       </div>
       <div className="masthead">
-        <Link href="/" className="brand" aria-label="Lupercia Startseite">
+        <LanguageSwitcher />
+        <Link href="/" className="brand" aria-label={t('Lupercia Startseite')}>
           <picture>
             <source
               srcSet="/assets/lupercia-mark-280.webp 280w, /assets/lupercia-mark-420.webp 420w, /assets/lupercia-mark-600.webp 600w, /assets/lupercia-mark.webp 930w"
@@ -70,7 +77,7 @@ export function Header() {
             <Image
               className="header-brand-mark"
               src="/assets/lupercia-mark-420.webp"
-              alt="Lupercia – Finest Teas & Tea Ceremonies"
+              alt={t('Lupercia – Finest Teas & Tea Ceremonies')}
               width={930}
               height={927}
               loading="eager"
@@ -84,24 +91,22 @@ export function Header() {
           className="menu-toggle"
           aria-controls="primary-nav"
           aria-expanded={open}
-          aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
+          aria-label={t(open ? 'Menü schließen' : 'Menü öffnen')}
           onClick={() => setOpen(!open)}
         >
           {open ? <X /> : <Menu />}
         </button>
       </div>
       <div className={`nav-wrap ${open ? 'is-open' : ''}`}>
-        <nav id="primary-nav" aria-label="Hauptnavigation">
+        <nav id="primary-nav" aria-label={t('Hauptnavigation')}>
           {links.map(([href, text]) => (
             <Link
               key={href}
               href={href}
-              aria-current={
-                pathname.replace(/\/$/, '') === href ? 'page' : undefined
-              }
+              aria-current={basePath(pathname) === href ? 'page' : undefined}
               onClick={() => setOpen(false)}
             >
-              {text}
+              {t(text)}
             </Link>
           ))}
           <Link
@@ -109,17 +114,18 @@ export function Header() {
             href="/salon#besuch"
             onClick={() => setOpen(false)}
           >
-            Zu Besuch <ArrowUpRight size={16} />
+            {t('Zu Besuch ')}
+            <ArrowUpRight size={16} />
           </Link>
           <Link
             className="nav-instagram"
             href="/maria#lupercias-reise"
-            aria-label="Zur eingebetteten Instagram-Sektion"
-            title="Instagram-Einblicke"
+            aria-label={t('Zur eingebetteten Instagram-Sektion')}
+            title={t('Instagram-Einblicke')}
             onClick={() => setOpen(false)}
           >
             <InstagramIcon />
-            <span>Instagram</span>
+            <span>{t('Instagram')}</span>
           </Link>
         </nav>
       </div>
