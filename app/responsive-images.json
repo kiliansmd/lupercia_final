@@ -1,0 +1,922 @@
+{
+  "/assets/images/geschenkbox/geschenkkorb.webp": {
+    "width": 1400,
+    "height": 1050,
+    "variants": [
+      {
+        "src": "/assets/responsive/geschenkkorb-137208f61ed9-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/geschenkkorb-137208f61ed9-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/geschenkkorb-137208f61ed9-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/geschenkkorb-137208f61ed9-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/geschenkkorb-137208f61ed9-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/responsive/geschenkkorb-137208f61ed9-1400.webp",
+        "width": 1400
+      }
+    ]
+  },
+  "/assets/images/geschenkbox/kleine-aufmerksamkeit.webp": {
+    "width": 1000,
+    "height": 1171,
+    "variants": [
+      {
+        "src": "/assets/responsive/kleine-aufmerksamkeit-f3896e15902a-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/kleine-aufmerksamkeit-f3896e15902a-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/kleine-aufmerksamkeit-f3896e15902a-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/kleine-aufmerksamkeit-f3896e15902a-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/kleine-aufmerksamkeit-f3896e15902a-1000.webp",
+        "width": 1000
+      }
+    ]
+  },
+  "/assets/images/geschenkbox/rosenbox.webp": {
+    "width": 1086,
+    "height": 1448,
+    "variants": [
+      {
+        "src": "/assets/responsive/rosenbox-4f75f12164b0-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/rosenbox-4f75f12164b0-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/rosenbox-4f75f12164b0-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/rosenbox-4f75f12164b0-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/rosenbox-4f75f12164b0-1086.webp",
+        "width": 1086
+      }
+    ]
+  },
+  "/assets/images/geschenkbox/tee-und-feines.webp": {
+    "width": 1600,
+    "height": 1096,
+    "variants": [
+      {
+        "src": "/assets/responsive/tee-und-feines-3c6559a4de15-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/tee-und-feines-3c6559a4de15-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/tee-und-feines-3c6559a4de15-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/tee-und-feines-3c6559a4de15-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/tee-und-feines-3c6559a4de15-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/responsive/tee-und-feines-3c6559a4de15-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/assets/images/geschenkbox-hero.webp": {
+    "width": 1600,
+    "height": 1097,
+    "variants": [
+      {
+        "src": "/assets/responsive/geschenkbox-hero-9e8dbabfc4d2-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-hero-9e8dbabfc4d2-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-hero-9e8dbabfc4d2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-hero-9e8dbabfc4d2-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-hero-9e8dbabfc4d2-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-hero-9e8dbabfc4d2-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/assets/images/hero/geschenkbox.webp": {
+    "width": 1086,
+    "height": 1448,
+    "variants": [
+      {
+        "src": "/assets/responsive/geschenkbox-4f75f12164b0-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-4f75f12164b0-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-4f75f12164b0-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-4f75f12164b0-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/geschenkbox-4f75f12164b0-1086.webp",
+        "width": 1086
+      }
+    ]
+  },
+  "/assets/images/hero/salon.webp": {
+    "width": 1200,
+    "height": 1420,
+    "variants": [
+      {
+        "src": "/assets/responsive/salon-6d71984cd36a-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/salon-6d71984cd36a-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/salon-6d71984cd36a-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/salon-6d71984cd36a-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/salon-6d71984cd36a-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/assets/images/hero/tee-genuss.webp": {
+    "width": 720,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "/assets/responsive/tee-genuss-4785f3cd8601-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/tee-genuss-4785f3cd8601-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/tee-genuss-4785f3cd8601-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/tee-genuss-4785f3cd8601-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "/assets/images/hero/veranstaltungen.webp": {
+    "width": 1200,
+    "height": 827,
+    "variants": [
+      {
+        "src": "/assets/responsive/veranstaltungen-9e3bf7cb8c89-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/veranstaltungen-9e3bf7cb8c89-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/veranstaltungen-9e3bf7cb8c89-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/veranstaltungen-9e3bf7cb8c89-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/veranstaltungen-9e3bf7cb8c89-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/assets/images/lupercia-fensterblick.webp": {
+    "width": 1023,
+    "height": 1537,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-fensterblick-6d683057f3c2-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-fensterblick-6d683057f3c2-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-fensterblick-6d683057f3c2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-fensterblick-6d683057f3c2-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/lupercia-fensterblick-6d683057f3c2-1023.webp",
+        "width": 1023
+      }
+    ]
+  },
+  "/assets/images/lupercia-geschenkbox.webp": {
+    "width": 1086,
+    "height": 1448,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-geschenkbox-3185efe0d209-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-geschenkbox-3185efe0d209-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-geschenkbox-3185efe0d209-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-geschenkbox-3185efe0d209-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/lupercia-geschenkbox-3185efe0d209-1086.webp",
+        "width": 1086
+      }
+    ]
+  },
+  "/assets/images/lupercia-porzellan-etagere.webp": {
+    "width": 1086,
+    "height": 1448,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-porzellan-etagere-6f28f66d82b2-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-porzellan-etagere-6f28f66d82b2-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-porzellan-etagere-6f28f66d82b2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-porzellan-etagere-6f28f66d82b2-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/lupercia-porzellan-etagere-6f28f66d82b2-1086.webp",
+        "width": 1086
+      }
+    ]
+  },
+  "/assets/images/lupercia-salon-hero.webp": {
+    "width": 1023,
+    "height": 1537,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-salon-hero-9db1429be555-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-salon-hero-9db1429be555-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-salon-hero-9db1429be555-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-salon-hero-9db1429be555-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/lupercia-salon-hero-9db1429be555-1023.webp",
+        "width": 1023
+      }
+    ]
+  },
+  "/assets/images/lupercia-schaufenster.webp": {
+    "width": 742,
+    "height": 1020,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-schaufenster-94a13942444f-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-schaufenster-94a13942444f-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-schaufenster-94a13942444f-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-schaufenster-94a13942444f-742.webp",
+        "width": 742
+      }
+    ]
+  },
+  "/assets/images/lupercia-startseite-hero.webp": {
+    "width": 1023,
+    "height": 1537,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-startseite-hero-d140a0e4a916-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-startseite-hero-d140a0e4a916-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-startseite-hero-d140a0e4a916-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-startseite-hero-d140a0e4a916-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/lupercia-startseite-hero-d140a0e4a916-1023.webp",
+        "width": 1023
+      }
+    ]
+  },
+  "/assets/images/lupercia-tea-time-tisch.webp": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-tea-time-tisch-362638c1fa4f-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-tea-time-tisch-362638c1fa4f-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-tea-time-tisch-362638c1fa4f-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-tea-time-tisch-362638c1fa4f-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/lupercia-tea-time-tisch-362638c1fa4f-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/responsive/lupercia-tea-time-tisch-362638c1fa4f-1448.webp",
+        "width": 1448
+      }
+    ]
+  },
+  "/assets/images/lupercia-tee-des-tages.webp": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-tee-des-tages-d557d4a63fb8-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/lupercia-tee-des-tages-d557d4a63fb8-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/lupercia-tee-des-tages-d557d4a63fb8-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/lupercia-tee-des-tages-d557d4a63fb8-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/lupercia-tee-des-tages-d557d4a63fb8-1122.webp",
+        "width": 1122
+      }
+    ]
+  },
+  "/assets/images/maria/maria-teeberatung.webp": {
+    "width": 1100,
+    "height": 1467,
+    "variants": [
+      {
+        "src": "/assets/responsive/maria-teeberatung-0e2db1c7e112-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/maria-teeberatung-0e2db1c7e112-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/maria-teeberatung-0e2db1c7e112-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/maria-teeberatung-0e2db1c7e112-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/maria-teeberatung-0e2db1c7e112-1100.webp",
+        "width": 1100
+      }
+    ]
+  },
+  "/assets/images/maria/teeperlen.webp": {
+    "width": 800,
+    "height": 1067,
+    "variants": [
+      {
+        "src": "/assets/responsive/teeperlen-4727d980fbcb-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/teeperlen-4727d980fbcb-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/teeperlen-4727d980fbcb-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/teeperlen-4727d980fbcb-800.webp",
+        "width": 800
+      }
+    ]
+  },
+  "/assets/images/mate-trinkgefaesse-hero.webp": {
+    "width": 1600,
+    "height": 837,
+    "variants": [
+      {
+        "src": "/assets/responsive/mate-trinkgefaesse-hero-f55e3daaa795-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/mate-trinkgefaesse-hero-f55e3daaa795-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/mate-trinkgefaesse-hero-f55e3daaa795-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/mate-trinkgefaesse-hero-f55e3daaa795-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/mate-trinkgefaesse-hero-f55e3daaa795-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/assets/responsive/mate-trinkgefaesse-hero-f55e3daaa795-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "/assets/images/salon/bluetenporzellan.webp": {
+    "width": 900,
+    "height": 998,
+    "variants": [
+      {
+        "src": "/assets/responsive/bluetenporzellan-1e05599d935d-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/bluetenporzellan-1e05599d935d-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/bluetenporzellan-1e05599d935d-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/bluetenporzellan-1e05599d935d-900.webp",
+        "width": 900
+      }
+    ]
+  },
+  "/assets/images/salon/dunoon-tassen.webp": {
+    "width": 900,
+    "height": 979,
+    "variants": [
+      {
+        "src": "/assets/responsive/dunoon-tassen-b68511dcb022-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/dunoon-tassen-b68511dcb022-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/dunoon-tassen-b68511dcb022-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/dunoon-tassen-b68511dcb022-900.webp",
+        "width": 900
+      }
+    ]
+  },
+  "/assets/images/salon/kuchen-und-mate.webp": {
+    "width": 1200,
+    "height": 1124,
+    "variants": [
+      {
+        "src": "/assets/responsive/kuchen-und-mate-99494fce6446-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-99494fce6446-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-99494fce6446-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-99494fce6446-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-99494fce6446-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/assets/images/salon/maria-teeberatung.webp": {
+    "width": 960,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "/assets/responsive/maria-teeberatung-a7ab8d1cee10-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/maria-teeberatung-a7ab8d1cee10-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/maria-teeberatung-a7ab8d1cee10-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/maria-teeberatung-a7ab8d1cee10-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/salon/mategefaesse.webp": {
+    "width": 1100,
+    "height": 1343,
+    "variants": [
+      {
+        "src": "/assets/responsive/mategefaesse-105f0fd9610e-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/mategefaesse-105f0fd9610e-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/mategefaesse-105f0fd9610e-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/mategefaesse-105f0fd9610e-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/mategefaesse-105f0fd9610e-1100.webp",
+        "width": 1100
+      }
+    ]
+  },
+  "/assets/images/salon/salon.webp": {
+    "width": 1200,
+    "height": 1420,
+    "variants": [
+      {
+        "src": "/assets/responsive/salon-b7d326aca83e-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/salon-b7d326aca83e-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/salon-b7d326aca83e-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/salon-b7d326aca83e-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/salon-b7d326aca83e-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/assets/images/salon/schaufenster.webp": {
+    "width": 1023,
+    "height": 1537,
+    "variants": [
+      {
+        "src": "/assets/responsive/schaufenster-715541380b58-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/schaufenster-715541380b58-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/schaufenster-715541380b58-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/schaufenster-715541380b58-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/schaufenster-715541380b58-1023.webp",
+        "width": 1023
+      }
+    ]
+  },
+  "/assets/images/salon/teekanne-rosa.webp": {
+    "width": 900,
+    "height": 1061,
+    "variants": [
+      {
+        "src": "/assets/responsive/teekanne-rosa-8eaa249457a6-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/teekanne-rosa-8eaa249457a6-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/teekanne-rosa-8eaa249457a6-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/teekanne-rosa-8eaa249457a6-900.webp",
+        "width": 900
+      }
+    ]
+  },
+  "/assets/images/tee-genuss/gruener-tee.webp": {
+    "width": 960,
+    "height": 1331,
+    "variants": [
+      {
+        "src": "/assets/responsive/gruener-tee-f8c03ec698e5-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/gruener-tee-f8c03ec698e5-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/gruener-tee-f8c03ec698e5-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/gruener-tee-f8c03ec698e5-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/images/tee-genuss/kuchen-und-mate.webp": {
+    "width": 1100,
+    "height": 1031,
+    "variants": [
+      {
+        "src": "/assets/responsive/kuchen-und-mate-4affc86ebac1-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-4affc86ebac1-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-4affc86ebac1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-4affc86ebac1-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/kuchen-und-mate-4affc86ebac1-1100.webp",
+        "width": 1100
+      }
+    ]
+  },
+  "/assets/images/tee-genuss/kuchen.webp": {
+    "width": 900,
+    "height": 995,
+    "variants": [
+      {
+        "src": "/assets/responsive/kuchen-9288047e73fa-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/kuchen-9288047e73fa-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/kuchen-9288047e73fa-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/kuchen-9288047e73fa-900.webp",
+        "width": 900
+      }
+    ]
+  },
+  "/assets/images/tee-genuss/porzellan-und-tee.webp": {
+    "width": 1000,
+    "height": 1357,
+    "variants": [
+      {
+        "src": "/assets/responsive/porzellan-und-tee-6cd6b8a7eb90-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/porzellan-und-tee-6cd6b8a7eb90-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/porzellan-und-tee-6cd6b8a7eb90-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/porzellan-und-tee-6cd6b8a7eb90-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/porzellan-und-tee-6cd6b8a7eb90-1000.webp",
+        "width": 1000
+      }
+    ]
+  },
+  "/assets/images/tee-genuss/scones-tea-time.webp": {
+    "width": 1000,
+    "height": 1063,
+    "variants": [
+      {
+        "src": "/assets/responsive/scones-tea-time-cf38d75e3c01-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/scones-tea-time-cf38d75e3c01-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/scones-tea-time-cf38d75e3c01-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/scones-tea-time-cf38d75e3c01-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/scones-tea-time-cf38d75e3c01-1000.webp",
+        "width": 1000
+      }
+    ]
+  },
+  "/assets/images/tee-genuss/tea-time-etagere.webp": {
+    "width": 1200,
+    "height": 1600,
+    "variants": [
+      {
+        "src": "/assets/responsive/tea-time-etagere-018868d1be90-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/tea-time-etagere-018868d1be90-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/tea-time-etagere-018868d1be90-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/tea-time-etagere-018868d1be90-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/assets/responsive/tea-time-etagere-018868d1be90-1200.webp",
+        "width": 1200
+      }
+    ]
+  },
+  "/assets/images/tee-genuss/tee-im-glas.webp": {
+    "width": 960,
+    "height": 1280,
+    "variants": [
+      {
+        "src": "/assets/responsive/tee-im-glas-1dcecfdb169d-240.webp",
+        "width": 240
+      },
+      {
+        "src": "/assets/responsive/tee-im-glas-1dcecfdb169d-400.webp",
+        "width": 400
+      },
+      {
+        "src": "/assets/responsive/tee-im-glas-1dcecfdb169d-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/assets/responsive/tee-im-glas-1dcecfdb169d-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  "/assets/lupercia-mark.webp": {
+    "width": 930,
+    "height": 927,
+    "variants": [
+      {
+        "src": "/assets/responsive/lupercia-mark-fc9a6debec3f-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/assets/responsive/lupercia-mark-fc9a6debec3f-220.webp",
+        "width": 220
+      },
+      {
+        "src": "/assets/responsive/lupercia-mark-fc9a6debec3f-280.webp",
+        "width": 280
+      },
+      {
+        "src": "/assets/responsive/lupercia-mark-fc9a6debec3f-420.webp",
+        "width": 420
+      },
+      {
+        "src": "/assets/responsive/lupercia-mark-fc9a6debec3f-600.webp",
+        "width": 600
+      },
+      {
+        "src": "/assets/responsive/lupercia-mark-fc9a6debec3f-930.webp",
+        "width": 930
+      }
+    ]
+  }
+}

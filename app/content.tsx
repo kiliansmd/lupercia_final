@@ -2,7 +2,7 @@
 import { useTranslation } from './i18n';
 import { DetailPhoto } from './detail-photo';
 import { PageSeo } from './seo-content';
-import Image from 'next/image';
+import Image from './responsive-image';
 import Link from './site-link';
 import { ArrowUpRight } from 'lucide-react';
 import { TextLink, Visit } from './site-chrome';
@@ -107,7 +107,7 @@ export default function Home() {
             {tile.id === 'maria' ? (
               <DetailPhoto
                 name="maria-teetafel"
-                sizes="(max-width: 760px) 46vw, (max-width: 1440px) 30vw, 420px"
+                sizes="(max-width: 359px) calc(100vw - 36px), (max-width: 760px) calc((100vw - 48px) / 2), (max-width: 1440px) 30vw, 416px"
                 eager
               />
             ) : tile.id === 'events' ? (
@@ -125,13 +125,13 @@ export default function Home() {
                 alt={t(tile.alt)}
                 width={tile.width}
                 height={tile.height}
-                loading={index < 3 ? 'eager' : 'lazy'}
+                loading={index === 0 ? 'eager' : 'lazy'}
                 fetchPriority={index === 0 ? 'high' : undefined}
                 decoding="async"
                 sizes={
                   tile.id === 'mate'
-                    ? '(max-width: 760px) 92vw, (max-width: 1100px) calc(100vw - 64px), 88vw'
-                    : undefined
+                    ? '(max-width: 760px) calc(100vw - 36px), (max-width: 1100px) calc(100vw - 64px), (max-width: 1440px) calc(100vw - 112px), 1328px'
+                    : '(max-width: 359px) calc(100vw - 36px), (max-width: 760px) calc((100vw - 48px) / 2), (max-width: 1440px) 30vw, 450px'
                 }
               />
             )}

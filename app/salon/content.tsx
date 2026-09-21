@@ -2,7 +2,7 @@
 import { useTranslation } from '../i18n';
 import { DetailPhoto } from '../detail-photo';
 import { PageSeo } from '../seo-content';
-import Image from 'next/image';
+import Image from '../responsive-image';
 import { ArrowUpRight } from 'lucide-react';
 import Link from '../site-link';
 import { TextLink, Visit, phone } from '../site-chrome';

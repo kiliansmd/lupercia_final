@@ -1,7 +1,7 @@
 'use client';
 import { useTranslation } from '../i18n';
 import { DetailPhoto } from '../detail-photo';
-import Image from 'next/image';
+import Image from '../responsive-image';
 import Link from '../site-link';
 import { PageSeo } from '../seo-content';
 import { TextLink } from '../site-chrome';

@@ -4,7 +4,7 @@ import config from '../seo.config.json';
 import Link from './site-link';
 import { maps, phone } from './site-config';
 import { siteOrigin } from './seo';
-import { localizedHref, languageTags } from './i18n-core';
+import { localizedHref, languageTags, languages } from './i18n-core';
 type PagePath = keyof typeof config.pages;
 const absolute = (path: string) => new URL(path, siteOrigin).href;
 const businessId = absolute('/#lupercia');
@@ -22,7 +22,7 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
 }
 
 export function SiteSchema() {
-  const { t, language } = useTranslation();
+  const { t } = useTranslation();
   return (
     <JsonLd
       data={{
@@ -69,7 +69,7 @@ export function SiteSchema() {
             '@id': websiteId,
             name: config.name,
             url: absolute('/'),
-            inLanguage: languageTags[language],
+            inLanguage: languages.map((language) => languageTags[language]),
             publisher: { '@id': businessId },
           },
         ],
@@ -103,6 +103,7 @@ export function PageSeo({ path }: { path: PagePath }) {
                 url: absolute(page.image),
                 width: page.width,
                 height: page.height,
+                caption: t(page.imageAlt),
               },
               ...(path === '/' ? {} : { breadcrumb: { '@id': breadcrumbId } }),
             },

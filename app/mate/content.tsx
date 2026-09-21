@@ -1,6 +1,6 @@
 'use client';
 import { useTranslation } from '../i18n';
-import Image from 'next/image';
+import Image from '../responsive-image';
 import { Invitation } from '../editorial';
 import { PageSeo } from '../seo-content';
 import { TextLink } from '../site-chrome';

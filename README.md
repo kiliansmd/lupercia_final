@@ -61,6 +61,14 @@ Die deutschen Ausgangstexte stehen in `app/content.tsx` und den jeweiligen `app/
 
 Die fünf Fotos der Hero-Navigation liegen unter `public/assets/images/hero/`: Tee & Genuss → `/tee-genuss/`, Maria → `/maria/`, Geschenkbox → `/geschenkbox/`, Salon → `/salon/`, Veranstaltungen → `/veranstaltungen/`. Die Zuordnung entspricht den benannten Originaldateien der bereitgestellten Auswahl. Auf der Startseite gibt es außerhalb dieser Hero-Kacheln keine Fotos; die Markenlogos in Kopf- und Fußzeile bleiben erhalten. Der Besuchsbereich wird dort mit `withPhoto={false}` ausgegeben.
 
+## Bildauslieferung und Bedienbarkeit
+
+`npm run dev` und `npm run build` erzeugen mit `scripts/generate-responsive-images.mjs` passende WebP-Größen aus den vorhandenen Originalbildern. Die Originaldateien, Bildmotive und Bildbeschreibungen bleiben erhalten. `app/responsive-image.tsx` liefert echte `srcset`-Kandidaten und passende `sizes` aus; die vorhandenen Detailfotos behalten ihre responsiven Quellen. `app/responsive-images.json` enthält das erzeugte Manifest. `public/assets/responsive/` wird beim Build erzeugt und nicht eingecheckt. Inhaltsabhängige Dateinamen erlauben langes Browser-Caching ohne veraltete Bilder nach einer Änderung.
+
+Die Sprachwahl und Footer-Bedienelemente haben größere Touch-Flächen. Die mobile Sprachwahl steht unter dem Logo, sodass sie auch bei 320 px nicht mit Logo oder Menü kollidiert. Tastaturfokus wird auf Bildkacheln und Formularfeldern sichtbar hervorgehoben. Die mobile Hauptnavigation ist auch ohne JavaScript zugänglich. Schriftdateien werden lokal vorgeladen.
+
+Die Sitemap enthält dieselben indexierbaren Seiten wie zuvor, ergänzt um gegenseitige Sprachverweise und vorhandene Hauptbilder. Website-Schema und seitenbezogene Sprachangaben sind konsistent. Die Build-Prüfungen kontrollieren zusätzlich Bildabmessungen, Seitenverhältnisse und Sitemap-Verweise.
+
 ## Technik und Prüfung
 
 React, TypeScript, Vinext (Next.js-kompatible Dateirouten) und statischer HTML-Export. Kein CMS und keine Datenbank erforderlich.

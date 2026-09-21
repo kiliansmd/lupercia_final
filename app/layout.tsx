@@ -31,6 +31,20 @@ export default function RootLayout({
   return (
     <LanguageDocument>
       <body>
+        <link
+          rel="preload"
+          href="/assets/fonts/SourceSans3-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/assets/fonts/Fraunces-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <SiteSchema />
         <SkipLink />
         <ConsentProvider>

@@ -1,6 +1,6 @@
 'use client';
 import { useTranslation } from './i18n';
-import Image from 'next/image';
+import Image from './responsive-image';
 import photos from './detail-photos.json';
 
 /** Native responsive sources keep the static export independent of an image server. */

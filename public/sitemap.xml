@@ -1,24 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/salon</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/tee-genuss</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/mate</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/maria</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/veranstaltungen</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/geschenkbox</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/en</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/en/salon</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/en/tee-genuss</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/en/mate</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/en/maria</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/en/veranstaltungen</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/en/geschenkbox</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/es</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/es/salon</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/es/tee-genuss</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/es/mate</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/es/maria</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/es/veranstaltungen</loc></url>
-  <url><loc>https://lupercia.meindigitalerbetrieb.de/es/geschenkbox</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/hero/salon.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/salon</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/salon" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/salon" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/salon" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/salon" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/einblicke/gemeinsam-tee-trinken-1066.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/tee-genuss</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/tee-genuss" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/tee-genuss/porzellan-und-tee.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/mate</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/mate" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/mate" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/mate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/mate" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/mate-trinkgefaesse-hero.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/maria</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/maria" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/maria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/maria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/maria" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/einblicke/maria-teetafel-1080.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/veranstaltungen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/veranstaltungen" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/hero/veranstaltungen.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/geschenkbox</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/geschenkbox" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/geschenkbox/rosenbox.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/en</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/hero/salon.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/en/salon</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/salon" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/salon" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/salon" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/salon" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/einblicke/gemeinsam-tee-trinken-1066.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/en/tee-genuss</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/tee-genuss" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/tee-genuss/porzellan-und-tee.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/en/mate</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/mate" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/mate" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/mate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/mate" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/mate-trinkgefaesse-hero.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/en/maria</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/maria" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/maria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/maria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/maria" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/einblicke/maria-teetafel-1080.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/en/veranstaltungen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/veranstaltungen" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/hero/veranstaltungen.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/en/geschenkbox</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/geschenkbox" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/geschenkbox/rosenbox.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/es</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/hero/salon.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/es/salon</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/salon" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/salon" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/salon" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/salon" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/einblicke/gemeinsam-tee-trinken-1066.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/es/tee-genuss</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/tee-genuss" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/tee-genuss" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/tee-genuss/porzellan-und-tee.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/es/mate</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/mate" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/mate" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/mate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/mate" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/mate-trinkgefaesse-hero.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/es/maria</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/maria" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/maria" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/maria" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/maria" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/einblicke/maria-teetafel-1080.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/es/veranstaltungen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/veranstaltungen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/veranstaltungen" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/hero/veranstaltungen.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://lupercia.meindigitalerbetrieb.de/es/geschenkbox</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://lupercia.meindigitalerbetrieb.de/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lupercia.meindigitalerbetrieb.de/en/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lupercia.meindigitalerbetrieb.de/es/geschenkbox" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lupercia.meindigitalerbetrieb.de/geschenkbox" />
+    <image:image><image:loc>https://lupercia.meindigitalerbetrieb.de/assets/images/geschenkbox/rosenbox.webp</image:loc></image:image>
+  </url>
 </urlset>
