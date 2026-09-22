@@ -2,7 +2,13 @@
 import { usePathname } from 'next/navigation';
 import { useState, useSyncExternalStore } from 'react';
 import { useTranslation } from './i18n';
-import { languages, languageNames, localizedHref, pagePath } from './i18n-core';
+import {
+  languages,
+  languageNames,
+  localizedHref,
+  pagePath,
+  type Language,
+} from './i18n-core';
 
 function subscribe(listener: () => void) {
   window.addEventListener('hashchange', listener);
@@ -22,6 +28,26 @@ export function LanguageSwitcher() {
   const [announced, setAnnounced] = useState(false);
   return (
     <fieldset className="language-switcher" aria-label={t('Sprache wählen')}>
+      <select
+        className="language-select"
+        aria-label={t('Sprache wählen')}
+        value={language}
+        onChange={(event) => {
+          setLanguage(event.target.value as Language);
+          setAnnounced(true);
+        }}
+      >
+        {languages.map((locale) => (
+          <option
+            key={locale}
+            value={locale}
+            lang={locale}
+            aria-label={languageNames[locale]}
+          >
+            {locale.toUpperCase()}
+          </option>
+        ))}
+      </select>
       {languages.map((locale) => (
         <a
           key={locale}
