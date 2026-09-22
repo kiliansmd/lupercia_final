@@ -58,7 +58,7 @@ export function Header() {
       <noscript>
         <style>
           {
-            '@media(max-width:760px){.site-header .nav-wrap nav{display:flex;flex-direction:column}.site-header .menu-toggle{display:none}}'
+            '@media(max-width:760px){.site-header .nav-wrap nav{display:flex;flex-direction:column}.site-header .menu-toggle,.site-header .language-select{display:none}.site-header .language-switcher{grid-column:1/-1;grid-row:3;width:auto;padding:3px;border:1px solid var(--line)}.site-header .language-switcher a{display:grid}}'
           }
         </style>
       </noscript>
