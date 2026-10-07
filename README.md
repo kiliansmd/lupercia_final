@@ -27,11 +27,13 @@ Die Website wird statisch ausgeliefert. Auf `/maria/` werden das DW-Instagram-Vi
 ## Veröffentlichung auf Vercel
 
 - Einziges Live-Repository: https://github.com/kiliansmd/lupercia_final
-- Live-Website: https://lupercia.meindigitalerbetrieb.de
+- Live-Website und einzige kanonische Domain: https://lupercia.de
 - Vercel-Projekt: `v0-lupercia-website-design`
 - Produktionsbranch: `main`
 
 Vercel ist mit diesem Repository verbunden. Änderungen auf `main` werden automatisch veröffentlicht. Das bisherige Repository `lupercia_website` ist vom Live-Projekt getrennt.
+
+`seo.config.json` legt `https://lupercia.de` als gemeinsame Basis für Canonicals, Sprachalternativen, strukturierte Daten, Social-Media-Metadaten, Sitemap und robots.txt fest. Die bisherige Subdomain `lupercia.meindigitalerbetrieb.de` und `www.lupercia.de` werden in den Vercel-Domain-Einstellungen dauerhaft und unter Beibehaltung des Pfads auf `lupercia.de` weitergeleitet. Die alte Subdomain muss als Weiterleitung erreichbar bleiben, damit bestehende Links und Suchsignale übertragen werden können. Details und Search-Console-Schritte: [Domainumstellung](docs/Domainumstellung-2026-10-07.md).
 
 `vercel.json` konfiguriert den Framework-Preset Other, `npm ci`, Typprüfung, Lint, Build und das Ausgabeverzeichnis `dist/client`. `cleanUrls` ermöglicht direkte Unterseitenaufrufe ohne `.html`. Alle Quelldateien, Medien und die Lockdatei liegen im Repository. Abhängigkeiten und generierte Dateien werden beim Build erstellt. Eigene Umgebungsvariablen, Serverfunktionen und eine Datenbank sind nicht erforderlich.
 

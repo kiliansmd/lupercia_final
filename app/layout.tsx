@@ -11,6 +11,9 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
+  verification: {
+    google: '5H1FPy8VkB4L9zVbZGb4j_5PY-eEQcCl76a26AO5pG8',
+  },
   title: {
     default: 'Lupercia – Teesalon & Teeladen in Bonn-Südstadt',
     template: '%s — Lupercia',
